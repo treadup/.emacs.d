@@ -36,5 +36,11 @@
 (use-package magit
   :ensure t)
 
+;; A dark theme for emacs.
+;; https://draculatheme.com/emacs/
+(use-package dracula-theme
+  :ensure t)
+
 ;; Hide startup screen
 (setq inhibit-startup-screen t)
+
