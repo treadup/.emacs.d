@@ -47,6 +47,13 @@
   :bind (("M-x" . smex))
   :config (smex-initialize))
 
+;; Projectile is a project interaction library for Emacs.
+;; It provides functions for project navigation.
+;; https://www.emacswiki.org/emacs/Projectile
+(use-package projectile
+  :ensure t
+  :config (projectile-global-mode)) ;; Enable projectile everywhere.
+
 ;; A theme that I have used previously and that is the theme for the Clojure True and Brave emacs.d 
 ;; is the Tomorrow Night Bright.
 ;; Unfortunately it does not seem to be available via any package repos.
@@ -124,4 +131,5 @@
 
 ;; Change the way the list of buffers is shown.
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+
 
