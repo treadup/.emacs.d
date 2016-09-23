@@ -71,7 +71,11 @@
 (defun config-for-cider ()
 
   ;; provides minibuffer documentation for the code you're typing into the repl
-  (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+  ;; Change this to 
+  ;; https://groups.google.com/forum/#!topic/clojure/suo83_S3Luo
+  ;; https://github.com/syl20bnr/spacemacs/pull/5828
+  ;; (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+  (add-hook 'cider-mode-hook 'eldoc-mode)
 
   ;; go right to the REPL buffer when it's finished connecting
   (setq cider-repl-pop-to-buffer-on-connect t)
