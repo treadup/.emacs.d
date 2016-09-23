@@ -41,6 +41,11 @@
 (use-package dracula-theme
   :ensure t)
 
+;; A theme that I have used previously and that is the theme for the Clojure True and Brave emacs.d 
+;; is the Tomorrow Night Bright.
+;; Unfortunately it does not seem to be available via any package repos.
+;; https://github.com/chriskempson/tomorrow-theme/blob/master/GNU%20Emacs/color-theme-tomorrow.el
+
 ;;
 ;; Sections
 ;;
@@ -98,5 +103,19 @@
 ;; Navigation
 ;;
 
+;;
 ;; Ido mode
+;;
+
+;; Ido mode allows you to more easily navigate choices.
+(ido-mode t)
+
+;; Use partial matching
+(setq ido-enable-flex-matching t)
+
+;; Enable ido wherever it could be useful.
+(setq ido-everywhere t)
+
+;; Change the way the list of buffers is shown.
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
