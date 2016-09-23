@@ -14,11 +14,6 @@
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-(defvar my-packages '(better-defaults
-                      projectile
-                      clojure-mode
-                      cider))
-
 ;; Bootstrap 'use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -31,9 +26,11 @@
 ;; The :ensure t tells use-package to load the package from the package-archives
 ;; if the package is not already installed.
 
+;; Provide better default configuration for Emacs than the out of the box experience.
 (use-package better-defaults
   :ensure t)
 
+;; Magit is a git frontend.
 (use-package magit
   :ensure t)
 
