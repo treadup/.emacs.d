@@ -132,6 +132,10 @@
 ;; Change the way the list of buffers is shown.
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;;
+;; Recent files
+;;
+
 ;; Build a list of recently opened files.
 ;; https://www.emacswiki.org/emacs/RecentFiles
 (setq recentf-save-file (concat user-emacs-directory ".recentf"))
@@ -140,3 +144,62 @@
 (setq recentf-max-menu-items 40)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
+
+;;;
+;;; Editing
+;;;
+
+;; Highlights matching parenthesis
+(show-paren-mode 1)
+
+;; Highlight current line
+(global-hl-line-mode 1)
+
+;; Interactive search key bindings. By default, C-s runs
+;; isearch-forward, so this swaps the bindings.
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+
+;; Use spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+
+;;;
+;;; Backups and Auto Saves
+;;;
+
+;; To avoid sprinkling backups and auto save files all over the filesystem
+;; we can use the following code.
+;; https://snarfed.org/gnu_emacs_backup_files
+
+;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
+(custom-set-variables
+  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
+  '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
+
+;; create the autosave dir if necessary, since emacs won't.
+(make-directory "~/.emacs.d/autosaves/" t)
+
+;; Now we have some other backup related stuff.
+;; For a description of how these variables work see the following url
+;; http://stackoverflow.com/questions/151945/how-do-i-control-how-emacs-makes-backup-files
+
+;; Make backups by copying
+(setq backup-by-copying t)
+
+;; Use version numbers on backups
+(setq version-control t)
+
+;; Delete old versions. In other words do not keep excess backups.
+(setq delete-old-versions t)
+
+;; Keep 20 of the newest versions of the file.
+(setq kept-new-versions 20)
+
+;; Keep 5 of the oldest versions of the file.
+(setq kept-old-versions 5) 
+
+;; TODO: Backup on save
+;; By default Emacs does not take a backup each time you save the file.
+;; It would be good if I could have Emacs do so.
