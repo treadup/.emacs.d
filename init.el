@@ -200,6 +200,20 @@
 ;; Keep 5 of the oldest versions of the file.
 (setq kept-old-versions 5) 
 
+;; Create backups of version controlled files.
+(setq vc-make-backup-files t)
+
 ;; TODO: Backup on save
 ;; By default Emacs does not take a backup each time you save the file.
-;; It would be good if I could have Emacs do so.
+;; It would be good if I could have Emacs do so. However it does not
+;; seem super important. (Famous last words.)
+
+;; There is a package called backup-each-save but I have not gotten it
+;; to work.
+
+;; When you visit a file, point goes to the last place where it
+;; was when you previously visited the same file.
+;; http://www.emacswiki.org/emacs/SavePlace
+(require 'saveplace)
+(setq-default save-place t)
+
