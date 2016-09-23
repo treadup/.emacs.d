@@ -66,9 +66,9 @@
 ;; Later on I might want to split these out into different files
 ;; but probably not right now.
 
-;;
-;; User Interface
-;;
+;;;
+;;; User Interface
+;;;
 
 ;; Hide startup screen
 (setq inhibit-startup-screen t)
@@ -112,9 +112,9 @@
 ;; this selection is gone unless this variable is non-nil
 (setq save-interprogram-paste-before-kill t)
 
-;;
-;; Navigation
-;;
+;;;
+;;; Navigation
+;;;
 
 ;;
 ;; Ido mode
@@ -132,4 +132,11 @@
 ;; Change the way the list of buffers is shown.
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+;; Build a list of recently opened files.
+;; https://www.emacswiki.org/emacs/RecentFiles
+(setq recentf-save-file (concat user-emacs-directory ".recentf"))
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 40)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
