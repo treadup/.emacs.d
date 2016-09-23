@@ -41,6 +41,12 @@
 (use-package dracula-theme
   :ensure t)
 
+;; The smex package provides an Ido like interface for M-x.
+(use-package smex
+  :ensure t
+  :bind (("M-x" . smex))
+  :config (smex-initialize))
+
 ;; A theme that I have used previously and that is the theme for the Clojure True and Brave emacs.d 
 ;; is the Tomorrow Night Bright.
 ;; Unfortunately it does not seem to be available via any package repos.
