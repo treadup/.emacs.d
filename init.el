@@ -41,6 +41,11 @@
 (use-package dracula-theme
   :ensure t)
 
+;; A theme that I have used previously and that is the theme for the Clojure True and Brave emacs.d 
+;; is the Tomorrow Night Bright.
+;; Unfortunately it does not seem to be available via any package repos.
+;; https://github.com/chriskempson/tomorrow-theme/blob/master/GNU%20Emacs/color-theme-tomorrow.el
+
 ;; The smex package provides an Ido like interface for M-x.
 (use-package smex
   :ensure t
@@ -54,17 +59,13 @@
   :ensure t
   :config (projectile-global-mode)) ;; Enable projectile everywhere.
 
-;; A theme that I have used previously and that is the theme for the Clojure True and Brave emacs.d 
-;; is the Tomorrow Night Bright.
-;; Unfortunately it does not seem to be available via any package repos.
-;; https://github.com/chriskempson/tomorrow-theme/blob/master/GNU%20Emacs/color-theme-tomorrow.el
-
-;;
-;; Sections
-;;
-;; Just add different sections here for UI, navigation, etc.
-;; Later on I might want to split these out into different files
-;; but probably not right now.
+;; Rainbow colored delimiters. Extremely useful if you are programming
+;; in a lisp like language.
+;; https://www.emacswiki.org/emacs/RainbowDelimiters
+(use-package rainbow-delimiters
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;;;
 ;;; User Interface
