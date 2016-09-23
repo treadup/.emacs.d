@@ -9,8 +9,9 @@
 (setq package-enable-at-startup nil)
 
 ;; Add package archives
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+;;(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 (defvar my-packages '(better-defaults
@@ -217,4 +218,17 @@
 ;; http://www.emacswiki.org/emacs/SavePlace
 (require 'saveplace)
 (setq-default save-place t)
+
+;;;
+;;; Customizations
+;;;
+
+;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder. 
+;; https://www.emacswiki.org/emacs/DotEmacsDotD
+(add-to-list 'load-path "~/.emacs.d/elisp")
+
+;;
+;; Clojure specific setup
+;;
+(load "for-clojure.el")
 
