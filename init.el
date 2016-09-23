@@ -232,3 +232,7 @@
 ;;
 (load "for-clojure.el")
 
+;;
+;; Shell specific setup
+;;
+(load "for-shell.el")
