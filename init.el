@@ -36,8 +36,18 @@
 
 ;; A dark theme for emacs.
 ;; https://draculatheme.com/emacs/
-(use-package dracula-theme
-  :ensure t)
+;; (use-package dracula-theme
+;;  :ensure t)
+;;
+;; This has the problem that the current line highlighting disappears.
+(load-theme 'deeper-blue)
+
+;; Here are some other good built in themes.
+;; deeper-blue
+;; misterioso
+;; tango-dark
+;; tshd-dark
+;; wheatgrass
 
 ;; A theme that I have used previously and that is the theme for the Clojure True and Brave emacs.d 
 ;; is the Tomorrow Night Bright.
