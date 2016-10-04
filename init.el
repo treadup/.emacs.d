@@ -237,4 +237,18 @@
 ;;
 (load "for-shell.el")
 
+;;
+;; PHP specific setup
+;;
+(load "for-php.el")
+
+;;
+;; OS X specific setup
+;;
+
+(if (string-equal system-type "darwin")
+    (load "for-osx.el"))
+
+
+
 

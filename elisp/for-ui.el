@@ -32,4 +32,11 @@
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 130) (height . 40)))
 
 ;; Turn of the visual bell.
+;;
+;; On OS X this disables the yellow warning triangle.
+;; https://www.emacswiki.org/emacs/AlarmBell
+(setq visible-bell nil)
+
+;; Disable audio bell
+(setq ring-bell-function 'ignore)
 
