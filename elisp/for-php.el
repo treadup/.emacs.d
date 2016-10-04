@@ -29,6 +29,9 @@
     (setq tab-width 2)
     
     ;; Add hook to indent PHP code before saving.
+    ;; The last argument is called local. Settin local to t means
+    ;; that this hook is a buffer-local hook.
+    ;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Setting-Hooks.html
     (add-hook 'before-save-hook 'personal-php-indent nil t))
 
 (use-package php-mode
