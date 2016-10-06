@@ -1,9 +1,18 @@
+
+;;;
+;;; Dracula theme
+;;;
+
 ;; A dark theme for emacs.
 ;; https://draculatheme.com/emacs/
 ;; (use-package dracula-theme
 ;;  :ensure t)
 ;;
 ;; This has the problem that the current line highlighting disappears.
+
+;;;
+;;; Built in themes
+;;;
 
 ;; Lets try some of the built in themes.
 ;; I can't really find one that I like.
@@ -16,10 +25,18 @@
 ;; tshd-dark
 ;; wheatgrass
 
+;;;
+;;; Tomorrow Night Bright (Clojure True and Brave)
+;;;
+
 ;; A theme that I have used previously and that is the theme for the Clojure True and Brave emacs.d 
 ;; is the Tomorrow Night Bright.
 ;; Unfortunately it does not seem to be available via any package repos.
 ;; https://github.com/chriskempson/tomorrow-theme/blob/master/GNU%20Emacs/color-theme-tomorrow.el
+
+;;;
+;;; Base 16
+;;;
 
 (use-package base16-theme
   :ensure t
@@ -32,3 +49,12 @@
 ;; base16-harmonic16-dark
 ;; base16-solar-flare
 ;; base16-solarized-dark
+
+;;;
+;;; Solarized
+;;;
+
+;; Did not like this theme at all.
+;; (use-package solarized-theme
+;;  :ensure t)
+  
