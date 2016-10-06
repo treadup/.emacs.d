@@ -40,3 +40,12 @@
 ;; Disable audio bell
 (setq ring-bell-function 'ignore)
 
+;; Change mode line. The mode line is the status bar at the bottom.
+;; https://github.com/Malabarba/smart-mode-line
+(use-package smart-mode-line
+  :ensure t
+  :config
+  (progn
+    ;; Do not ask if we really want to load this theme
+    (setq sml/no-confirm-load-theme t)
+    (sml/setup)))
