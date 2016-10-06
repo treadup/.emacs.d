@@ -48,4 +48,7 @@
   (progn
     ;; Do not ask if we really want to load this theme
     (setq sml/no-confirm-load-theme t)
+    ;; Seems to respect the theme choices that I have already made.
+    (setq sml/theme 'respectful)
+    ;; Turn on the new mode line.
     (sml/setup)))
