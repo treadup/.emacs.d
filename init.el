@@ -19,6 +19,75 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;;;
+;;; Backups and Auto Saves
+;;;
+
+;;
+;; Issue: This section uses the custom-set-variables function. This function has to be
+;; called before themes and other things are loaded. There is some kind of issue here
+;; with the order of the custom-set-variables function being called and functions
+;; that use the customize system.
+;;
+
+;; To avoid sprinkling backups and auto save files all over the filesystem
+;; we can use the following code.
+;; https://snarfed.org/gnu_emacs_backup_files
+
+;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
+(custom-set-variables
+  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
+  '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
+
+;; create the autosave dir if necessary, since emacs won't.
+(make-directory "~/.emacs.d/autosaves/" t)
+
+;; Now we have some other backup related stuff.
+;; For a description of how these variables work see the following url
+;; http://stackoverflow.com/questions/151945/how-do-i-control-how-emacs-makes-backup-files
+
+;; Make backups by copying
+(setq backup-by-copying t)
+
+;; Use version numbers on backups
+(setq version-control t)
+
+;; Delete old versions. In other words do not keep excess backups.
+(setq delete-old-versions t)
+
+;; Keep 20 of the newest versions of the file.
+(setq kept-new-versions 20)
+
+;; Keep 5 of the oldest versions of the file.
+(setq kept-old-versions 5) 
+
+;; Create backups of version controlled files.
+(setq vc-make-backup-files t)
+
+;; TODO: Backup on save
+;; By default Emacs does not take a backup each time you save the file.
+;; It would be good if I could have Emacs do so. However it does not
+;; seem super important. (Famous last words.)
+
+;; There is a package called backup-each-save but I have not gotten it
+;; to work.
+
+;;
+;; Customize system
+;;
+
+;; http://irreal.org/blog/?p=3765
+;; http://emacs.stackexchange.com/questions/102/advantages-of-setting-variables-with-setq-instead-of-custom-el
+;; http://stackoverflow.com/questions/5052088/what-is-custom-set-variables-and-faces-in-my-emacs
+;; https://www.reddit.com/r/emacs/comments/2lif7v/how_to_transform_your_customsetvariables_in/
+;; http://stackoverflow.com/questions/8545756/how-to-treat-my-custom-emacs-theme-as-a-safe-theme
+;;
+;; Safe code. The error message about safe code has something to do with custom-set-variables not having been
+;; called before the theme is loaded.
+;; I do not want generated code in my init.el file.
+;; Make the customize system write to a temp file that is deleted.
+(setq custom-file (make-temp-file "emacs-custom"))
+
 ;;
 ;; Load packages
 ;;
@@ -161,52 +230,6 @@
 
 ;; Use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
-
-;;;
-;;; Backups and Auto Saves
-;;;
-
-;; To avoid sprinkling backups and auto save files all over the filesystem
-;; we can use the following code.
-;; https://snarfed.org/gnu_emacs_backup_files
-
-;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
-(custom-set-variables
-  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
-  '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
-
-;; create the autosave dir if necessary, since emacs won't.
-(make-directory "~/.emacs.d/autosaves/" t)
-
-;; Now we have some other backup related stuff.
-;; For a description of how these variables work see the following url
-;; http://stackoverflow.com/questions/151945/how-do-i-control-how-emacs-makes-backup-files
-
-;; Make backups by copying
-(setq backup-by-copying t)
-
-;; Use version numbers on backups
-(setq version-control t)
-
-;; Delete old versions. In other words do not keep excess backups.
-(setq delete-old-versions t)
-
-;; Keep 20 of the newest versions of the file.
-(setq kept-new-versions 20)
-
-;; Keep 5 of the oldest versions of the file.
-(setq kept-old-versions 5) 
-
-;; Create backups of version controlled files.
-(setq vc-make-backup-files t)
-
-;; TODO: Backup on save
-;; By default Emacs does not take a backup each time you save the file.
-;; It would be good if I could have Emacs do so. However it does not
-;; seem super important. (Famous last words.)
-
-;; There is a package called backup-each-save but I have not gotten it
-;; to work.
 
 ;; When you visit a file, point goes to the last place where it
 ;; was when you previously visited the same file.
