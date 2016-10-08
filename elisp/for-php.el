@@ -27,6 +27,9 @@
     ;; The width of the tab should be 2 characters.
     (make-local-variable 'tab-width)
     (setq tab-width 2)
+
+    ;; Block usage of the spacebar for indentation in PHP mode.
+    (local-set-key (kbd "SPC") (lambda () (interactive) (conditional-space-insert-command)))
     
     ;; Add hook to indent PHP code before saving.
     ;; The last argument is called local. Settin local to t means

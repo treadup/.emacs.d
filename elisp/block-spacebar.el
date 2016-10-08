@@ -23,6 +23,5 @@
 ;; (global-set-key (kbd "C-c l") (lambda () (interactive) (message "%s" (line-beginning-to-point-string))))
 ;; (global-set-key (kbd "C-c w") (lambda () (interactive) (message "%s" (whitespace-to-point-p))))
 
-;; Do not do this as a global set key.
-;; This should be set on a per mode basis.
-(global-set-key (kbd "SPC") (lambda () (interactive) (conditional-space-insert-command)))
+;; Do not do this as a global set key. Blocking the spacebar should be set on a per mode basis.
+;; (global-set-key (kbd "SPC") (lambda () (interactive) (conditional-space-insert-command)))

@@ -243,6 +243,10 @@
 (if (string-equal system-type "darwin")
     (load "for-osx.el"))
 
+;;
+;; Block spacebar key
+;;
+(load "block-spacebar.el")
 
 
 
