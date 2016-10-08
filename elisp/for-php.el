@@ -36,6 +36,7 @@
 
 (use-package php-mode
   :ensure t
+  :defer t
   :config
   (add-hook 'php-mode-hook 'personal-php-mode-config))
 
