@@ -253,4 +253,10 @@
 ;;
 (load "for-text.el")
 
+;;
+;; Browser specific setup
+;;
+(load "for-browser.el")
+
+
 
