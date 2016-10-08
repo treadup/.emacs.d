@@ -248,5 +248,9 @@
 ;;
 (load "block-spacebar.el")
 
+;;
+;; Text mode specific setup
+;;
+(load "for-text.el")
 
 
