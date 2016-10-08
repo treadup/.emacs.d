@@ -57,3 +57,9 @@
     (setq sml/theme 'respectful)
     ;; Turn on the new mode line.
     (sml/setup)))
+
+;; Show tabs with a special glyph that kind of looks like >> but smaller.
+;; Here is a 	tab character so you can see how it looks.
+;;(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
+(setq whitespace-style (quote (tabs tab-mark)))
+(global-whitespace-mode 1)
