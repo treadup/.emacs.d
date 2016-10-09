@@ -14,8 +14,9 @@
 ;; Show line numbers
 (global-linum-mode)
 
-;; Show menu bar
-(menu-bar-mode t)
+;; Show menu bar if we are in graphics mode
+(if (display-graphic-p)
+    (menu-bar-mode t))
 
 ;; Increase font size.
 ;; Play with the :height attribute to change size
