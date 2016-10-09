@@ -38,11 +38,23 @@
 ;;; Base 16
 ;;;
 
-(use-package base16-theme
-  :ensure t
-  :config
-  (load-theme 'base16-solar-flare t)) ;; The t at the end load the them without giving any security warnings.
+;; There is an issue with using the base16-theme in a terminal. I get a weird blue background.
+;; See the following discussion of a similar problem.
+;; https://github.com/bbatsov/solarized-emacs/issues/18
 
+;; A workaround is to use different themes for the graphical environment and for the terminal.
+
+(if (display-graphic-p)
+    (use-package base16-theme
+      :ensure t
+      ;; The t at the end load the theme without giving any security warnings.
+      :config  (load-theme 'base16-solar-flare t))
+    (use-package zenburn-theme
+      :ensure t
+      :config
+      (load-theme 'zenburn t)))
+;; The main theme I use is a base16-theme that is called base16-solar-flare
+;;
 ;; Some other good choices for themes
 ;; base16-materia
 ;; base16-oceanicnext
