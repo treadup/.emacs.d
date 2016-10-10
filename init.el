@@ -258,5 +258,17 @@
 ;;
 (load "for-browser.el")
 
+;;
+;; Magit specific setup
+;;
+(load "for-magit.el")
 
+;;
+;; Tramp specific setup
+;;
+(load "for-tramp.el")
 
+;;
+;; The elisp specific setup 
+;;
+(load "for-elisp.el")
