@@ -103,13 +103,6 @@
 (use-package magit
   :ensure t)
 
-
-;; The smex package provides an Ido like interface for M-x.
-(use-package smex
-  :ensure t
-  :bind (("M-x" . smex))
-  :config (smex-initialize))
-
 ;; Projectile is a project interaction library for Emacs.
 ;; It provides functions for project navigation.
 ;; https://www.emacswiki.org/emacs/Projectile
@@ -148,21 +141,6 @@
 ;;; Navigation
 ;;;
 
-;;
-;; Ido mode
-;;
-
-;; Ido mode allows you to more easily navigate choices.
-(ido-mode t)
-
-;; Use partial matching
-(setq ido-enable-flex-matching t)
-
-;; Enable ido wherever it could be useful.
-(setq ido-everywhere t)
-
-;; Change the way the list of buffers is shown.
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;;
 ;; Recent files
@@ -269,6 +247,12 @@
 (load "for-tramp.el")
 
 ;;
-;; The elisp specific setup 
+;; elisp specific setup 
 ;;
 (load "for-elisp.el")
+
+;;
+;; Ivy specific setup
+;;
+(load "for-ivy.el")
+
