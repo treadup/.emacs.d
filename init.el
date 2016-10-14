@@ -260,3 +260,9 @@
 ;; Ivy specific setup
 ;;
 (load "for-ivy.el")
+
+;;
+;; Python specific setup
+;;
+(load "for-python.el")
+
