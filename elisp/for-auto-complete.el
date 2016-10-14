@@ -2,22 +2,23 @@
 ;;; Customizations for Auto Complete
 ;;;
 
-;; dirty fix for having AC everywhere
-;; from EmacsWiki
-;; Probably do not want auto complete in text mode.
-(define-globalized-minor-mode real-global-auto-complete-mode
-  auto-complete-mode (lambda ()
-                       (if (not (minibufferp (current-buffer)))
-                         (auto-complete-mode 1))
-                       ))
+;; I tried the auto-complete package and tried to get jedi working
+;; with it however I was unable to. Instead I am going to try company
+;; mode.
 
-(defun personal-auto-complete-setup ()
-  (setq-default ac-sources '(ac-source-abbrev ac-source-dictionary ac-source-words-in-same-mode-buffers))
-  ;; (global-auto-complete-mode t)
-  ;; (real-global-auto-complete-mode t)
-  (add-hook 'prog-mode-hook 'auto-complete-mode))
+;(use-package auto-complete
+;  :ensure t)
 
-(use-package auto-complete
+(defun personal-completion-setup ()
+  (add-hook 'prog-mode-hook 'company-mode))
+  
+(use-package company
   :ensure t
   :config
-  (personal-auto-complete-setup))
+  (personal-completion-setup))
+
+(use-package company-quickhelp
+  :ensure t
+  :config
+  (company-quickhelp-mode 1))
+
