@@ -200,6 +200,11 @@
 (load "for-theme.el")
 
 ;;
+;; Auto complete specific setup
+;;
+(load "for-auto-complete.el")
+
+;;
 ;; Clojure specific setup
 ;;
 (load "for-clojure.el")
@@ -255,4 +260,3 @@
 ;; Ivy specific setup
 ;;
 (load "for-ivy.el")
-
