@@ -70,3 +70,6 @@
 ;; (use-package solarized-theme
 ;;  :ensure t)
   
+;; The following article has some nice code for creating your own custom color theme.
+;; http://www.jesshamrick.com/2012/09/18/emacs-as-a-python-ide/
+;;
