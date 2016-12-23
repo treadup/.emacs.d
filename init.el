@@ -271,3 +271,7 @@
 ;;
 (load "for-common-lisp.el")
 
+;;
+;; Kill current buffer instead of prompting for buffer to kill.
+;;
+(load "for-kill-buffer.el")
