@@ -275,3 +275,11 @@
 ;; Kill current buffer instead of prompting for buffer to kill.
 ;;
 (load "for-kill-buffer.el")
+
+;;
+;; Execute shell commands and place the result in the current buffer.
+;;
+(load "for-shell-command.el")
+
+
+
