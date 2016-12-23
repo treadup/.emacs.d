@@ -281,5 +281,9 @@
 ;;
 (load "for-shell-command.el")
 
+;;
+;; Web mode specific setup
+;;
+(load "for-web-mode.el")
 
 
