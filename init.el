@@ -266,3 +266,8 @@
 ;;
 (load "for-python.el")
 
+;;
+;; Common Lisp specific setup
+;;
+(load "for-common-lisp.el")
+
