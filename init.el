@@ -189,6 +189,9 @@
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
+(defun hostname ()
+  (car (split-string system-name "[.]")))
+
 ;;
 ;; User interface specific setup
 ;;
@@ -286,4 +289,9 @@
 ;;
 (load "for-web-mode.el")
 
-
+;;
+;; Per host specific setup
+;;
+(cond
+ ((string= "hickory" (hostname)) (load "hickory-configuration.el"))
+ (t (load "default-configuration.el")))
