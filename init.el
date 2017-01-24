@@ -262,7 +262,9 @@
 ;;
 ;; Ivy specific setup
 ;;
-(load "for-ivy.el")
+;; For some reason swiper does not work.
+;;
+;; (load "for-ivy.el")
 
 ;;
 ;; Python specific setup
