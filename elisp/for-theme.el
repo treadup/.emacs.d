@@ -48,7 +48,8 @@
     (use-package base16-theme
       :ensure t
       ;; The t at the end load the theme without giving any security warnings.
-      :config  (load-theme 'base16-solar-flare t))
+      :config  (load-theme 'base16-solarized-dark t))
+      
     (use-package zenburn-theme
       :ensure t
       :config
