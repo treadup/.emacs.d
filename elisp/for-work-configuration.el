@@ -11,11 +11,11 @@
   (insert "\t"))
 
 (defun is-special-project-buffer ()
-    "Predicate that determines if the current buffer is from a special project."
+  "Predicate that determines if the current buffer is from a special project."
     (cond
      ((not (buffer-file-name)) nil)
-     ((string-prefix-p "/Users/henrik/code/booli_pro" (buffer-file-name)) t)
      ((string-prefix-p "/Users/henrik/code/booli.se-api" (buffer-file-name)) t)
+     ((string-prefix-p "/Users/henrik/code/booli_pro" (buffer-file-name)) t)
      (t nil)))
 
 (defun special-work-project-setup ()
@@ -29,6 +29,7 @@
 
 (defun custom-work-configuration ()
   (message "About to determine if we need the special work configuration.")
+  (message (concat "Current buffer filename: " (buffer-file-name)))
   (if (is-special-project-buffer)
       (progn
           (message "Special work configuration is needed.")
