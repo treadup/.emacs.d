@@ -25,14 +25,6 @@
       (personal-insert-tab-char)
       (self-insert-command 1)))
 
-(defun conditional-backspace-command ()
-  (interactive)
-  (if (whitespace-to-point-p)
-      (progn
-        (delete-backward-char)
-        (delete-backward-char))
-      (delete-backward-char)))
-
 ;; The following keybindings are useful for debugging.
 ;; (global-set-key (kbd "C-c l") (lambda () (interactive) (message "%s" (line-beginning-to-point-string))))
 ;; (global-set-key (kbd "C-c w") (lambda () (interactive) (message "%s" (whitespace-to-point-p))))

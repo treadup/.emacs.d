@@ -25,7 +25,8 @@
   (setq indent-tabs-mode -1)
   (setq tab-width 4)
   (local-set-key (kbd "<tab>") 'personal-insert-tab-char)
-  (local-set-key (kbd "<backspace>") 'delete-backward-char))
+  (local-set-key (kbd "<backspace>") 'delete-backward-char)
+  (local-set-key (kbd "SPC") (lambda () (interactive) (conditional-space-insert-command))))
 
 (defun custom-work-configuration ()
   (message "About to determine if we need the special work configuration.")
