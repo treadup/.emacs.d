@@ -15,12 +15,13 @@
 (global-linum-mode)
 
 ;; Show menu bar if we are in graphics mode
+;; TOOD: Probably disable this unless we are on a Mac
 (if (display-graphic-p)
     (menu-bar-mode t))
 
 ;; Increase font size.
 ;; Play with the :height attribute to change size
-(set-face-attribute 'default nil :height 160)
+(set-face-attribute 'default nil :height 140)
 
 ;; No cursor blinking
 (blink-cursor-mode 0)
@@ -62,5 +63,5 @@
 ;; Show tabs with a special glyph that kind of looks like >> but smaller.
 ;; Here is a 	tab character so you can see how it looks.
 ;;(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
-(setq whitespace-style (quote (tabs tab-mark)))
-(global-whitespace-mode 1)
+;; (setq whitespace-style (quote (tabs tab-mark)))
+;; (global-whitespace-mode 1)
