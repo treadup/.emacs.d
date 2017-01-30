@@ -203,6 +203,11 @@
 (load "for-theme.el")
 
 ;;
+;; Ag specific setup
+;;
+(load "for-ag.el")
+
+;;
 ;; Auto complete specific setup
 ;;
 (load "for-auto-complete.el")
