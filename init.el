@@ -297,6 +297,16 @@
 (load "for-web-mode.el")
 
 ;;
+;; Project navigation specific setup
+;;
+(load "for-project-nav.el")
+
+;;
+;; Neotree specific setup
+;;
+(load "for-neotree.el")
+
+;;
 ;; Per host specific setup
 ;;
 (cond
