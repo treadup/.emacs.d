@@ -16,6 +16,7 @@
      ((not (buffer-file-name)) nil)
      ((string-prefix-p "/Users/henrik/code/booli.se-api" (buffer-file-name)) t)
      ((string-prefix-p "/Users/henrik/code/booli_pro" (buffer-file-name)) t)
+     ((string-prefix-p "/Users/henrik/code/parse" (buffer-file-name)) t)
      (t nil)))
 
 (defun special-work-project-setup ()
