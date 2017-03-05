@@ -319,7 +319,7 @@
 ;;
 ;; Log file specific setup
 ;;
-(load "for-tail.el")
+; (load "for-tail.el")
 
 ;;
 ;; Per host specific setup
