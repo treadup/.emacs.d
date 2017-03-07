@@ -24,6 +24,16 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+;; On OSX if you do not start the Emacs application from a shell the PATH variable
+;; will not be set correctly. To fix this you can use the exec-path-from-shell
+;; package which will try to read these variables from the shell and set them
+;; in Emacs.
+
+(use-package exec-path-from-shell
+  :ensure t
+  :config (when (memq window-system '(mac ns))
+            (exec-path-from-shell-initialize)))
+
 ;;;
 ;;; Backups and Auto Saves
 ;;;
