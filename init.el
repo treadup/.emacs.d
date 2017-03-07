@@ -319,7 +319,12 @@
 ;;
 ;; Log file specific setup
 ;;
-(load "for-tail.el")
+;;(load "for-log.el")
+
+;;
+;; Editor Config specific setup
+;; editorconfig.org
+(load "for-editor-config.el")
 
 ;;
 ;; Per host specific setup
