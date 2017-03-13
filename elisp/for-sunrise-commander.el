@@ -5,7 +5,6 @@
 (use-package sunrise-commander
   :ensure t)
 
-
 ;; To reset the panes when Sunrise Commander gets messed up you can
 ;; use the sunrise-cd command.
 
@@ -16,6 +15,4 @@
 ;; To open one of the windows to the notes folder on fern change one
 ;; of the panes to show the following folder.
 ;; /ubuntu@fern.peacefulrainforest.org:/home/ubuntu/notes:
-
-
 
