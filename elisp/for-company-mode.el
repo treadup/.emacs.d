@@ -16,12 +16,13 @@
 ;; Use company mode in all buffers.
 (add-hook 'after-init-hook 'global-company-mode)
 
-(use-package company-quickhelp
-  :ensure t
-  :config)
 
+;; The company quickhelp mode was not very nice.
+;; (use-package company-quickhelp
+;;  :ensure t)
+;;
 ;; Turn on the quickhelp in all buffers.
-(company-quickhelp-mode 1)
+;; (company-quickhelp-mode 1)
 
 
 
