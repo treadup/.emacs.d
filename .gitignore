@@ -1,8 +1,13 @@
-# Compiled
-*.elc
+# Ignore everything by default.
+*
 
-# Packaging
-.cask
+# Include init file
+!init.el
 
-# The ELPA package folder.
-/elpa
+# Include elisp folder
+!elisp/
+
+# Include .gitignore
+!.gitignore
+
+
