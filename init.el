@@ -223,9 +223,9 @@
 (load "for-ag.el")
 
 ;;
-;; Auto complete specific setup
+;; Company mode specific setup
 ;;
-(load "for-auto-complete.el")
+(load "for-company-mode.el")
 
 ;;
 ;; Clojure specific setup
@@ -335,6 +335,11 @@
 ;; Editor Config specific setup
 ;; editorconfig.org
 (load "for-editor-config.el")
+
+;;
+;; SQL specific setup
+;;
+;; (load "for-sql.el")
 
 ;;
 ;; Per host specific setup

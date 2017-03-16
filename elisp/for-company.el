@@ -1,5 +1,5 @@
 ;;;
-;;; Customizations for Auto Complete
+;;; Customizations for company mode
 ;;;
 
 ;; I tried the auto-complete package and tried to get jedi working
@@ -9,13 +9,11 @@
 ;(use-package auto-complete
 ;  :ensure t)
 
-(defun personal-completion-setup ()
-  (add-hook 'prog-mode-hook 'company-mode))
-  
 (use-package company
   :ensure t
   :config
-  (personal-completion-setup))
+  ;; Use company mode in all buffers.
+  (add-hook 'after-init-hook 'global-company-mode))
 
 (use-package company-quickhelp
   :ensure t
