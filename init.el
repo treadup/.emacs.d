@@ -342,6 +342,13 @@
 ;; (load "for-sql.el")
 
 ;;
+;; Wanderlust email client
+;;
+;; Right now I cannot load the wanderlust email client from MELPA.
+;; I'm going to leave this in there and see if it works later on.
+;; (load "for-wanderlust.el")
+
+;;
 ;; Per host specific setup
 ;;
 (cond
