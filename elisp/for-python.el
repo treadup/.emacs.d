@@ -3,11 +3,13 @@
 ;;;
 
 (use-package anaconda-mode
-  :ensure t
-  :config (progn
-            (add-hook 'python-mode-hook 'anaconda-mode)
-;            (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-            ))
+  :ensure t)
+
+;; Activate anaconda-mode for all Python buffers.
+(add-hook 'python-mode-hook 'anaconda-mode)
+
+;; Anaconda has an eldoc mode. See if I can get this working.
+(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
 ;;
 ;; Jedi
