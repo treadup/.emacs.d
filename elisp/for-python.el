@@ -11,6 +11,20 @@
 ;; Anaconda has an eldoc mode. See if I can get this working.
 (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
+;; Something is giving me completion when editing Python files.
+;; I think this is just plain company-mode talking to jedi. However
+;; I am not sure.
+
+;; There is also company-anaconda that is an anaconda backend for company-mode.
+;; However this did not seem to work. The completions contained the function named
+;; followed by the function name in brackets. foo<foo>
+;; (use-package company-anaconda
+;;   :ensure t)
+
+;; Add company-anaconda as a company backend.
+;; (eval-after-load "company"
+;;  '(add-to-list 'company-backends 'company-anaconda))
+
 ;;
 ;; Jedi
 ;;
