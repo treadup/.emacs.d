@@ -1,7 +1,8 @@
-;;;
-;;; Customizations for Python
+;;; for-python --- Customizations for Python
+;;; Commentary:
 ;;;
 
+;;; Code:
 (use-package anaconda-mode
   :ensure t)
 
@@ -18,8 +19,10 @@
 ;; There is also company-anaconda that is an anaconda backend for company-mode.
 ;; However this did not seem to work. The completions contained the function named
 ;; followed by the function name in brackets. foo<foo>
-;; (use-package company-anaconda
-;;   :ensure t)
+(use-package company-anaconda
+   :ensure t)
+
+(add-to-list 'company-backends 'company-anaconda)
 
 ;; Add company-anaconda as a company backend.
 ;; (eval-after-load "company"
@@ -39,3 +42,4 @@
 ;  (add-to-list 'company-backends 'company-jedi))
 
 ;(add-hook 'python-mode-hook 'personal-python-mode-setup)
+
