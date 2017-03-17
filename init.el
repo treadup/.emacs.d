@@ -255,6 +255,11 @@
 (load "block-spacebar.el")
 
 ;;
+;; Eldoc mode specific setup
+;;
+(load "for-eldoc.el")
+
+;;
 ;; Text mode specific setup
 ;;
 (load "for-text.el")
