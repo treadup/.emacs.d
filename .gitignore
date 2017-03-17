@@ -6,6 +6,7 @@
 
 # Include elisp folder
 !elisp/
+!elisp/*
 
 # Include .gitignore
 !.gitignore
