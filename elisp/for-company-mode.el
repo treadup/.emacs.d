@@ -23,6 +23,9 @@
 ;; Turn on the quickhelp in all buffers.
 (company-quickhelp-mode 1)
 
+;; Make completion start immediately instead of after waiting for 3 chars or half a second.
+(setq company-minimum-prefix-length 1) 
+(setq company-idle-delay 0)
 
 
 
