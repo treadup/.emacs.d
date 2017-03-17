@@ -342,6 +342,11 @@
 (load "for-editor-config.el")
 
 ;;
+;; Flycheck specific setup
+;;
+(load "for-flycheck.el")
+
+;;
 ;; SQL specific setup
 ;;
 ;; (load "for-sql.el")
