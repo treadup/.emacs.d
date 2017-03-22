@@ -255,6 +255,11 @@
 (load "block-spacebar.el")
 
 ;;
+;; Eldoc mode specific setup
+;;
+(load "for-eldoc.el")
+
+;;
 ;; Text mode specific setup
 ;;
 (load "for-text.el")
@@ -335,6 +340,11 @@
 ;; Editor Config specific setup
 ;; editorconfig.org
 (load "for-editor-config.el")
+
+;;
+;; Flycheck specific setup
+;;
+(load "for-flycheck.el")
 
 ;;
 ;; SQL specific setup
