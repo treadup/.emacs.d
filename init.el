@@ -74,7 +74,7 @@
 (setq kept-new-versions 20)
 
 ;; Keep 5 of the oldest versions of the file.
-(setq kept-old-versions 5) 
+(setq kept-old-versions 5)
 
 ;; Create backups of version controlled files.
 (setq vc-make-backup-files t)
@@ -141,10 +141,10 @@
 ;; for more information.
 
 ;; Use the clipboard when killing and yanking
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)
 
 ;; The C-w and C-y commands should use the clipboard selection.
-(setq x-select-enable-clipboard nil)
+(setq select-enable-clipboard nil)
 
 ;; Save clipboard strings into kill ring before replacing them.
 ;; When one selects something in another program to paste it into Emacs,
@@ -200,12 +200,13 @@
 ;;; Customizations
 ;;;
 
-;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder. 
+;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder.
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
 (defun hostname ()
-  (car (split-string system-name "[.]")))
+  "Get the hostname of the computer Emacs is running on."
+  (car (split-string (system-name) "[.]")))
 
 ;;
 ;; User interface specific setup
@@ -280,7 +281,7 @@
 (load "for-tramp.el")
 
 ;;
-;; elisp specific setup 
+;; elisp specific setup
 ;;
 (load "for-elisp.el")
 
@@ -358,9 +359,3 @@
 ;; I'm going to leave this in there and see if it works later on.
 ;; (load "for-wanderlust.el")
 
-;;
-;; Per host specific setup
-;;
-(cond
- ((string= "hickory" (hostname)) (load "hickory-configuration.el"))
- (t (load "default-configuration.el")))
