@@ -378,6 +378,11 @@
 (load "for-scheme.el")
 
 ;;
+;; Go lang specific setup
+;;
+(load "for-go.el")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
