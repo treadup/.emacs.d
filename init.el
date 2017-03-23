@@ -368,6 +368,11 @@
 (load "for-asciidoc.el")
 
 ;;
+;; Markdown specific setup
+;;
+(load "for-markdown.el")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
