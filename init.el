@@ -353,6 +353,11 @@
 ;; (load "for-sql.el")
 
 ;;
+;; NGINX specific setup
+;;
+(load "for-nginx.el")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
