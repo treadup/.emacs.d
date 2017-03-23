@@ -373,6 +373,11 @@
 (load "for-markdown.el")
 
 ;;
+;; Scheme specific setup
+;;
+(load "for-scheme.el")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
