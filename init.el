@@ -363,6 +363,11 @@
 (load "for-docker.el")
 
 ;;
+;; Ascii Doc specific setup
+;;
+(load "for-asciidoc.el")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
