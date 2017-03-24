@@ -383,6 +383,11 @@
 (load "for-go.el")
 
 ;;
+;; YAML specific setup
+;;
+(load "for-yaml.el")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
