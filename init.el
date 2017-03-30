@@ -239,6 +239,11 @@
 (load "for-shell.el")
 
 ;;
+;; Bash specific setup
+;;
+(load "for-bash.el")
+
+;;
 ;; PHP specific setup
 ;;
 (load "for-php.el")
