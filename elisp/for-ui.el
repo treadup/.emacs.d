@@ -12,7 +12,11 @@
 (setq inhibit-startup-screen t)
 
 ;; Show line numbers
-(global-linum-mode)
+(add-hook 'prog-mode-hook 'linum-mode)
+(add-hook 'text-mode-hook 'linum-mode)
+
+(if (not (display-graphic-p))
+    (setq linum-format "%d "))
 
 ;; Show menu bar if we are in graphics mode
 ;; TOOD: Probably disable this unless we are on a Mac
