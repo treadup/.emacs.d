@@ -276,9 +276,9 @@
 (load "for-browser.el")
 
 ;;
-;; Magit specific setup
+;; Git specific setup
 ;;
-(load "for-magit.el")
+(load "for-git.el")
 
 ;;
 ;; Tramp specific setup
