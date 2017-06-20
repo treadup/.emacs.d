@@ -16,13 +16,18 @@
 ;; I think this is just plain company-mode talking to jedi. However
 ;; I am not sure.
 
+;; For now I will not use company-anaconda. The company-anaconda mode was
+;; causing issues when you tried to exit emacs after editing a python file.
+;; It would have several running background processes and would ask you if
+;; you wanted to exit each time you tried to close emacs.
+
 ;; There is also company-anaconda that is an anaconda backend for company-mode.
 ;; However this did not seem to work. The completions contained the function named
 ;; followed by the function name in brackets. foo<foo>
-(use-package company-anaconda
-   :ensure t)
+; (use-package company-anaconda
+;   :ensure t)
 
-(add-to-list 'company-backends 'company-anaconda)
+; (add-to-list 'company-backends 'company-anaconda)
 
 ;; Add company-anaconda as a company backend.
 ;; (eval-after-load "company"
