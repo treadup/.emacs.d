@@ -2,11 +2,18 @@
 ;;; Customization for markdown
 ;;;
 
+;; The markdown-mode package provides two major-modes
+;; 1. markdown-mode
+;; 2. gfm-mode
+;;
+;; markdown-mode is a major mode for standard markdown.
+;; gfm-mode is a major mode for GitHub flavored markdown.
+
 (use-package markdown-mode
   :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
-         ("\\.md\\'" . markdown-mode)
-         ("\\.markdown\\'" . markdown-mode))
+         ("\\.md\\'" . gfm-mode)
+         ("\\.markdown\\'" . gfm-mode))
   :init (setq markdown-command "multimarkdown"))
 
