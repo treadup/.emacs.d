@@ -9,7 +9,6 @@
 ;; key combination. This will reflow the text.
 
 (defun personal-configure-text-mode ()
-  (setq-default tab-width 4)
   (turn-on-auto-fill))
 
 ;; Turn on autofill-mode for text modes.
