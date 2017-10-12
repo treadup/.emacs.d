@@ -256,11 +256,6 @@
     (load "for-osx.el"))
 
 ;;
-;; Block spacebar key
-;;
-(load "block-spacebar.el")
-
-;;
 ;; Eldoc mode specific setup
 ;;
 (load "for-eldoc.el")
