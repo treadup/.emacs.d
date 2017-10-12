@@ -244,11 +244,6 @@
 (load "for-bash.el")
 
 ;;
-;; PHP specific setup
-;;
-(load "for-php.el")
-
-;;
 ;; OS X specific setup
 ;;
 
