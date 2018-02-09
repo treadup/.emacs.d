@@ -12,3 +12,8 @@
   :ensure spaceline
   :config
   (spaceline-spacemacs-theme))
+
+;; Use the wave separator character in the modeline instead of the arrow.
+;; To get this to work you might have to execute (spaceline-compile)
+(setq powerline-default-separator 'wave)
+(spaceline-compile)
