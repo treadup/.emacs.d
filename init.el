@@ -242,6 +242,11 @@
 (load "for-ui.el")
 
 ;;
+;; Window numbering
+;;
+(load "for-winum.el")
+
+;;
 ;; Theme specific setup
 ;;
 (load "for-theme.el")
