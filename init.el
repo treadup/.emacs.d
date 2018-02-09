@@ -1,7 +1,29 @@
 ;;
-;; Package management
+;; TODO
 ;;
 
+;; The following are the things that I need to do.
+;; 1. Setup gnutls for macos correctly [x] This is done
+;; 2. Setup use-package correctly [x] This is already done
+;; 3. Setup spacemacs theme
+;; 4. Setup spaceline
+;; 5. Setup which key
+;; 6. Update packages with package.el
+;; 7. Remove sunrise-commander
+
+;;;
+;;; Code:
+;;;
+
+;;
+;; Setup GnuTLS
+;;
+(require 'gnutls)
+(add-to-list 'gnutls-trustfiles "/private/etc/ssl/cert.pem")
+
+;;
+;; Package management
+;;
 (require 'package)
 
 ;; We do not want to call package-initialize again after the init file has
@@ -398,4 +420,3 @@
 ;; Right now I cannot load the wanderlust email client from MELPA.
 ;; I'm going to leave this in there and see if it works later on.
 ;; (load "for-wanderlust.el")
-
