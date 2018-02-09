@@ -284,6 +284,11 @@
 (load "for-eldoc.el")
 
 ;;
+;; Which key setup
+;;
+(load "for-which-key.el")
+
+;;
 ;; Text mode specific setup
 ;;
 (load "for-text.el")
