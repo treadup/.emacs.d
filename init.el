@@ -32,8 +32,8 @@
 
 ;; Add package archives
 ;;(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
-;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ;; SunriseCommander has its own package archive. Not sure if I like this.
 (add-to-list 'package-archives '("SC"   . "http://joseito.republika.pl/sunrise-commander/") t)
 
