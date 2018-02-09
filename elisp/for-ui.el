@@ -4,6 +4,15 @@
 ;;; This file contains user interface specific things.
 ;;;
 
+
+;; This is the configuration from Spacemacs.
+;;
+;; '("Source Code Pro"
+;;                               :size 16
+;;                               :weight normal
+;;                               :width normal
+;;                               :powerline-scale 1.1)
+
 ;;
 ;; User Interface
 ;;
@@ -25,7 +34,7 @@
 
 ;; Increase font size.
 ;; Play with the :height attribute to change size
-(set-face-attribute 'default nil :height 140)
+(set-face-attribute 'default nil :height 160)
 
 ;; No cursor blinking
 (blink-cursor-mode 0)
@@ -53,16 +62,16 @@
 
 ;; Change mode line. The mode line is the status bar at the bottom.
 ;; https://github.com/Malabarba/smart-mode-line
-(use-package smart-mode-line
-  :ensure t
-  :config
-  (progn
-    ;; Do not ask if we really want to load this theme
-    (setq sml/no-confirm-load-theme t)
-    ;; Seems to respect the theme choices that I have already made.
-    (setq sml/theme 'respectful)
-    ;; Turn on the new mode line.
-    (sml/setup)))
+;; (use-package smart-mode-line
+;;  :ensure t
+;;  :config
+;;  (progn
+;;    ;; Do not ask if we really want to load this theme
+;;    (setq sml/no-confirm-load-theme t)
+;;    ;; Seems to respect the theme choices that I have already made.
+;;    (setq sml/theme 'respectful)
+;;    ;; Turn on the new mode line.
+;;    (sml/setup)))
 
 ;; Show tabs with a special glyph that kind of looks like >> but smaller.
 ;; Here is a 	tab character so you can see how it looks.
