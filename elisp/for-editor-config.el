@@ -12,6 +12,5 @@
 (use-package editorconfig
   :ensure t
   :config
-  (editorconfig-mode 1))
-
-
+  (editorconfig-mode 1)
+  :diminish "EC")

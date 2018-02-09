@@ -3,13 +3,8 @@
 ;;
 
 ;; The following are the things that I need to do.
-;; 1. Setup gnutls for macos correctly [x] This is done
-;; 2. Setup use-package correctly [x] This is already done
-;; 3. Setup spacemacs theme
-;; 4. Setup spaceline
-;; 5. Setup which key
-;; 6. Update packages with package.el
-;; 7. Remove sunrise-commander
+;; 1. Setup which key
+;; 2. Remove sunrise-commander
 
 ;;;
 ;;; Code:
@@ -45,6 +40,11 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+;; Load the diminish package early. It can then be used in the use-package forms
+;; using :diminish
+(use-package diminish
+  :ensure t)
 
 ;; On OSX if you do not start the Emacs application from a shell the PATH variable
 ;; will not be set correctly. To fix this you can use the exec-path-from-shell
@@ -145,7 +145,8 @@
 ;; https://www.emacswiki.org/emacs/Projectile
 (use-package projectile
   :ensure t
-  :config (projectile-global-mode)) ;; Enable projectile everywhere.
+  :config (projectile-global-mode) ;; Enable projectile everywhere.
+  :diminish "P")
 
 ;; Rainbow colored delimiters. Extremely useful if you are programming
 ;; in a lisp like language.
@@ -229,6 +230,11 @@
 (defun hostname ()
   "Get the hostname of the computer Emacs is running on."
   (car (split-string (system-name) "[.]")))
+
+;;
+;; Emacs specific setup
+;;
+(load "for-emacs.el")
 
 ;;
 ;; User interface specific setup

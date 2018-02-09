@@ -6,6 +6,7 @@
 ;; http://www.flycheck.org/en/latest/
 
 (use-package flycheck
-  :ensure t)
+  :ensure t
+  :diminish "FC")
 
 (global-flycheck-mode)
