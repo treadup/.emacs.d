@@ -237,6 +237,11 @@
 (load "for-emacs.el")
 
 ;;
+;; Emacs server
+;;
+(load "for-server.el")
+
+;;
 ;; User interface specific setup
 ;;
 (load "for-ui.el")
