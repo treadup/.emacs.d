@@ -2,6 +2,16 @@
 ;;; Commentary:
 ;;;
 
+;; TODO:
+;; 1. Virtual environments in Emacs
+;;    Want them to work in the python shell and eshell.
+;;    Use named virtual environments and make sure that it is
+;;    compatible with pew.
+;; 2. Auto completion using company
+;; 3. Inferior shell using ipython
+;; 4. Fix the mode line so that it contains the name of the
+;;    virtual environment.
+
 ;;; Code:
 (use-package anaconda-mode
   :ensure t)
