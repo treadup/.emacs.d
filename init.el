@@ -250,6 +250,11 @@
 (load "for-winum.el")
 
 ;;
+;; Window Configuration
+;;
+(load "for-window-configuration.el")
+
+;;
 ;; Theme specific setup
 ;;
 (load "for-theme.el")
