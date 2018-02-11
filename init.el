@@ -14,7 +14,7 @@
 ;; Setup GnuTLS
 ;;
 (require 'gnutls)
-(add-to-list 'gnutls-trustfiles "/private/etc/ssl/cert.pem")
+(add-to-list 'gnutls-trustfiles "/etc/ssl/cert.pem")
 
 ;;
 ;; Package management
