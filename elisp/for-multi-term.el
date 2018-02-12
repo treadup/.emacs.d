@@ -13,14 +13,16 @@
   (progn
     (split-window-below)
     (other-window 1)
-    (multi-term)))
+    (multi-term)
+    (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
 (defun multi-term-right ()
   (interactive)
   (progn
     (split-window-right)
     (other-window 1)
-    (multi-term)))
+    (multi-term)
+    (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
 (use-package multi-term
   :ensure
