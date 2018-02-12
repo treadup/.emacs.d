@@ -14,7 +14,12 @@
   :diminish "Cmp")
 
 ;; Disable compnay mode for org-mode
-(setq company-global-modes '(not org-mode gfm-mode markdown-mode))
+(setq company-global-modes '(not org-mode
+                              gfm-mode
+                              markdown-mode
+                              eshell-mode
+                              shell-mode
+                              term-mode))
 
 ;; Use company mode in all buffers.
 (add-hook 'after-init-hook 'global-company-mode)
