@@ -8,10 +8,6 @@
   (interactive)
   (progn (split-window-below) (other-window 1) (term "/bin/bash")))
 
-(defun eshell-below ()
-  (interactive)
-  (progn (split-window-below) (other-window 1) (eshell)))
-
 (defun ielm-below ()
   (interactive)
   (progn (split-window-below) (other-window 1) (ielm)))
@@ -27,16 +23,6 @@
   (interactive);; "Prompt\n shell name:")
   (let ((shell-name (read-string "shell name: " nil)))
     (shell (concat "*" shell-name "*"))))
-
-;; This is quite an interesting page
-;; https://www.emacswiki.org/emacs/EshellMultipleEshellBuffers
-;; https://github.com/DamienCassou/shell-switcher
-
-(defun create-eshell ()
-  "creates an eshell with a given name"
-  (interactive);; "Prompt\n shell name:")
-  (let ((eshell-name (read-string "eshell name: " nil)))
-    (eshell (concat "*" eshell-name "*"))))
 
 ;; http://emacsredux.com/blog/2013/03/29/terminal-at-your-fingertips/
 (defun visit-term-buffer ()
@@ -59,8 +45,3 @@
   (interactive)
   (let ((default-directory "/ssh:henrik@oak:"))
     (create-shell)))
-
-(defun oak-eshell ()
-  (interactive)
-  (let ((default-directory "/ssh:henrik@oak:"))
-    (create-eshell)))
