@@ -285,6 +285,11 @@
 (load "for-bash.el")
 
 ;;
+;; Fish specific setup
+;;
+(load "for-fish.el")
+
+;;
 ;; OS X specific setup
 ;;
 
