@@ -4,17 +4,23 @@
 
 ;; See if there are any differences in how bash, fish and zsh are supported.
 
+(defun delete-all-windows-for-buffer (buffer)
+  (dolist (window (get-buffer-window-list (buffer))
+            (delete-window window))))
+
 (defun multi-term-below ()
   (interactive)
   (progn
     (split-window-below)
     (other-window 1)
-    (multi-term)
-;;    (delete-window)
-    ))
+    (multi-term)))
 
-;; Perhaps I can use the kill buffer hook to close the window once I am done in the buffer?
-;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Killing-Buffers.html#Killing-Buffers
+(defun multi-term-right ()
+  (interactive)
+  (progn
+    (split-window-right)
+    (other-window 1)
+    (multi-term)))
 
 (use-package multi-term
   :ensure
@@ -23,7 +29,8 @@
   (global-set-key (kbd "C-c t") 'multi-term-next)
   (global-set-key (kbd "C-c T") 'multi-term)
   (global-set-key (kbd "C-c _") 'multi-term-below)
-  (global-set-key (kbd "C-c -") 'multi-term-below))
+  (global-set-key (kbd "C-c -") 'multi-term-below)
+  (global-set-key (kbd "C-c |") 'multi-term-right))
 
 ;; Some functionality that is missing from Emacs is the tmux like split behavior.
 ;; C-c | should create a new multi-term to the right.
