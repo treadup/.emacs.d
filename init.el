@@ -434,6 +434,21 @@
 (load "for-javascript.el")
 
 ;;
+;; Eyebrowse specific setup
+;;
+(load "for-eyebrowse.el")
+
+;;
+;; Todo specific setup
+;;
+(load "for-todo.el")
+
+;;
+;; Multi term setup
+;;
+(load "for-multi-term.el")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
