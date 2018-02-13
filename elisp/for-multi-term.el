@@ -24,6 +24,12 @@
     (multi-term)
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
+(defun multi-term-current-buffer ()
+  (interactive)
+  (progn
+    (multi-term)
+    (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
+
 (use-package multi-term
   :ensure
   :config
@@ -32,7 +38,23 @@
   (global-set-key (kbd "C-c T") 'multi-term)
   (global-set-key (kbd "C-c _") 'multi-term-below)
   (global-set-key (kbd "C-c -") 'multi-term-below)
-  (global-set-key (kbd "C-c |") 'multi-term-right))
+  (global-set-key (kbd "C-c |") 'multi-term-right)
+  (global-set-key (kbd "C-c .") 'multi-term-current-buffer))
+
+;;
+;; TODO: Have some keybiding for opening a terminal in the current window.
+;; Also have some keybinding for when you want to open other types of terminals.
+;; It might be interesting to switch from kill-buffer to kill-buffer-and-window and
+;; have it key bound to C-x k
+;; Also C-c t can be the prefix for the terminal / shell menu.
+;; This means that
+;; C-c t e would be eshell
+;; C-c t m would be multi-term
+
+;; v - split vertically
+;; h - split horizontally
+;;   - take over window
+;; q - kill window and buffer
 
 ;; Some functionality that is missing from Emacs is the tmux like split behavior.
 ;; C-c | should create a new multi-term to the right.
