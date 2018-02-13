@@ -459,6 +459,11 @@
 (load "for-eshell.el")
 
 ;;
+;; Spotify setup
+;;
+(load "for-spotify.el")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
