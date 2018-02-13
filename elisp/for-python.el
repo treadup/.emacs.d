@@ -14,13 +14,23 @@
 
 ;;; Code:
 (use-package anaconda-mode
-  :ensure t)
+  :ensure t
+  :config
+  (progn
+    ;; Activate anaconda-mode for all Python buffers.
+    (add-hook 'python-mode-hook 'anaconda-mode)
 
-;; Activate anaconda-mode for all Python buffers.
-(add-hook 'python-mode-hook 'anaconda-mode)
+    ;; Anaconda has an eldoc mode. See if I can get this working.
+    ;; TODO: I think that 'anaconda-eldoc-mode is a free variable here.
+    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
-;; Anaconda has an eldoc mode. See if I can get this working.
-(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+    ;; Add company-anaconda as a company backend.
+    ;; This should work since we use ensure for both the python mode
+    ;; and for company mode and company mode comes before python
+    ;; mode in the init file.
+;;    (eval-after-load "company"
+    ;;      '(add-to-list 'company-backends 'company-anaconda)))
+    ))
 
 ;; Something is giving me completion when editing Python files.
 ;; I think this is just plain company-mode talking to jedi. However
@@ -34,8 +44,10 @@
 ;; There is also company-anaconda that is an anaconda backend for company-mode.
 ;; However this did not seem to work. The completions contained the function named
 ;; followed by the function name in brackets. foo<foo>
-; (use-package company-anaconda
-;   :ensure t)
+(use-package company-anaconda
+  :ensure t
+  :config
+  (setq-default company-backends (list 'company-anaconda)))
 
 ; (add-to-list 'company-backends 'company-anaconda)
 
