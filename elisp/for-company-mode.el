@@ -35,6 +35,9 @@
 ;; M-x company-complete runs the completion manually. You can check the dropdown
 ;; to see if it contains the correct items.
 
-;; http://company-mode.github.io/
+
 
 ;; Right now I have company working in elisp files.
+
+;; References
+;; http://company-mode.github.io/
