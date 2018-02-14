@@ -33,6 +33,7 @@
 (package-initialize)
 
 ;; To upadate the packages (or is it the index of packages?) run (package-refresh-contents)
+;; You can also run M-x package-list-packages. This will also update the list of packages.
 
 ;; Bootstrap 'use-package'
 (unless (package-installed-p 'use-package)
@@ -228,6 +229,16 @@
 (defun hostname ()
   "Get the hostname of the computer Emacs is running on."
   (car (split-string (system-name) "[.]")))
+
+;;
+;; EasyPG specific setup
+;;
+(load "for-gpg.el")
+
+;;
+;; Secrets
+;;
+;; (load "for-secrets.el")
 
 ;;
 ;; Emacs specific setup
@@ -462,6 +473,11 @@
 ;; Spotify setup
 ;;
 (load "for-spotify.el")
+
+;;
+;; Pass specific setup
+;;
+;; (load "for-pass.el")
 
 ;;
 ;; Wanderlust email client
