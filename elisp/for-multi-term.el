@@ -4,10 +4,6 @@
 
 ;; See if there are any differences in how bash, fish and zsh are supported.
 
-(defun delete-all-windows-for-buffer (buffer)
-  (dolist (window (get-buffer-window-list (buffer))
-            (delete-window window))))
-
 (defun multi-term-below ()
   (interactive)
   (progn
@@ -33,7 +29,10 @@
 (use-package multi-term
   :ensure
   :config
-  (setq multi-term-program "/bin/bash")
+  (setq multi-term-program (executable-find "fish"))
+  (unless multi-term-program
+    (setq multi-term-program "/bin/bash"))
+  (setq term-buffer-maximum-size 100000)
   (global-set-key (kbd "C-c t") 'multi-term-next)
   (global-set-key (kbd "C-c T") 'multi-term)
   (global-set-key (kbd "C-c _") 'multi-term-below)
@@ -67,7 +66,6 @@
 ;; a shell?
 
 ;; I should also be able to do all of the above using eshell.
-
 
 ;; http://emacs-fu.blogspot.se/2010/06/console-apps-in-emacs-with-multi-term.html
 ;; http://rawsyntax.com/blog/learn-emacs-zsh-and-multi-term/
