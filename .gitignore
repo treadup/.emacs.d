@@ -11,4 +11,5 @@
 # Include .gitignore
 !.gitignore
 
-
+# Ignore private folder
+private/
