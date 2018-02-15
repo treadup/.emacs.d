@@ -43,3 +43,11 @@
 ;; References
 ;; https://github.com/proofit404/anaconda-mode
 ;; https://github.com/proofit404/company-anaconda
+
+;; The following are the built in keybindings for anaconda-mode.
+;; C-M-i	anaconda-mode-complete
+;; M-.	anaconda-mode-find-definitions
+;; M-,	anaconda-mode-find-assignments
+;; M-r	anaconda-mode-find-references
+;; M-*	anaconda-mode-go-back
+;; M-?	anaconda-mode-show-doc
