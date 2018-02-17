@@ -486,6 +486,11 @@
 (load "for-spotify.el")
 
 ;;
+;; html to markdown setup
+;;
+(load "for-html-to-markdown.el")
+
+;;
 ;; Miscellaneous customizations
 ;;
 (load "for-misc.el")
@@ -501,3 +506,6 @@
 ;; Right now I cannot load the wanderlust email client from MELPA.
 ;; I'm going to leave this in there and see if it works later on.
 ;; (load "for-wanderlust.el")
+
+(provide 'init)
+;;; init.el ends here
