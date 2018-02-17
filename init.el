@@ -481,6 +481,11 @@
 (load "for-spotify.el")
 
 ;;
+;; Miscellaneous customizations
+;;
+(load "for-misc.el")
+
+;;
 ;; Pass specific setup
 ;;
 ;; (load "for-pass.el")
