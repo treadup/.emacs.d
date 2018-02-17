@@ -51,3 +51,9 @@
 ;; M-r	anaconda-mode-find-references
 ;; M-*	anaconda-mode-go-back
 ;; M-?	anaconda-mode-show-doc
+
+;; It can be a bit tricky to get anaconda-mode working.
+;; I think I have installed the following packages in
+;; the global environment.
+;;
+;;    pip install jedi==0.8.1 json-rpc==1.8.1 service_factory==0.1.2
