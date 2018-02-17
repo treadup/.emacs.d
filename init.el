@@ -232,6 +232,11 @@
 (load "for-hostname.el")
 
 ;;
+;; Context functions
+;;
+(load "for-context.el")
+
+;;
 ;; EasyPG specific setup
 ;;
 (load "for-gpg.el")
