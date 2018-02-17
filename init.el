@@ -242,6 +242,11 @@
 (load "for-gpg.el")
 
 ;;
+;; Auth source specific setup
+;;
+(load "for-auth-source.el")
+
+;;
 ;; Secrets
 ;;
 ;; (load "for-secrets.el")
