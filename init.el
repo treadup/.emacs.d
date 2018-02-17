@@ -226,9 +226,10 @@
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
-(defun hostname ()
-  "Get the hostname of the computer Emacs is running on."
-  (car (split-string (system-name) "[.]")))
+;;
+;; Hostname functions
+;;
+(load "for-hostname.el")
 
 ;;
 ;; EasyPG specific setup
