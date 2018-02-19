@@ -1,11 +1,3 @@
-;;
-;; TODO
-;;
-
-;; The following are the things that I need to do.
-;; 1. Setup which key
-;; 2. Remove sunrise-commander
-
 ;;;
 ;;; Code:
 ;;;
@@ -275,6 +267,11 @@
 ;; Window Configuration
 ;;
 (load "for-window-configuration.el")
+
+;;
+;; Buffer move setup
+;;
+(load "for-buffer-move.el")
 
 ;;
 ;; Theme specific setup

@@ -11,10 +11,10 @@
 
 ;; Key bindings for Emacs built in window resizing functions.
 ;; Shift Ctrl <arrow key> performs the following actions.
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+;; (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+;; (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+;; (global-set-key (kbd "S-C-<down>") 'shrink-window)
+;; (global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ;; The above works but is no intuitive. Instead try to find some way of
 ;; moving the border around. Here is some code that does that.
