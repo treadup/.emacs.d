@@ -33,3 +33,8 @@ project.
 
 And it looks like I could still be using pyvenv to activate the
 virtual environments.
+
+There is a minor mode called pyvenv-tracking-mode in the pyvenv.el
+file that I think could be combined with dir local variables to
+get the behavior that emacs will automatically switch virtualenvs
+when you switch buffers.
