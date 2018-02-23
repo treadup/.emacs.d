@@ -493,6 +493,11 @@
 (load "for-misc.el")
 
 ;;
+;; Libraries for Elisp
+;;
+(load "for-libraries.el")
+
+;;
 ;; Pass specific setup
 ;;
 ;; (load "for-pass.el")
