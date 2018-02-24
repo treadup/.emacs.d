@@ -289,6 +289,11 @@
 (load "for-company-mode.el")
 
 ;;
+;; Projectile specific setup
+;;
+(load "for-projectile.el")
+
+;;
 ;; Clojure specific setup
 ;;
 (load "for-clojure.el")
