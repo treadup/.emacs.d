@@ -343,7 +343,7 @@
 (load "for-tramp.el")
 
 ;;
-;; elisp specific setup
+;; Elisp specific setup
 ;;
 (load "for-elisp.el")
 
@@ -363,6 +363,11 @@
 ;; Common Lisp specific setup
 ;;
 (load "for-common-lisp.el")
+
+;;
+;; Erlang specific setup
+;;
+(load "for-erlang.el")
 
 ;;
 ;; Kill current buffer instead of prompting for buffer to kill.
