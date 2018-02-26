@@ -66,7 +66,6 @@
 ;; The second is activating the virtual environment.
 
 (defconst original-python-extra-pythonpaths python-shell-extra-pythonpaths)
-(defvar current-virtual-environment-name nil)
 
 (defun parse-single-token (filename)
 "Read a single token from the first line of the file FILENAME."
@@ -98,15 +97,14 @@ Activates the virtual environment."
       ;; Add the project root to the python-shell-extra-pythonpaths
       (setq python-shell-extra-pythonpaths original-python-extra-pythonpaths)
       (add-to-list 'python-shell-extra-pythonpaths (projectile-project-root))
-      ;; Always try deactivating the current virtual environment.
-      (pyvenv-deactivate)
+      ;; If we are in a virtual environment then deactivate it.
+      (if python-shell-virtualenv-root
+        (pyvenv-deactivate))
       ;; Acivate the virtual environment from the .venv file if there is one.
       (let ((venv-name (suggest-virtual-environment-name)))
+        (message (concat "venv name is equal to " venv-name))
         (unless (s-blank? venv-name)
-          (progn
-            (setq current-virtual-environment-name venv-name)
-            (pyvenv-workon venv-name))
-          (setq current-virtual-environment-name nil))))))
+          (pyvenv-workon venv-name))))))
 
 ;; On startup activate the current projectile project, if there is
 ;; one, as a python project.
