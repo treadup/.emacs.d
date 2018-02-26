@@ -51,6 +51,8 @@
 ;;; Backups and Auto Saves
 ;;;
 
+;; TODO: Split this up into two for-foo.el files namely for-backups.el and for-autosave.el
+
 ;;
 ;; Issue: This section uses the custom-set-variables function. This function has to be
 ;; called before themes and other things are loaded. There is some kind of issue here
@@ -92,14 +94,6 @@
 ;; Create backups of version controlled files.
 (setq vc-make-backup-files t)
 
-;; TODO: Backup on save
-;; By default Emacs does not take a backup each time you save the file.
-;; It would be good if I could have Emacs do so. However it does not
-;; seem super important. (Famous last words.)
-
-;; There is a package called backup-each-save but I have not gotten it
-;; to work.
-
 ;;
 ;; Customize system
 ;;
@@ -130,22 +124,6 @@
 ;; Magit is a git frontend.
 (use-package magit
   :ensure t)
-
-;; Projectile is a project interaction library for Emacs.
-;; It provides functions for project navigation.
-;; https://www.emacswiki.org/emacs/Projectile
-(use-package projectile
-  :ensure t
-  :config (projectile-global-mode) ;; Enable projectile everywhere.
-  :diminish "P")
-
-;; Rainbow colored delimiters. Extremely useful if you are programming
-;; in a lisp like language.
-;; https://www.emacswiki.org/emacs/RainbowDelimiters
-(use-package rainbow-delimiters
-  :ensure t
-  :config
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 ;;
 ;; Clipboard interaction
@@ -210,13 +188,17 @@
 (require 'saveplace)
 (setq-default save-place t)
 
-;;;
-;;; Customizations
-;;;
+;;
+;; Load path
+;;
 
 ;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder.
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/elisp")
+
+;;;
+;;; Customizations
+;;;
 
 ;;
 ;; Hostname functions
@@ -252,6 +234,16 @@
 ;; Emacs server
 ;;
 (load "for-server.el")
+
+;;
+;; Projectile
+;;
+(load "for-projectile.el")
+
+;;
+;; Rainbow delimiters
+;;
+(load "for-rainbow-delimiters.el")
 
 ;;
 ;; User interface specific setup
