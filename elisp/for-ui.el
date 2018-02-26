@@ -61,3 +61,7 @@
 ;;(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
 ;; (setq whitespace-style (quote (tabs tab-mark)))
 ;; (global-whitespace-mode 1)
+
+;; Display tooltips in the echo area.
+(tooltip-mode -1)
+(setq tooltip-use-echo-area t)
