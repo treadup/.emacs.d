@@ -6,7 +6,7 @@
 ;; 1. Activates anaconda-mode
 ;; 2. Set the python-shell-extra-pythonpaths to contain the root
 ;;    folder of the current projectile project.
-;; 3. TODO: Activate the virtual environment in the .venv file in the current
+;; 3. Activate the virtual environment in the .venv file in the current
 ;;    projectile project.
 ;; 3. Turn on auto-completion using company-anaconda.
 ;; 4. Turn on eldoc using anaconda-eldoc-mode
@@ -65,27 +65,55 @@
 ;; The first is adding the root folder of the project as an extra python path.
 ;; The second is activating the virtual environment.
 
-(defconst pht--original-python-extra-pythonpaths python-shell-extra-pythonpaths)
+(defconst original-python-extra-pythonpaths python-shell-extra-pythonpaths)
+(defvar current-virtual-environment-name nil)
 
-(if (projectile-project-p)
-  (message (concat "Inside project" " " (projectile-project-root)))
-  (message "Not in a project."))
+(defun parse-single-token (filename)
+"Read a single token from the first line of the file FILENAME."
+  (let ((venv-file-content (f-read-text filename)))
+    (if (s-blank? venv-file-content)
+      nil
+      (s-trim (car (s-lines venv-file-content))))))
 
-(defun pht-activate-python-project ()
+(defun suggest-virtual-environment-name ()
+"Read the virtual environment name from the .venv file.
+The .venv file is located in the project root folder."
+  (let ((venv-file-path (concat (projectile-project-root) ".venv")))
+    (if
+      (and
+        (f-exists? venv-file-path)
+        (f-file? venv-file-path)
+        (f-readable? venv-file-path))
+      (let ((venv-name (parse-single-token venv-file-path)))
+        (if (s-blank? venv-name)
+          nil
+          venv-name)))))
+
+(defun activate-python-project ()
 "Activate the current projectile project as a python project.
 Sets the python-extra-pythonpath to the root of the project.
-TODO: Activates the virtual environment."
+Activates the virtual environment."
   (if (projectile-project-p)
     (progn
-      (setq python-shell-extra-pythonpaths pht--original-python-extra-pythonpaths)
-      (add-to-list 'python-shell-extra-pythonpaths (projectile-project-root)))))
+      ;; Add the project root to the python-shell-extra-pythonpaths
+      (setq python-shell-extra-pythonpaths original-python-extra-pythonpaths)
+      (add-to-list 'python-shell-extra-pythonpaths (projectile-project-root))
+      ;; Always try deactivating the current virtual environment.
+      (pyvenv-deactivate)
+      ;; Acivate the virtual environment from the .venv file if there is one.
+      (let ((venv-name (suggest-virtual-environment-name)))
+        (unless (s-blank? venv-name)
+          (progn
+            (setq current-virtual-environment-name venv-name)
+            (pyvenv-workon venv-name))
+          (setq current-virtual-environment-name nil))))))
 
 ;; On startup activate the current projectile project, if there is
 ;; one, as a python project.
-(pht-activate-python-project)
+(activate-python-project)
 
 ;; And switch python project when we switch projects in Projectile.
-(add-hook 'projectile-after-switch-project-hook #'pht-activate-python-project)
+(add-hook 'projectile-after-switch-project-hook #'activate-python-project)
 
 ;;
 ;; iPython
