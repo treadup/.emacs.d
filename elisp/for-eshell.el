@@ -2,16 +2,17 @@
 ;;; Customizations for eshell
 ;;;
 
+(require 'eshell)
+
 ;; The quit function allows us to execute the quit command
 ;; in eshell to close the eshell buffer and window.
 ;; Remember that in eshell you can run functions without
 ;; using parenthesis.
 
 (defun quit ()
+"Kill the current buffer and window by typing quit in eshell.
+This might be better as an Eshell alias."
   (kill-buffer-and-window))
-
-(defun open (filename)
-  (find-file filename))
 
 ;; (eshell t) will create a new eshell with the next eshell index number.
 
@@ -37,3 +38,16 @@
     (other-window 1)
     (eshell t)
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
+
+;; Change the prompt we have to set the eshell-prompt-function variable
+;; to something that generates a nice prompt. Currently it is very basic.
+
+(defun custom-eshell-prompt-function ()
+  "Custom Eshell prompt."
+  (concat (abbreviate-file-name (eshell/pwd))
+    (if (= (user-uid) 0) " # " " $ ")))
+
+(setq eshell-prompt-function 'custom-eshell-prompt-function)
+
+(provide 'for-eshell.el)
+;;; for-eshell ends here
