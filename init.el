@@ -233,6 +233,11 @@
 (load "for-emacs.el")
 
 ;;
+;; Whitespace specific setup
+;;
+(load "for-whitespace.el")
+
+;;
 ;; Emacs server
 ;;
 (load "for-server.el")
