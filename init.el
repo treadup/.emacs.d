@@ -507,6 +507,11 @@
 (load "for-libraries.el")
 
 ;;
+;; Guru mode
+;;
+(load "for-guru.el")
+
+;;
 ;; Pass specific setup
 ;;
 ;; (load "for-pass.el")
