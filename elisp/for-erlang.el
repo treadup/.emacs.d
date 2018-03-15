@@ -3,7 +3,7 @@
 ;;;
 
 (use-package erlang
-  :ensure t)
+  :defer t)
 
 ;; The following packages look interesting.
 ;; https://melpa.org/#/company-erlang
