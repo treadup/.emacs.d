@@ -399,7 +399,12 @@
 ;;
 ;; Neotree specific setup
 ;;
-(load "for-neotree.el")
+;; (load "for-neotree.el")
+
+;;
+;; Treemacs specific setup
+;;
+(load "for-treemacs.el")
 
 ;;
 ;; Log file specific setup
