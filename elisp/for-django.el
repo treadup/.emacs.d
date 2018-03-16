@@ -12,3 +12,9 @@
 
 ;; python-django
 ;; https://github.com/fgallina/python-django.el
+
+
+;; For web mode you should be able to set the engine family to Django.
+
+;; Spacemacs uses Pony mode for its Django layer.
+;; https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bframeworks/django
