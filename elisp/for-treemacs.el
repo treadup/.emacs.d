@@ -60,8 +60,8 @@
 
         ;; After here we need to start thinking about how we
         ;; want to map things.
-;;        ("M-m ft"     . treemacs-toggle)
-;;        ("M-m fT"     . treemacs)
+        ("C-c b t"     . treemacs-toggle)
+        ("C-c b T"     . treemacs)
 ;;        ("M-m fB"     . treemacs-bookmark)
 ;;        ("M-m f C-t"  . treemacs-find-file)
 ;;        ("M-m f M-t"  . treemacs-find-tag)
@@ -73,6 +73,11 @@
   :config
   (setq treemacs-header-function #'treemacs-projectile-create-header)
   :bind (:map global-map
-;;              ("M-m fP" . treemacs-projectile)
-;;              ("M-m fp" . treemacs-projectile-toggle)
-              ))
+              ("C-c b P" . treemacs-projectile)
+              ("C-c b p" . treemacs-projectile-toggle)))
+
+;; treemacs and treemacs-projectile are similar
+;; treemacs-toggle and treemacs-projectile-toggle are also similar
+;; Treemacs seems most useful when you are in a project.
+
+;; What is the difference between the commands treemacs and treemacs-toggle?
