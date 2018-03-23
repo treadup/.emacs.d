@@ -192,7 +192,7 @@
 
 ;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder.
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
-(add-to-list 'load-path "~/.emacs.d/elisp")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 ;;;
 ;;; Customizations
