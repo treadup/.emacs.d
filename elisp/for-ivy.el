@@ -31,13 +31,17 @@
 ;;(use-package counsel
 ;;  :ensure t)
 
+;; For ido when in find file press C-f to go back to the old behvior.
+;; https://stackoverflow.com/questions/17986194/emacs-disable-automatic-file-search-in-ido-mode
+
 (use-package ivy
-  :ensure t)
+  :ensure t
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) "))
 
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-
-;; 
+;;
 ;; C-n goes to the next match.
 ;; C-p goes to the previous match.
 ;; Up and down arrow will move around in the minibuffer.
@@ -76,4 +80,3 @@
 
 ;; Use locate to find a file
 (global-set-key (kbd "C-x l") 'counsel-locate)
-
