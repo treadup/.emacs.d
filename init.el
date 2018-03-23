@@ -119,10 +119,6 @@
 ;; The :ensure t tells use-package to load the package from the package-archives
 ;; if the package is not already installed.
 
-;; Provide better default configuration for Emacs than the out of the box experience.
-(use-package better-defaults
-  :ensure t)
-
 ;; Magit is a git frontend.
 (use-package magit
   :ensure t)
