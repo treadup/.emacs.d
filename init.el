@@ -2,6 +2,10 @@
 ;;; Code:
 ;;;
 
+;; There is a package called auto-compile that looks interesting.
+;; https://github.com/emacscollective/auto-compile
+(setq load-prefer-newer t)
+
 ;;
 ;; Setup GnuTLS
 ;;
@@ -22,10 +26,21 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
+(message "Checking ido mode after initialize")
+(debug-has-ido)
+
 (package-initialize)
+
+(message "Checking ido mode after initialize")
+(debug-has-ido)
 
 ;; To upadate the packages (or is it the index of packages?) run (package-refresh-contents)
 ;; You can also run M-x package-list-packages. This will also update the list of packages.
+
+;; If you remove a use-package statement for a package that package will still stay installed
+;; if it has already been installed. Removing a use-package statement will never uninstall
+;; a package. You have to do this manually. One simple way of doing this is to remove the elpa
+;; folder in the emacs user directory.
 
 ;; Bootstrap 'use-package'
 (unless (package-installed-p 'use-package)
@@ -164,27 +179,8 @@
 ;;; Editing
 ;;;
 
-;; Highlights matching parenthesis
-(show-paren-mode 1)
-
-;; Highlight current line
-(global-hl-line-mode 1)
-
-;; Interactive search key bindings. By default, C-s runs
-;; isearch-forward, so this swaps the bindings.
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-r") 'isearch-backward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-(global-set-key (kbd "C-M-r") 'isearch-backward)
-
 ;; Use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
-
-;; When you visit a file, point goes to the last place where it
-;; was when you previously visited the same file.
-;; http://www.emacswiki.org/emacs/SavePlace
-(require 'saveplace)
-(setq-default save-place t)
 
 ;;
 ;; Load path
@@ -194,8 +190,10 @@
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+
 (defun setup-custom (filename)
   "Load custom settings from the file with name FILENAME."
+;;  (message (concat "Loading " filename))
   (load filename))
 
 ;;;

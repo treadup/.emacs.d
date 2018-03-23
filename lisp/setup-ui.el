@@ -64,4 +64,36 @@
 
 ;; Display tooltips in the echo area.
 (tooltip-mode -1)
-(setq tooltip-use-echo-area t)
+
+;; This variable is deprecated as of Emacs 24.1
+;; (setq tooltip-use-echo-area t)
+
+;; Remove menu bar
+(menu-bar-mode -1)
+
+;; Remove toolbar
+(tool-bar-mode -1)
+
+;; Remove scrollbars
+(scroll-bar-mode -1)
+(horizontal-scroll-bar-mode -1)
+
+;; When you visit a file, point goes to the last place where it
+;; was when you previously visited the same file.
+;; http://www.emacswiki.org/emacs/SavePlace
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file (concat user-emacs-directory "places"))
+
+;; Highlights matching parenthesis
+(show-paren-mode 1)
+
+;; Highlight current line
+(global-hl-line-mode 1)
+
+;; Interactive search key bindings. By default, C-s runs
+;; isearch-forward, so this swaps the bindings.
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
