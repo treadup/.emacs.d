@@ -201,328 +201,328 @@
 ;;
 ;; Hostname functions
 ;;
-(load "for-hostname.el")
+(load "setup-hostname.el")
 
 ;;
 ;; Context functions
 ;;
-(load "for-context.el")
+(load "setup-context.el")
 
 ;;
 ;; EasyPG specific setup
 ;;
-(load "for-gpg.el")
+(load "setup-gpg.el")
 
 ;;
 ;; Auth source specific setup
 ;;
-(load "for-auth-source.el")
+(load "setup-auth-source.el")
 
 ;;
 ;; Secrets
 ;;
-;; (load "for-secrets.el")
+;; (load "setup-secrets.el")
 
 ;;
 ;; Emacs specific setup
 ;;
-(load "for-emacs.el")
+(load "setup-emacs.el")
 
 ;;
 ;; Whitespace specific setup
 ;;
-(load "for-whitespace.el")
+(load "setup-whitespace.el")
 
 ;;
 ;; Emacs server
 ;;
-(load "for-server.el")
+(load "setup-server.el")
 
 ;;
 ;; Projectile
 ;;
-(load "for-projectile.el")
+(load "setup-projectile.el")
 
 ;;
 ;; Rainbow delimiters
 ;;
-(load "for-rainbow-delimiters.el")
+(load "setup-rainbow-delimiters.el")
 
 ;;
 ;; User interface specific setup
 ;;
-(load "for-ui.el")
+(load "setup-ui.el")
 
 ;;
 ;; Window numbering
 ;;
-(load "for-winum.el")
+(load "setup-winum.el")
 
 ;;
 ;; Window Configuration
 ;;
-(load "for-window-configuration.el")
+(load "setup-window-configuration.el")
 
 ;;
 ;; Buffer move setup
 ;;
-(load "for-buffer-move.el")
+(load "setup-buffer-move.el")
 
 ;;
 ;; Theme specific setup
 ;;
-(load "for-theme.el")
+(load "setup-theme.el")
 
 ;;
 ;; Ag specific setup
 ;;
-(load "for-ag.el")
+(load "setup-ag.el")
 
 ;;
 ;; Company mode specific setup
 ;;
-(load "for-company-mode.el")
+(load "setup-company-mode.el")
 
 ;;
 ;; Projectile specific setup
 ;;
-(load "for-projectile.el")
+(load "setup-projectile.el")
 
 ;;
 ;; Clojure specific setup
 ;;
-(load "for-clojure.el")
+(load "setup-clojure.el")
 
 ;;
 ;; Shell specific setup
 ;;
-(load "for-shell.el")
+(load "setup-shell.el")
 
 ;;
 ;; Bash specific setup
 ;;
-(load "for-bash.el")
+(load "setup-bash.el")
 
 ;;
 ;; Fish specific setup
 ;;
-(load "for-fish.el")
+(load "setup-fish.el")
 
 ;;
 ;; OS X specific setup
 ;;
 
 (if (string-equal system-type "darwin")
-    (load "for-osx.el"))
+    (load "setup-osx.el"))
 
 ;;
 ;; Eldoc mode specific setup
 ;;
-(load "for-eldoc.el")
+(load "setup-eldoc.el")
 
 ;;
 ;; Which key setup
 ;;
-(load "for-which-key.el")
+(load "setup-which-key.el")
 
 ;;
 ;; Text mode specific setup
 ;;
-(load "for-text.el")
+(load "setup-text.el")
 
 ;;
 ;; Browser specific setup
 ;;
-(load "for-browser.el")
+(load "setup-browser.el")
 
 ;;
 ;; Git specific setup
 ;;
-(load "for-git.el")
+(load "setup-git.el")
 
 ;;
 ;; Tramp specific setup
 ;;
-(load "for-tramp.el")
+(load "setup-tramp.el")
 
 ;;
 ;; Elisp specific setup
 ;;
-(load "for-elisp.el")
+(load "setup-elisp.el")
 
 ;;
 ;; Ivy specific setup
 ;;
 ;; For some reason swiper does not work.
 ;;
-;; (load "for-ivy.el")
+;; (load "setup-ivy.el")
 
 ;;
 ;; Python specific setup
 ;;
-(load "for-python.el")
+(load "setup-python.el")
 
 ;;
 ;; Common Lisp specific setup
 ;;
-(load "for-common-lisp.el")
+(load "setup-common-lisp.el")
 
 ;;
 ;; Erlang specific setup
 ;;
-(load "for-erlang.el")
+(load "setup-erlang.el")
 
 ;;
 ;; Kill current buffer instead of prompting for buffer to kill.
 ;;
-(load "for-kill-buffer.el")
+(load "setup-kill-buffer.el")
 
 ;;
 ;; Execute shell commands and place the result in the current buffer.
 ;;
-(load "for-shell-command.el")
+(load "setup-shell-command.el")
 
 ;;
 ;; Web mode specific setup
 ;;
-(load "for-web-mode.el")
+(load "setup-web-mode.el")
 
 ;;
 ;; Project navigation specific setup
 ;;
-(load "for-project-nav.el")
+(load "setup-project-nav.el")
 
 ;;
 ;; Neotree specific setup
 ;;
-;; (load "for-neotree.el")
+;; (load "setup-neotree.el")
 
 ;;
 ;; Treemacs specific setup
 ;;
-(load "for-treemacs.el")
+(load "setup-treemacs.el")
 
 ;;
 ;; Log file specific setup
 ;;
-;;(load "for-log.el")
+;;(load "setup-log.el")
 
 ;;
 ;; Editor Config specific setup
 ;; editorconfig.org
-(load "for-editor-config.el")
+(load "setup-editor-config.el")
 
 ;;
 ;; Flycheck specific setup
 ;;
-(load "for-flycheck.el")
+(load "setup-flycheck.el")
 
 ;;
 ;; SQL specific setup
 ;;
-;; (load "for-sql.el")
+;; (load "setup-sql.el")
 
 ;;
 ;; NGINX specific setup
 ;;
-(load "for-nginx.el")
+(load "setup-nginx.el")
 
 ;;
 ;; Docker specific setup
 ;;
-(load "for-docker.el")
+(load "setup-docker.el")
 
 ;;
 ;; Ascii Doc specific setup
 ;;
-(load "for-asciidoc.el")
+(load "setup-asciidoc.el")
 
 ;;
 ;; Markdown specific setup
 ;;
-(load "for-markdown.el")
+(load "setup-markdown.el")
 
 ;;
 ;; Scheme specific setup
 ;;
-(load "for-scheme.el")
+(load "setup-scheme.el")
 
 ;;
 ;; Go lang specific setup
 ;;
-(load "for-go.el")
+(load "setup-go.el")
 
 ;;
 ;; YAML specific setup
 ;;
-(load "for-yaml.el")
+(load "setup-yaml.el")
 
 ;;
 ;; JSON specific setup
 ;;
-(load "for-json.el")
+(load "setup-json.el")
 
 ;;
 ;; JavaScript specific setup
 ;;
-(load "for-javascript.el")
+(load "setup-javascript.el")
 
 ;;
 ;; Eyebrowse specific setup
 ;;
-(load "for-eyebrowse.el")
+(load "setup-eyebrowse.el")
 
 ;;
 ;; Todo specific setup
 ;;
-(load "for-todo.el")
+(load "setup-todo.el")
 
 ;;
 ;; Multi term setup
 ;;
-(load "for-multi-term.el")
+(load "setup-multi-term.el")
 
 ;;
 ;; Eshell setup
 ;;
-(load "for-eshell.el")
+(load "setup-eshell.el")
 
 ;;
 ;; Spotify setup
 ;;
-(load "for-spotify.el")
+(load "setup-spotify.el")
 
 ;;
 ;; html to markdown setup
 ;;
-(load "for-html-to-markdown.el")
+(load "setup-html-to-markdown.el")
 
 ;;
 ;; Miscellaneous customizations
 ;;
-(load "for-misc.el")
+(load "setup-misc.el")
 
 ;;
 ;; Libraries for Elisp
 ;;
-(load "for-libraries.el")
+(load "setup-libraries.el")
 
 ;;
 ;; Guru mode
 ;;
-(load "for-guru.el")
+(load "setup-guru.el")
 
 ;;
 ;; Pass specific setup
 ;;
-;; (load "for-pass.el")
+;; (load "setup-pass.el")
 
 ;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
 ;; I'm going to leave this in there and see if it works later on.
-;; (load "for-wanderlust.el")
+;; (load "setup-wanderlust.el")
 
 (provide 'init)
 ;;; init.el ends here
