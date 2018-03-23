@@ -5,8 +5,8 @@
 !init.el
 
 # Include elisp folder
-!elisp/
-!elisp/*
+!lisp/
+!lisp/*
 
 # Include .gitignore
 !.gitignore
