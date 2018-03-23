@@ -26,13 +26,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-(message "Checking ido mode after initialize")
-(debug-has-ido)
-
 (package-initialize)
-
-(message "Checking ido mode after initialize")
-(debug-has-ido)
 
 ;; To upadate the packages (or is it the index of packages?) run (package-refresh-contents)
 ;; You can also run M-x package-list-packages. This will also update the list of packages.
