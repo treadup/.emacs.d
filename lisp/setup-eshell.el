@@ -42,6 +42,10 @@ This might be better as an Eshell alias."
 ;; Change the prompt we have to set the eshell-prompt-function variable
 ;; to something that generates a nice prompt. Currently it is very basic.
 
+(defun prompt-color (text color)
+"Set the foreground color of the given TEXT to COLOR."
+  (propertize text 'face `(:foreground color)))
+
 (defun custom-eshell-prompt-virtualenv ()
 "The following will find the name of the current virtual environment.
 If there is no current virtual environment return a blank string."
@@ -50,32 +54,32 @@ If there is no current virtual environment return a blank string."
       ""
       (propertize
         (concat (car (last (s-split "/" venv-path))) " ")
-        'face `(:foreground "green")))))  ;; blue
+        'face `(:foreground "green")))))
 
 (defun custom-eshell-prompt-char ()
 "Return the prompt character.
 For non root users this is $.  For the root user this is #."
-  (if (= (user-uid) 0) " # " " $ "))
+  (prompt-color
+    (if (= (user-uid) 0) "\n# " "\n$ ")
+    "white"))
 
 
 (defun custom-eshell-prompt-path ()
-"Return the current path."
-  (abbreviate-file-name (eshell/pwd)))
+  "Return the current path."
+  (prompt-color
+    (abbreviate-file-name (eshell/pwd))
+    "green"))
 
 ;; The next issue is if there is a getenv function that gets the value from the local
 ;; environment. I.e. gets the value from the remote server when you are logged into
 ;; a remote server?
 
-;; Split this up into separate function called custom-eshell-prompt-user, etc.
-
-(defun custom-eshell-prompt-function ()
+(defun eshell-prompt-function ()
   "Custom Eshell prompt."
   (concat
     (custom-eshell-prompt-virtualenv)
     (custom-eshell-prompt-path)
     (custom-eshell-prompt-char)))
-
-(setq eshell-prompt-function 'custom-eshell-prompt-function)
 
 (provide 'for-eshell.el)
 ;;; for-eshell ends here
