@@ -197,321 +197,306 @@
 ;;
 ;; Hostname functions
 ;;
-(setup-custom "setup-hostname.el")
+(setup-custom "setup-hostname")
 
 ;;
 ;; Context functions
 ;;
-(setup-custom "setup-context.el")
+(setup-custom "setup-context")
 
 ;;
 ;; EasyPG specific setup
 ;;
-(setup-custom "setup-gpg.el")
+(setup-custom "setup-gpg")
 
 ;;
 ;; Auth source specific setup
 ;;
-(setup-custom "setup-auth-source.el")
-
-;;
-;; Secrets
-;;
-;; (setup-custom "setup-secrets.el")
+(setup-custom "setup-auth-source")
 
 ;;
 ;; Emacs specific setup
 ;;
-(setup-custom "setup-emacs.el")
+(setup-custom "setup-emacs")
 
 ;;
 ;; Whitespace specific setup
 ;;
-(setup-custom "setup-whitespace.el")
+(setup-custom "setup-whitespace")
 
 ;;
 ;; Emacs server
 ;;
-(setup-custom "setup-server.el")
+(setup-custom "setup-server")
 
 ;;
 ;; Projectile
 ;;
-(setup-custom "setup-projectile.el")
+(setup-custom "setup-projectile")
 
 ;;
 ;; Rainbow delimiters
 ;;
-(setup-custom "setup-rainbow-delimiters.el")
+(setup-custom "setup-rainbow-delimiters")
 
 ;;
 ;; User interface specific setup
 ;;
-(setup-custom "setup-ui.el")
+(setup-custom "setup-ui")
 
 ;;
 ;; Window numbering
 ;;
-(setup-custom "setup-winum.el")
+(setup-custom "setup-winum")
 
 ;;
 ;; Window Configuration
 ;;
-(setup-custom "setup-window-configuration.el")
+(setup-custom "setup-window-configuration")
 
 ;;
 ;; Buffer move setup
 ;;
-(setup-custom "setup-buffer-move.el")
+(setup-custom "setup-buffer-move")
 
 ;;
 ;; Theme specific setup
 ;;
-(setup-custom "setup-theme.el")
+(setup-custom "setup-theme")
 
 ;;
 ;; Ag specific setup
 ;;
-(setup-custom "setup-ag.el")
+(setup-custom "setup-ag")
 
 ;;
 ;; Company mode specific setup
 ;;
-(setup-custom "setup-company-mode.el")
+(setup-custom "setup-company-mode")
 
 ;;
 ;; Projectile specific setup
 ;;
-(setup-custom "setup-projectile.el")
+(setup-custom "setup-projectile")
 
 ;;
 ;; Clojure specific setup
 ;;
-(setup-custom "setup-clojure.el")
+(setup-custom "setup-clojure")
 
 ;;
 ;; Shell specific setup
 ;;
-(setup-custom "setup-shell.el")
+(setup-custom "setup-shell")
 
 ;;
 ;; Bash specific setup
 ;;
-(setup-custom "setup-bash.el")
+(setup-custom "setup-bash")
 
 ;;
 ;; Fish specific setup
 ;;
-(setup-custom "setup-fish.el")
+(setup-custom "setup-fish")
 
 ;;
 ;; OS X specific setup
 ;;
 
 (if (string-equal system-type "darwin")
-    (setup-custom "setup-osx.el"))
+    (setup-custom "setup-osx"))
 
 ;;
 ;; Eldoc mode specific setup
 ;;
-(setup-custom "setup-eldoc.el")
+(setup-custom "setup-eldoc")
 
 ;;
 ;; Which key setup
 ;;
-(setup-custom "setup-which-key.el")
+(setup-custom "setup-which-key")
 
 ;;
 ;; Text mode specific setup
 ;;
-(setup-custom "setup-text.el")
+(setup-custom "setup-text")
 
 ;;
 ;; Browser specific setup
 ;;
-(setup-custom "setup-browser.el")
+(setup-custom "setup-browser")
 
 ;;
 ;; Git specific setup
 ;;
-(setup-custom "setup-git.el")
+(setup-custom "setup-git")
 
 ;;
 ;; Tramp specific setup
 ;;
-(setup-custom "setup-tramp.el")
+(setup-custom "setup-tramp")
 
 ;;
 ;; Elisp specific setup
 ;;
-(setup-custom "setup-elisp.el")
+(setup-custom "setup-elisp")
 
 ;;
 ;; Ivy specific setup
 ;;
 ;; For some reason swiper does not work.
 ;;
-;; (setup-custom "setup-ivy.el")
+(setup-custom "setup-ivy")
 
 ;;
 ;; Python specific setup
 ;;
-(setup-custom "setup-python.el")
+(setup-custom "setup-python")
 
 ;;
 ;; Common Lisp specific setup
 ;;
-(setup-custom "setup-common-lisp.el")
+(setup-custom "setup-common-lisp")
 
 ;;
 ;; Erlang specific setup
 ;;
-(setup-custom "setup-erlang.el")
+(setup-custom "setup-erlang")
 
 ;;
 ;; Kill current buffer instead of prompting for buffer to kill.
 ;;
-(setup-custom "setup-kill-buffer.el")
+(setup-custom "setup-kill-buffer")
 
 ;;
 ;; Execute shell commands and place the result in the current buffer.
 ;;
-(setup-custom "setup-shell-command.el")
+(setup-custom "setup-shell-command")
 
 ;;
 ;; Web mode specific setup
 ;;
-(setup-custom "setup-web-mode.el")
+(setup-custom "setup-web-mode")
 
 ;;
 ;; Project navigation specific setup
 ;;
-(setup-custom "setup-project-nav.el")
-
-;;
-;; Neotree specific setup
-;;
-;; (setup-custom "setup-neotree.el")
+(setup-custom "setup-project-nav")
 
 ;;
 ;; Treemacs specific setup
 ;;
-(setup-custom "setup-treemacs.el")
+(setup-custom "setup-treemacs")
 
 ;;
 ;; Log file specific setup
 ;;
-;;(setup-custom "setup-log.el")
+;;(setup-custom "setup-log")
 
 ;;
 ;; Editor Config specific setup
-;; editorconfig.org
-(setup-custom "setup-editor-config.el")
+;;
+(setup-custom "setup-editor-config")
 
 ;;
 ;; Flycheck specific setup
 ;;
-(setup-custom "setup-flycheck.el")
+(setup-custom "setup-flycheck")
 
 ;;
 ;; SQL specific setup
 ;;
-;; (setup-custom "setup-sql.el")
+;; (setup-custom "setup-sql")
 
 ;;
 ;; NGINX specific setup
 ;;
-(setup-custom "setup-nginx.el")
+(setup-custom "setup-nginx")
 
 ;;
 ;; Docker specific setup
 ;;
-(setup-custom "setup-docker.el")
+(setup-custom "setup-docker")
 
 ;;
 ;; Ascii Doc specific setup
 ;;
-(setup-custom "setup-asciidoc.el")
+(setup-custom "setup-asciidoc")
 
 ;;
 ;; Markdown specific setup
 ;;
-(setup-custom "setup-markdown.el")
+(setup-custom "setup-markdown")
 
 ;;
 ;; Scheme specific setup
 ;;
-(setup-custom "setup-scheme.el")
+(setup-custom "setup-scheme")
 
 ;;
 ;; Go lang specific setup
 ;;
-(setup-custom "setup-go.el")
+(setup-custom "setup-go")
 
 ;;
 ;; YAML specific setup
 ;;
-(setup-custom "setup-yaml.el")
+(setup-custom "setup-yaml")
 
 ;;
 ;; JSON specific setup
 ;;
-(setup-custom "setup-json.el")
+(setup-custom "setup-json")
 
 ;;
 ;; JavaScript specific setup
 ;;
-(setup-custom "setup-javascript.el")
+(setup-custom "setup-javascript")
 
 ;;
 ;; Eyebrowse specific setup
 ;;
-(setup-custom "setup-eyebrowse.el")
+(setup-custom "setup-eyebrowse")
 
 ;;
 ;; Todo specific setup
 ;;
-(setup-custom "setup-todo.el")
+(setup-custom "setup-todo")
 
 ;;
 ;; Multi term setup
 ;;
-(setup-custom "setup-multi-term.el")
+(setup-custom "setup-multi-term")
 
 ;;
 ;; Eshell setup
 ;;
-(setup-custom "setup-eshell.el")
+(setup-custom "setup-eshell")
 
 ;;
 ;; Spotify setup
 ;;
-(setup-custom "setup-spotify.el")
+(setup-custom "setup-spotify")
 
 ;;
 ;; html to markdown setup
 ;;
-(setup-custom "setup-html-to-markdown.el")
+(setup-custom "setup-html-to-markdown")
 
 ;;
 ;; Miscellaneous customizations
 ;;
-(setup-custom "setup-misc.el")
+(setup-custom "setup-misc")
 
 ;;
 ;; Libraries for Elisp
 ;;
-(setup-custom "setup-libraries.el")
+(setup-custom "setup-libraries")
 
 ;;
 ;; Guru mode
 ;;
-(setup-custom "setup-guru.el")
-
-;;
-;; Pass specific setup
-;;
-;; (setup-custom "setup-pass.el")
+(setup-custom "setup-guru")
 
 ;;
 ;; Wanderlust email client
