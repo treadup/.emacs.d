@@ -74,12 +74,14 @@ For non root users this is $.  For the root user this is #."
 ;; environment. I.e. gets the value from the remote server when you are logged into
 ;; a remote server?
 
-(defun eshell-prompt-function ()
+(defun custom-eshell-prompt-function ()
   "Custom Eshell prompt."
   (concat
     (custom-eshell-prompt-virtualenv)
     (custom-eshell-prompt-path)
     (custom-eshell-prompt-char)))
+
+(setq eshell-prompt-function 'custom-eshell-prompt-function)
 
 (provide 'for-eshell.el)
 ;;; for-eshell ends here
