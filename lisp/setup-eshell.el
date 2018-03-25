@@ -81,7 +81,13 @@ For non root users this is $.  For the root user this is #."
     (custom-eshell-prompt-path)
     (custom-eshell-prompt-char)))
 
-(setq eshell-prompt-function 'custom-eshell-prompt-function)
+;; Use customize-set-variable instead of setq when setting variables created
+;; by defcustom.
+(customize-set-variable 'eshell-prompt-function 'custom-eshell-prompt-function)
+
+;; If we have a multiline prompt then the regexp only needs to match the last
+;; line in the prompt.
+(customize-set-variable 'eshell-prompt-regexp "[$#] ")
 
 (provide 'for-eshell.el)
 ;;; for-eshell ends here
