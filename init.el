@@ -2,6 +2,14 @@
 ;;; Code:
 ;;;
 
+;; To revaluate elisp code you can use one of the following options.
+;; C-M-x will call eval-defun which evaluates the top level form
+;; containing point.
+;; C-x C-e will call eval-last-sexp which evaluates the sexp before
+;; point and then prints the value in the echo area.
+;; To evaluate the entire buffer you can call M-x eval-buffer
+;; To evaluate the region you can call M-x eval-region
+
 ;; There is a package called auto-compile that looks interesting.
 ;; https://github.com/emacscollective/auto-compile
 (setq load-prefer-newer t)
