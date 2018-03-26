@@ -166,11 +166,6 @@
 ;; this selection is gone unless this variable is non-nil
 (setq save-interprogram-paste-before-kill t)
 
-;;;
-;;; Navigation
-;;;
-
-
 ;;
 ;; Recent files
 ;;
@@ -507,6 +502,11 @@
 ;; Libraries for Elisp
 ;;
 (setup-custom "setup-libraries")
+
+;;
+;; ERC specific setup
+;;
+(setup-custom "setup-erc")
 
 ;;
 ;; Guru mode
