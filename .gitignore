@@ -7,6 +7,7 @@
 # Include elisp folder
 !lisp/
 !lisp/*
+lisp/*.elc
 
 # Include .gitignore
 !.gitignore
