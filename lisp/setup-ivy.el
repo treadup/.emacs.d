@@ -1,38 +1,10 @@
 ;;;
-;;; Customizations for completion
+;;; Customizations for Ivy
 ;;;
 
 ;;
-;; Ido mode
+;; Ivy
 ;;
-
-;; Ido mode allows you to more easily navigate choices.
-; (ido-mode t)
-
-;; Use partial matching
-; (setq ido-enable-flex-matching t)
-
-;; Enable ido wherever it could be useful.
-; (setq ido-everywhere t)
-
-;; Change the way the list of buffers is shown.
-;(global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;; The smex package provides an Ido like interface for M-x.
-;;(use-package smex
-;;  :ensure t
-;;  :bind (("M-x" . smex))
-;;  :config (smex-initialize))
-
-;;
-;; I am not sure if you have to install both ivy and counsel or if
-;; counsel pulls in ivy automatically.
-
-;;(use-package counsel
-;;  :ensure t)
-
-;; For ido when in find file press C-f to go back to the old behvior.
-;; https://stackoverflow.com/questions/17986194/emacs-disable-automatic-file-search-in-ido-mode
 
 (use-package ivy
   :ensure t
@@ -40,6 +12,24 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) "))
+
+;;
+;; Swiper
+;;
+(use-package swiper
+  :ensure t
+  :config
+  (progn
+    (global-set-key "\C-s" 'swiper)))
+
+;;
+;; Counsel
+;;
+(use-package counsel
+  :ensure t
+  :config
+  (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file))
 
 ;;
 ;; C-n goes to the next match.
