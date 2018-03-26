@@ -70,3 +70,6 @@
 
 ;; Use locate to find a file
 ;; (global-set-key (kbd "C-x l") 'counsel-locate)
+
+;; Not sure if the following will work.
+;; (setq counsel-find-file-ignore-regexp "\\.elc\\'")
