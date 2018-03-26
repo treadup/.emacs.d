@@ -4,7 +4,7 @@
 
 ;; Byte compile all files in the .emacs.d/lisp folder. Force byte compilation
 ;; even if there is no existing .elc file for the .el file.
-(byte-recompile-directory "~/.emacs.d/lisp" 0)
+;; (byte-recompile-directory "~/.emacs.d/lisp" 0)
 
 ;; To revaluate elisp code you can use one of the following options.
 ;; C-M-x will call eval-defun which evaluates the top level form
