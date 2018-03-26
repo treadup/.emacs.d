@@ -2,6 +2,10 @@
 ;;; Code:
 ;;;
 
+;; Byte compile all files in the .emacs.d/lisp folder. Force byte compilation
+;; even if there is no existing .elc file for the .el file.
+(byte-recompile-directory "~/.emacs.d/lisp" 0)
+
 ;; To revaluate elisp code you can use one of the following options.
 ;; C-M-x will call eval-defun which evaluates the top level form
 ;; containing point.
@@ -10,8 +14,7 @@
 ;; To evaluate the entire buffer you can call M-x eval-buffer
 ;; To evaluate the region you can call M-x eval-region
 
-;; There is a package called auto-compile that looks interesting.
-;; https://github.com/emacscollective/auto-compile
+;; If the .el file is newer than the .elc file then load the .el file.
 (setq load-prefer-newer t)
 
 ;;
@@ -48,6 +51,10 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+;; Required when bytecompiling to avoid personal-keybindings is void error that seems to be
+;; caused by the use-package macro.
+(require 'bind-key)
 
 ;; Load the diminish package early. It can then be used in the use-package forms
 ;; using :diminish
