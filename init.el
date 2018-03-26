@@ -270,6 +270,11 @@
 (setup-custom "setup-buffer-move")
 
 ;;
+;; Crux setup
+;;
+(setup-custom "setup-crux")
+
+;;
 ;; Theme specific setup
 ;;
 (setup-custom "setup-theme")
