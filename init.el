@@ -519,6 +519,11 @@
 (setup-custom "setup-guru")
 
 ;;
+;; Yasnippet
+;;
+(setup-custom "setup-yasnippet")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
