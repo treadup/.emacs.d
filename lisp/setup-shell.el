@@ -1,3 +1,10 @@
+;;;
+;;; Customizations for shell
+;;;
+
+;; Use bash when starting a normal shell.
+(customize-set-variable 'explicit-shell-file-name "/bin/bash")
+
 ;; Create keybindings for the different terminal alternatives.
 
 (defun shell-below ()
