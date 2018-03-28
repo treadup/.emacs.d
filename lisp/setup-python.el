@@ -102,7 +102,6 @@ Activates the virtual environment."
         (pyvenv-deactivate))
       ;; Acivate the virtual environment from the .venv file if there is one.
       (let ((venv-name (suggest-virtual-environment-name)))
-        (message (concat "venv name is equal to " venv-name))
         (unless (s-blank? venv-name)
           (pyvenv-workon venv-name))))))
 
