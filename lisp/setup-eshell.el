@@ -42,9 +42,15 @@ This might be better as an Eshell alias."
 ;; Change the prompt we have to set the eshell-prompt-function variable
 ;; to something that generates a nice prompt. Currently it is very basic.
 
+;; TODO: There is a macro called with-face on the EmacsWiki
+
 (defun prompt-color (text color)
 "Set the foreground color of the given TEXT to COLOR."
   (propertize text 'face `(:foreground color)))
+
+;;(defmacro with-foreground (str color)
+;;  "Prompertice a string
+;;  `(propertize ,str 'face (list ,@properties)))
 
 (defun custom-eshell-prompt-virtualenv ()
 "The following will find the name of the current virtual environment.
@@ -56,6 +62,10 @@ If there is no current virtual environment return a blank string."
         (concat (car (last (s-split "/" venv-path))) " ")
         'face `(:foreground "green")))))
 
+(defun custom-eshell-prompt-location ()
+"Return user@hostname."
+  (concat (user-login-name) "@" (hostname) " "))
+
 (defun custom-eshell-prompt-char ()
 "Return the prompt character.
 For non root users this is $.  For the root user this is #."
@@ -63,6 +73,9 @@ For non root users this is $.  For the root user this is #."
     (if (= (user-uid) 0) "\n# " "\n$ ")
     "white"))
 
+(defun custom-eshell-prompt-git-branch ()
+  "Return the current git branch."
+  (concat (magit-get-current-branch) " "))
 
 (defun custom-eshell-prompt-path ()
   "Return the current path."
@@ -78,6 +91,8 @@ For non root users this is $.  For the root user this is #."
   "Custom Eshell prompt."
   (concat
     (custom-eshell-prompt-virtualenv)
+    (custom-eshell-prompt-location)
+    (custom-eshell-prompt-git-branch)
     (custom-eshell-prompt-path)
     (custom-eshell-prompt-char)))
 
