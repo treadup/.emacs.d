@@ -11,7 +11,14 @@
   :config
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
-  (setq ivy-count-format "(%d/%d) "))
+  (setq ivy-count-format "(%d/%d) ")
+
+  ;; Use C-j for immediate termination with the current value, and RET
+  ;; for continuing completion for that directory. This is the ido
+  ;; behaviour.
+  ;; https://github.com/abo-abo/swiper/wiki/ido-style-folder-navigation
+  (define-key ivy-minibuffer-map (kbd "C-j") #'ivy-immediate-done)
+  (define-key ivy-minibuffer-map (kbd "RET") #'ivy-alt-done))
 
 ;;
 ;; Swiper
