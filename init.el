@@ -230,6 +230,11 @@
 (setup-custom "setup-emacs")
 
 ;;
+;; Eshell setup
+;;
+(setup-custom "setup-eshell")
+
+;;
 ;; Whitespace specific setup
 ;;
 (setup-custom "setup-whitespace")
@@ -482,11 +487,6 @@
 ;; Multi term setup
 ;;
 (setup-custom "setup-multi-term")
-
-;;
-;; Eshell setup
-;;
-(setup-custom "setup-eshell")
 
 ;;
 ;; Spotify setup
