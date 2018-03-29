@@ -54,6 +54,9 @@
 ;; Use the pyvenv package to mange virtual environments.
 ;; https://github.com/jorgenschaefer/pyvenv
 ;; This is the package that spacemacs uses to manage virtual environments.
+;; Unfortunately this package does not support Eshell.
+;; There is a github issue to fix this.
+;; github.com/joergenschaefer/elpy/issues/1172
 (use-package pyvenv
   :ensure t)
 
@@ -88,6 +91,10 @@ The .venv file is located in the project root folder."
           nil
           venv-name)))))
 
+;; Repeat of what is in the setup-eshell.el file.
+(defvar custom-eshell-path-env)
+(setq custom-eshell-path-env eshell-path-env)
+
 (defun activate-python-project ()
 "Activate the current projectile project as a python project.
 Sets the python-extra-pythonpath to the root of the project.
@@ -103,7 +110,16 @@ Activates the virtual environment."
       ;; Acivate the virtual environment from the .venv file if there is one.
       (let ((venv-name (suggest-virtual-environment-name)))
         (unless (s-blank? venv-name)
-          (pyvenv-workon venv-name))))))
+          (progn
+            (pyvenv-workon venv-name)
+            ;; Set the eshell path
+            ;; https://github.com/jorgenschaefer/elpy/issues/1172
+            ;; Setting eshell-path-env directly does not seem to work.
+            (setq eshell-path-env (mapconcat 'identity exec-path ":"))
+            ;; Instead set custom-eshell-path-env that we then use in
+            ;; an eshell-mode hook to set eshell-path-env.
+            (setq custom-eshell-path-env (mapconcat 'identity exec-path ":"))
+            ))))))
 
 ;; On startup activate the current projectile project, if there is
 ;; one, as a python project.
@@ -119,5 +135,7 @@ Activates the virtual environment."
 ;; Use ipython for the inferior shell. The --simple-prompt argument is there
 ;; because Emacs does not work with the default prompt in newer versions of
 ;; ipython.
-(setq python-shell-interpreter "ipython"
-        python-shell-interpreter-args "--simple-prompt -i")
+;; (setq python-shell-interpreter "ipython"
+;;        python-shell-interpreter-args "--simple-prompt -i")
+
+;; Actually the above might interfer when switching virtual environments.

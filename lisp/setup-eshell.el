@@ -4,6 +4,23 @@
 
 (require 'eshell)
 
+;; Allow eshell to modify the global environment. This is needed so that when
+;; we switch python virutal environments this change also shows up in Eshell.
+(setq eshell-modify-global-environment t)
+
+(defvar custom-eshell-path-env)
+(setq custom-eshell-path-env eshell-path-env)
+
+;; This is a hack to get Eshell to respect the bin folder from
+;; the Python virtual environment.
+(defun custom-eshell-mode-hook ()
+"Set the eshell-path-env to the current custom version.
+The custom-eshell-path-env is updated whenever you switch virtual
+environments."
+  (setq eshell-path-env custom-eshell-path-env))
+
+(add-hook 'eshell-mode-hook 'custom-eshell-mode-hook)
+
 ;; The quit function allows us to execute the quit command
 ;; in eshell to close the eshell buffer and window.
 ;; Remember that in eshell you can run functions without
