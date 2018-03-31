@@ -524,6 +524,11 @@
 (setup-custom "setup-yasnippet")
 
 ;;
+;; Host specific setup
+;;
+(setup-custom "setup-oak")
+
+;;
 ;; Wanderlust email client
 ;;
 ;; Right now I cannot load the wanderlust email client from MELPA.
