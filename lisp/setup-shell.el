@@ -1,6 +1,8 @@
-;;;
-;;; Customizations for shell
-;;;
+;;; setup-shell --- Customizations for shell.
+
+;;; Commentary:
+
+;;; Code:
 
 ;; Use bash when starting a normal shell.
 (customize-set-variable 'explicit-shell-file-name "/bin/bash")
@@ -26,7 +28,7 @@
 ; (global-set-key (kbd "C-c i") (lambda () (interactive) (ielm-below)))
 
 (defun create-shell ()
-  "creates a shell with a given name"
+  "Create a shell with a given name."
   (interactive);; "Prompt\n shell name:")
   (let ((shell-name (read-string "shell name: " nil)))
     (shell (concat "*" shell-name "*"))))

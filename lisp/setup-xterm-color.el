@@ -12,16 +12,23 @@
   :ensure t
   :config
 
-  ;; Eshell
+  ;; Config for shell
+  (setq comint-output-filter-functions
+    (remove 'ansi-color-process-output comint-output-filter-functions))
+
+  (add-hook 'shell-mode-hook
+    (lambda ()
+      (progn
+        (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter nil t))))
+
+  ;; Config for eshell
   (add-hook 'eshell-before-prompt-hook
     (lambda ()
       (setq xterm-color-preserve-properties t)))
 
   (add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
   (setq eshell-output-filter-functions
-    (remove 'eshell-handle-ansi-color eshell-output-filter-functions))
-
-  (setenv "TERM" "xterm-256-color"))
+    (remove 'eshell-handle-ansi-color eshell-output-filter-functions)))
 
 (provide 'setup-xterm-color)
 ;;; setup-xterm-color ends here
