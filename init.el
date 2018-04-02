@@ -235,6 +235,11 @@
 (setup-custom "setup-eshell")
 
 ;;
+;; Xterm color setup
+;;
+(setup-custom "setup-xterm-color")
+
+;;
 ;; Whitespace specific setup
 ;;
 (setup-custom "setup-whitespace")

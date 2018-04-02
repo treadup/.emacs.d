@@ -33,7 +33,11 @@
 "Set the eshell-path-env to the current custom version.
 The custom-eshell-path-env is updated whenever you switch virtual
 environments."
-  (setq eshell-path-env custom-eshell-path-env))
+  (setq eshell-path-env custom-eshell-path-env)
+
+  ;; Since we are using xterm-color.el we can have a terminal
+  ;; with 256 colors instead of a dumb terminal.
+  (setenv "TERM" "xterm-256color"))
 
 (add-hook 'eshell-mode-hook 'custom-eshell-mode-hook)
 
