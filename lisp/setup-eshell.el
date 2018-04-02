@@ -1,12 +1,28 @@
-;;;
-;;; Customizations for eshell
-;;;
+;;; setup-eshell --- Customizations for Eshell.
+
+;;; Commentary:
+
+;; Allow eshell to modify the global environment.  This is needed so that when
+;; we switch python virutal environments this change also shows up in Eshell.
+;; (setq eshell-modify-global-environment t)
+
+;; See if I can't define my own methods for handling virutal environments
+;; in eshell.
+;;
+;; workon - activate a virtual environment
+;; deactivate - deactivate the current virtual environment
+;; mkvenv
+;; rmvenv
+;; lsvenv
+
+;; These could work by managing the eshell-path-env ourselves.  When we call workon
+;; we would append the virtual environments bin folder to custom-eshell-path-env.
+;; Then in the custom-eshell-prompt-function we could update eshell-path-env from
+;; custom-eshell-path-env.  This will work but it might be slow.
+
+;;; Code:
 
 (require 'eshell)
-
-;; Allow eshell to modify the global environment. This is needed so that when
-;; we switch python virutal environments this change also shows up in Eshell.
-(setq eshell-modify-global-environment t)
 
 (defvar custom-eshell-path-env)
 (setq custom-eshell-path-env eshell-path-env)
@@ -41,6 +57,7 @@ This might be better as an Eshell alias."
 ;; it in the current window.
 
 (defun eshell-below ()
+"Open an eshell in a new window below the current window."
   (interactive)
   (progn
     (split-window-below)
@@ -49,6 +66,7 @@ This might be better as an Eshell alias."
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
 (defun eshell-right ()
+"Open an eshell in a new window to the right og the current window."
   (interactive)
   (progn
     (split-window-right)
@@ -56,18 +74,17 @@ This might be better as an Eshell alias."
     (eshell t)
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
-;; Change the prompt we have to set the eshell-prompt-function variable
-;; to something that generates a nice prompt. Currently it is very basic.
+;;
+;; Custom prompt
+;;
 
-;; TODO: There is a macro called with-face on the EmacsWiki
+;; TODO: It should be possible to have shortended paths in Eshell just like
+;; we have in fish.
+;; https://www.emacswiki.org/emacs/EshellPrompt
 
-(defun prompt-color (text color)
+(defun with-color (text color)
 "Set the foreground color of the given TEXT to COLOR."
-  (propertize text 'face `(:foreground color)))
-
-;;(defmacro with-foreground (str color)
-;;  "Prompertice a string
-;;  `(propertize ,str 'face (list ,@properties)))
+  (propertize text 'face `(:foreground ,color)))
 
 (defun custom-eshell-prompt-virtualenv ()
 "The following will find the name of the current virtual environment.
@@ -75,30 +92,35 @@ If there is no current virtual environment return a blank string."
   (let ((venv-path (getenv "VIRTUAL_ENV")))
     (if (s-blank? venv-path)
       ""
-      (propertize
+      (with-color
         (concat (car (last (s-split "/" venv-path))) " ")
-        'face `(:foreground "green")))))
+        "cyan"))))
 
 (defun custom-eshell-prompt-location ()
 "Return user@hostname."
-  (concat (user-login-name) "@" (hostname) " "))
+  (with-color
+    (concat (user-login-name) "@" (hostname) " ")
+    "green"))
+
+(defun custom-eshell-prompt-git-branch ()
+  "Return the current git branch."
+  (with-color
+    (concat (magit-get-current-branch) " ")
+    "magenta"))
+
+(defun custom-eshell-prompt-path ()
+  "Return the current path."
+  (with-color
+    (abbreviate-file-name (eshell/pwd))
+    "lightGrey"))
 
 (defun custom-eshell-prompt-char ()
 "Return the prompt character.
 For non root users this is $.  For the root user this is #."
-  (prompt-color
+  (with-color
     (if (= (user-uid) 0) "\n# " "\n$ ")
-    "white"))
+    "lightGrey"))
 
-(defun custom-eshell-prompt-git-branch ()
-  "Return the current git branch."
-  (concat (magit-get-current-branch) " "))
-
-(defun custom-eshell-prompt-path ()
-  "Return the current path."
-  (prompt-color
-    (abbreviate-file-name (eshell/pwd))
-    "green"))
 
 ;; The next issue is if there is a getenv function that gets the value from the local
 ;; environment. I.e. gets the value from the remote server when you are logged into
@@ -121,5 +143,5 @@ For non root users this is $.  For the root user this is #."
 ;; line in the prompt.
 (customize-set-variable 'eshell-prompt-regexp "[$#] ")
 
-(provide 'for-eshell.el)
-;;; for-eshell ends here
+(provide 'setup-eshell)
+;;; setup-eshell.el ends here
