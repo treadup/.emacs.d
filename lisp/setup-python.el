@@ -60,6 +60,38 @@
 (use-package pyvenv
   :ensure t)
 
+;; TODO: Have a flag where you can enable or disable the old Eshell support
+;; for python virtual envs.
+
+;; Folder containing the Python virtual environments.
+(defconst python-virtualenv-workon-dir (expand-file-name "~/.local/share/virtualenvs/"))
+
+(defun parse-dot-venv-file (filename)
+"Parse a .venv file with the given FILENAME  and return the name of the virtual environment."
+  (let ((venv-file-content (f-read-text filename)))
+    (if (s-blank? venv-file-content)
+      nil
+      (s-trim (car (s-lines venv-file-content))))))
+
+(defun find-python-virtualenv-path (venv-name)
+  "Find the path to the Python virtual environment with the given VENV-NAME."
+  (concat (file-name-as-directory python-virtualenv-workon-dir) venv-name))
+
+(defun find-dot-venv-filename (dir)
+  "Find the name of the .venv file associated with the given directory DIR."
+  (let ((dot-venv-directory (locate-dominating-file default-directory ".venv")))
+    (if dot-venv-directory
+      (concat dot-venv-directory ".venv")
+      nil)))
+
+(defun find-automatic-venv-name (dir)
+  "Find the name of the virtual environment from a .venv file.
+Either in the given directory DIR in one of the ancestors."
+  (let ((venv-filename (find-dot-venv-filename dir)))
+    (if venv-filename
+      (parse-dot-venv-file venv-filename)
+      nil)))
+
 ;;
 ;; Projectile switch project hook
 ;;
@@ -69,27 +101,6 @@
 ;; The second is activating the virtual environment.
 
 (defconst original-python-extra-pythonpaths python-shell-extra-pythonpaths)
-
-(defun parse-single-token (filename)
-"Read a single token from the first line of the file FILENAME."
-  (let ((venv-file-content (f-read-text filename)))
-    (if (s-blank? venv-file-content)
-      nil
-      (s-trim (car (s-lines venv-file-content))))))
-
-(defun suggest-virtual-environment-name ()
-"Read the virtual environment name from the .venv file.
-The .venv file is located in the project root folder."
-  (let ((venv-file-path (concat (projectile-project-root) ".venv")))
-    (if
-      (and
-        (f-exists? venv-file-path)
-        (f-file? venv-file-path)
-        (f-readable? venv-file-path))
-      (let ((venv-name (parse-single-token venv-file-path)))
-        (if (s-blank? venv-name)
-          nil
-          venv-name)))))
 
 ;; Repeat of what is in the setup-eshell.el file.
 (defvar custom-eshell-path-env)
@@ -108,7 +119,7 @@ Activates the virtual environment."
       (if python-shell-virtualenv-root
         (pyvenv-deactivate))
       ;; Acivate the virtual environment from the .venv file if there is one.
-      (let ((venv-name (suggest-virtual-environment-name)))
+      (let ((venv-name (find-automatic-venv-name default-directory)))
         (unless (s-blank? venv-name)
           (progn
             (pyvenv-workon venv-name)
