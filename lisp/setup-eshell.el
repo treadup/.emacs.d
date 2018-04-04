@@ -39,6 +39,10 @@ The custom-eshell-path-env is updated whenever you switch virtual
 environments."
   (setq eshell-path-env custom-eshell-path-env)
 
+  ;; Create aliases
+  (eshell/alias "ff" "find-file $1")
+  (eshell/alias "emacs" "find-file $1")
+
   ;; Since we are using xterm-color.el we can have a terminal
   ;; with 256 colors instead of a dumb terminal.
   (setenv "TERM" "xterm-256color"))
@@ -50,7 +54,7 @@ environments."
 ;; Remember that in eshell you can run functions without
 ;; using parenthesis.
 
-(defun quit ()
+(defun eshell/quit ()
 "Kill the current buffer and window by typing quit in eshell.
 This might be better as an Eshell alias."
   (kill-buffer-and-window))
