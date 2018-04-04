@@ -24,6 +24,10 @@
 
 (require 'eshell)
 
+;; Since we are inside Emacs we do not want to use a pager. Use cat as a kind of
+;; no operation pager.
+(setenv "PAGER" "cat")
+
 (defvar custom-eshell-path-env)
 (setq custom-eshell-path-env eshell-path-env)
 
