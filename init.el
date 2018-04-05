@@ -373,9 +373,17 @@
 ;;
 ;; Ivy specific setup
 ;;
-;; For some reason swiper does not work.
+;; (setup-custom "setup-ivy")
+
 ;;
-(setup-custom "setup-ivy")
+;; Helm specific setup
+;;
+;; (setup-custom "setup-helm")
+
+;;
+;; Ido specific setup
+;;
+(setup-custom "setup-ido")
 
 ;;
 ;; Python specific setup
