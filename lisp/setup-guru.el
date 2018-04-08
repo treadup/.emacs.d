@@ -8,4 +8,5 @@
 (use-package guru-mode
   :ensure t
   :config
-  (guru-global-mode +1))
+  (guru-global-mode +1)
+  :diminish "")
