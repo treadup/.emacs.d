@@ -46,6 +46,11 @@ ARGS should be nil."
 (defvar-local vpy--current-venv-name nil)
 (defvar-local vpy-venv-name nil)
 
+(defun vpy--virtual-environment-bin-directory (venv-name)
+"Find the path to the virutal environment bin directory.
+VENV-NAME is the name of the virtual environment."
+  (concat (find-python-virtualenv-path venv-name) "/bin"))
+
 (defun vpy-activate (&optional venv-name &rest args)
 "Activate the VENV-NAME virtual environment.
 ARGS should be nil."
@@ -54,8 +59,10 @@ ARGS should be nil."
     (progn
       (setq-local vpy--current-venv-name venv-name)
       (setq-local vpy--current-eshell-path-env
-        (mapconcat 'identity exec-path ":"))
-      (setq-local eshell-path-env vpy--current-eshell-path-env))))
+        (concat (vpy--virtual-environment-bin-directory venv-name) ":"
+          vpy--original-eshell-path-env))
+      (setq eshell-path-env vpy--current-eshell-path-env)
+      nil)))
 
 (defun vpy-deactivate (&rest args)
 "Deactivate the currently active virtual environment.
@@ -65,7 +72,8 @@ ARGS should be nil."
     (progn
       (setq-local vpy--current-venv-name nil)
       (setq-local vpy--current-eshell-path-env vpy--original-eshell-path-env)
-      (setq-local eshell-path-env vpy--current-eshell-path-env))))
+      (setq eshell-path-env vpy--current-eshell-path-env)
+      nil)))
 
 (defun eshell/vpy (&optional cmd &rest args)
 "The vpy function is used to manage Python virtual environments.
