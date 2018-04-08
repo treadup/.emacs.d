@@ -234,6 +234,11 @@
 (setup-custom "setup-emacs")
 
 ;;
+;; Python virtual environment manager for Eshell
+;;
+(setup-custom "vpy")
+
+;;
 ;; Eshell setup
 ;;
 (setup-custom "setup-eshell")

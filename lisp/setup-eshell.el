@@ -101,7 +101,7 @@ This might be better as an Eshell alias."
 (defun custom-eshell-prompt-virtualenv ()
 "The following will find the name of the current virtual environment.
 If there is no current virtual environment return a blank string."
-  (let ((venv-path (getenv "VIRTUAL_ENV")))
+  (let ((venv-path (vpy-current-venv)))
     (if (s-blank? venv-path)
       ""
       (with-color
