@@ -86,5 +86,10 @@ Executes the given CMD.  ARGS are dependent on the command you execute."
       ("deactivate" (apply 'vpy-deactivate args))
       (_ (eshell/echo (concat "Unknown command " cmd))))))
 
+(defun vpy-current-venv ()
+"Return the name of the currently active Python virtual environment.
+Return nil if no virtual environment is active."
+  vpy--current-venv-name)
+
 (provide 'vpy)
 ;;; vpy.el ends here
