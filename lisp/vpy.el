@@ -46,10 +46,17 @@ ARGS should be nil."
 (defvar-local vpy--current-venv-name nil)
 (defvar-local vpy-venv-name nil)
 
+;; Folder containing the Python virtual environments.
+(defvar vpy-virtualenv-workon-dir (expand-file-name "~/.local/share/virtualenvs/"))
+
+(defun vpy--virtual-environment-directory (venv-name)
+  "Find the path to the Python virtual environment with the given VENV-NAME."
+  (concat (file-name-as-directory vpy-virtualenv-workon-dir) venv-name))
+
 (defun vpy--virtual-environment-bin-directory (venv-name)
 "Find the path to the virutal environment bin directory.
 VENV-NAME is the name of the virtual environment."
-  (concat (find-python-virtualenv-path venv-name) "/bin"))
+  (concat (vpy--virtual-environment-directory venv-name) "/bin"))
 
 (defun vpy-activate (&optional venv-name &rest args)
 "Activate the VENV-NAME virtual environment.
