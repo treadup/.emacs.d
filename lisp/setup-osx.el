@@ -1,22 +1,34 @@
-;;;
-;;; Customizations for OS X
-;;;
+;;; setup-osx --- Customizations for OS X
+
+;;; Commentary:
+;;
+;; Implement cut and paste for OSX.
+;; https://apple.stackexchange.com/questions/85222/configure-emacs-to-cut-and-copy-text-to-mac-os-x-clipboard
+
+
+;;; Code:
 
 ;;
 ;; Cut and Paste
 ;;
 
-;; Fixes cut and paste for OS X.
-;; https://www.emacswiki.org/emacs/Comments_on_CopyAndPaste
+(defun pbcopy ()
+  (interactive)
+  (call-process-region (point) (mark) "pbcopy")
+  (setq deactivate-mark t))
 
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
+(defun pbpaste ()
+  (interactive)
+  (call-process-region (point) (if mark-active (mark) (point)) "pbpaste" t t))
 
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
+(defun pbcut ()
+  (interactive)
+  (pbcopy)
+  (delete-region (region-beginning) (region-end)))
 
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
+(global-set-key (kbd "C-c c") 'pbcopy)
+(global-set-key (kbd "C-c v") 'pbpaste)
+(global-set-key (kbd "C-c x") 'pbcut)
+
+(provide 'setup-osx)
+;;; setup-osx.el ends here
