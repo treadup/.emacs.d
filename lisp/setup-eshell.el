@@ -24,6 +24,7 @@
 
 (require 'eshell)
 
+
 ;; Since we are inside Emacs we do not want to use a pager. Use cat as a kind of
 ;; no operation pager.
 (setenv "PAGER" "cat")
@@ -58,6 +59,14 @@ environments."
 "Kill the current buffer and window by typing quit in eshell.
 This might be better as an Eshell alias."
   (kill-buffer-and-window))
+
+(defun eshell/lcd (&optional directory)
+  "Change directory to DIRECTORY.
+If no directory argument is given go to the home folder
+on the current machine."
+  (if (and (null directory) (file-remote-p default-directory))
+    (eshell/cd (file-remote-p default-directory))
+    (eshell/cd directory)))
 
 ;; (eshell t) will create a new eshell with the next eshell index number.
 
