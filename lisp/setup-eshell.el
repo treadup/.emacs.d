@@ -99,6 +99,37 @@ on the current machine."
 ;; Custom prompt
 ;;
 
+(defun shorten-directory-component (directory-component)
+"Shorten the DIRECTORY-COMPONENT.
+The shortened version consists of a string containing the first
+character of the DIRECTORY-COMPONENT.  If the first character is
+a period then the shortened version consists of the first two
+characters in the DIRECTORY-COMPONENT."
+  (if (null directory-component) ""
+    (if (string-empty-p directory-component) ""
+      (let ((first-char (elt directory-component 0)))
+        (if (= first-char ?.)
+          (s-prepend "." (shorten-directory-component (substring directory-component 1)))
+          (string first-char))))))
+
+(defun shorten-directory (directory)
+"Shorten the DIRECTORY name.
+Replace ancestor directory names with the first character in the directory name.
+If on of the ancestor directory names starts with a period replace it with the
+first two characters in the directory name."
+  (let ((dir-name (abbreviate-file-name (directory-file-name directory))))
+    (s-join "/" (reverse
+                  (let ((components (reverse (s-split "/" dir-name))))
+                    (cons (car components)
+                      (mapcar 'shorten-directory-component (cdr components))))))))
+
+(defun remote-shorten-directory (directory)
+  "Shorten the DIRECTORY name which can be a local or remote directory name."
+  (s-join ":" (reverse
+    (let ((components (reverse (s-split ":" directory))))
+    (cons (shorten-directory (car components))
+      (cdr components))))))
+
 ;; TODO: It should be possible to have shortended paths in Eshell just like
 ;; we have in fish.
 ;; https://www.emacswiki.org/emacs/EshellPrompt
@@ -132,7 +163,7 @@ If there is no current virtual environment return a blank string."
 (defun custom-eshell-prompt-path ()
   "Return the current path."
   (with-color
-    (abbreviate-file-name (eshell/pwd))
+    (remote-shorten-directory (eshell/pwd))
     "lightGrey"))
 
 (defun custom-eshell-prompt-char ()
