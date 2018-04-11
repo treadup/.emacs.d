@@ -130,10 +130,6 @@ first two characters in the directory name."
     (cons (shorten-directory (car components))
       (cdr components))))))
 
-;; TODO: It should be possible to have shortended paths in Eshell just like
-;; we have in fish.
-;; https://www.emacswiki.org/emacs/EshellPrompt
-
 (defun with-color (text color)
 "Set the foreground color of the given TEXT to COLOR."
   (propertize text 'face `(:foreground ,color)))
@@ -147,6 +143,10 @@ If there is no current virtual environment return a blank string."
       (with-color
         (concat (car (last (s-split "/" venv-path))) " ")
         "cyan"))))
+
+;; In tramp we can have multi hops. This kind of means that the host
+;; and path get intermingled. Perhaps it is best to skip the idea of
+;; having the location and path be separate things in the prompt?
 
 (defun custom-eshell-prompt-location ()
 "Return user@hostname."
