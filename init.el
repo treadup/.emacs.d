@@ -546,6 +546,11 @@
 (setup-custom "setup-yasnippet")
 
 ;;
+;; Pass specific setup
+;;
+(setup-custom "setup-pass")
+
+;;
 ;; Host specific setup
 ;;
 (setup-custom "setup-oak")
