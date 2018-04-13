@@ -11,6 +11,12 @@
 (add-hook 'text-mode-hook 'goto-address-mode)
 (add-hook 'prog-mode-hook 'goto-address-mode)
 
+;; Sentences should end with a single space and not double space.
+(setq sentence-end-double-space nil)
+
+;; Calendar weeks should start on monday.
+(setq-default calendar-week-start-day 1)
+
 ;; Some functions in Emacs are disabled by default.
 ;; The following will enable individual functions.
 
