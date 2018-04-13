@@ -1,6 +1,8 @@
-;;;
-;;; Spacemacs theme
-;;;
+;;; setup-theme --- Setup the theme and modeline
+
+;;; Commentary:
+
+;;; Code:
 
 ;; There is an issue with the spacemacs theme not being installable using use-package.
 ;; This has to to with the naming of the package and the names of the files in the package.
@@ -10,6 +12,8 @@
   (package-install 'spacemacs-theme))
 
 (load-theme 'spacemacs-dark t)
+;; (load-theme 'spacemacs-light t)
+
 
 ;; Use the modeline from spacemacs
 (use-package spaceline-config
@@ -21,3 +25,6 @@
 ;; To get this to work you might have to execute (spaceline-compile)
 (setq powerline-default-separator 'wave)
 (spaceline-compile)
+
+(provide 'setup-theme)
+;;; setup-theme.el ends here
