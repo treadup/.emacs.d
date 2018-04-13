@@ -65,6 +65,14 @@
 (use-package diminish
   :ensure t)
 
+;;
+;; Load path
+;;
+
+;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder.
+;; https://www.emacswiki.org/emacs/DotEmacsDotD
+(add-to-list 'load-path "~/.emacs.d/lisp")
+
 ;; On OSX if you do not start the Emacs application from a shell the PATH variable
 ;; will not be set correctly. To fix this you can use the exec-path-from-shell
 ;; package which will try to read these variables from the shell and set them
@@ -189,15 +197,6 @@
 
 ;; Use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
-
-;;
-;; Load path
-;;
-
-;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder.
-;; https://www.emacswiki.org/emacs/DotEmacsDotD
-(add-to-list 'load-path "~/.emacs.d/lisp")
-
 
 (defun setup-custom (filename)
   "Load custom settings from the file with name FILENAME."
