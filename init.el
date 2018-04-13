@@ -381,12 +381,12 @@
 ;;
 ;; Helm specific setup
 ;;
-;; (setup-custom "setup-helm")
+(setup-custom "setup-helm")
 
 ;;
 ;; Ido specific setup
 ;;
-(setup-custom "setup-ido")
+;; (setup-custom "setup-ido")
 
 ;;
 ;; Python specific setup
