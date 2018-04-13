@@ -20,14 +20,25 @@
 ;; Then in the custom-eshell-prompt-function we could update eshell-path-env from
 ;; custom-eshell-path-env.  This will work but it might be slow.
 
+;; We want to enable Eshell smart display mode. This gives us a built in pager for
+;; all commands. Space will move down a page. Backspace will move back a page.
+;; https://www.masteringemacs.org/article/complete-guide-mastering-eshell
+
 ;;; Code:
 
 (require 'eshell)
 
+;; Use Eshell smart display
+(require 'em-smart)
+
+;; Configure Eshell smart display
+(setq eshell-where-to-jump 'begin)
+(setq eshell-review-quick-commands nil)
+(setq eshell-smart-space-goes-to-end t)
 
 ;; Since we are inside Emacs we do not want to use a pager. Use cat as a kind of
 ;; no operation pager.
-(setenv "PAGER" "cat")
+(setenv "PAGER" "cat")   ;; TODO: Might want to test to set the pager to the empty string "".
 
 (defvar custom-eshell-path-env)
 (setq custom-eshell-path-env eshell-path-env)
@@ -43,6 +54,9 @@ environments."
   ;; Create aliases
   (eshell/alias "ff" "find-file $1")
   (eshell/alias "emacs" "find-file $1")
+
+  ;; Enable Eshell smart display.
+  (eshell-smart-initialize)
 
   ;; Since we are using xterm-color.el we can have a terminal
   ;; with 256 colors instead of a dumb terminal.
