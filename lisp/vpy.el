@@ -9,6 +9,8 @@
 
 ;;; Code:
 (require 'eshell)
+(require 's)
+(require 'f)
 
 (defconst vpy--help-message "Usage: vpy <command> [<args>]
 The vpy command is used to activate and deactivate Python virtual
@@ -57,6 +59,53 @@ ARGS should be nil."
 "Find the path to the virutal environment bin directory.
 VENV-NAME is the name of the virtual environment."
   (concat (vpy--virtual-environment-directory venv-name) "/bin"))
+
+;;
+;; Automatic virtualenv loading
+;;
+
+(defun vpy--parse-dot-venv-file (filename)
+"Parse a .venv file with the given FILENAME and return the name of the virtual environment."
+  (let ((venv-file-content (f-read-text filename)))
+    (if (s-blank? venv-file-content)
+      nil
+      (s-trim (car (s-lines venv-file-content))))))
+
+(defun vpy--find-dot-venv-filename (dir)
+  "Find the name of the .venv file associated with the given directory DIR."
+  (let ((dot-venv-directory (locate-dominating-file default-directory ".venv")))
+    (if dot-venv-directory
+      (concat dot-venv-directory ".venv")
+      nil)))
+
+(defun vpy--find-automatic-venv-name (dir)
+"Find the name of the virtual environment from the .venv file.
+Either in the given directory DIR in one of the ancestors."
+  (let ((venv-filename (vpy--find-dot-venv-filename dir)))
+    (if venv-filename
+      (vpy--parse-dot-venv-file venv-filename)
+      nil)))
+
+;; The vpy-auto-activate-venv specifies if the virtual environment should be
+;; automatically activated/deactivated when navigating to a new directory.
+(defvar vpy-auto-activate-venv nil)
+
+(defun vpy--eshell-before-prompt-hook ()
+"Automatically activate or deactivate a Python virtual environment.
+This function should be added to the eshell-before-prompt hook. This
+hook is called by Eshell before displaying the prompt."
+  (when vpy-auto-activate-venv
+    (let ((new-venv-name (vpy--find-automatic-venv-name default-directory)))
+      (unless (equal new-venv-name vpy--current-venv-name)
+        (message "Should activate the new virtual environment here.")))))
+
+;; TODO: Need to extract the code that activates and deactivates the virtual
+;; environments into functions that can then be used from the eshell before
+;; prompt hook.
+
+;;
+;; Eshell commands
+;;
 
 (defun vpy-activate (&optional venv-name &rest args)
 "Activate the VENV-NAME virtual environment.
