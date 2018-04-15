@@ -105,7 +105,7 @@ Either in the given directory DIR in one of the ancestors."
 
 ;; The vpy-auto-activate-venv specifies if the virtual environment should be
 ;; automatically activated/deactivated when navigating to a new directory.
-(defvar vpy-auto-activate-venv nil)
+(defvar vpy-auto-activate-venv t)
 
 (defun vpy--eshell-before-prompt-hook ()
 "Automatically activate or deactivate a Python virtual environment.
@@ -115,6 +115,8 @@ hook is called by Eshell before displaying the prompt."
     (let ((new-venv-name (vpy--find-automatic-venv-name default-directory)))
       (unless (equal new-venv-name vpy--current-venv-name)
         (vpy--activate-virtual-environment new-venv-name)))))
+
+(add-hook 'eshell-before-prompt-hook 'vpy--eshell-before-prompt-hook)
 
 ;;
 ;; Eshell commands
