@@ -60,6 +60,23 @@ ARGS should be nil."
 VENV-NAME is the name of the virtual environment."
   (concat (vpy--virtual-environment-directory venv-name) "/bin"))
 
+(defun vpy--deactivate-virtual-environment ()
+"Deactivate the current active Python virtual environment."
+  (setq-local vpy--current-venv-name nil)
+  (setq-local vpy--current-eshell-path-env vpy--original-eshell-path-env)
+  (setq eshell-path-env vpy--current-eshell-path-env))
+
+(defun vpy--activate-virtual-environment (venv-name)
+  "Activate the VENV-NAME Python virtual environment."
+  (if (s-blank? venv-name)
+    (vpy--deactivate-virtual-environment)
+    (progn
+      (setq-local vpy--current-venv-name venv-name)
+      (setq-local vpy--current-eshell-path-env
+        (concat (vpy--virtual-environment-bin-directory venv-name) ":"
+          vpy--original-eshell-path-env))
+      (setq eshell-path-env vpy--current-eshell-path-env))))
+
 ;;
 ;; Automatic virtualenv loading
 ;;
@@ -97,11 +114,7 @@ hook is called by Eshell before displaying the prompt."
   (when vpy-auto-activate-venv
     (let ((new-venv-name (vpy--find-automatic-venv-name default-directory)))
       (unless (equal new-venv-name vpy--current-venv-name)
-        (message "Should activate the new virtual environment here.")))))
-
-;; TODO: Need to extract the code that activates and deactivates the virtual
-;; environments into functions that can then be used from the eshell before
-;; prompt hook.
+        (vpy--activate-virtual-environment new-venv-name)))))
 
 ;;
 ;; Eshell commands
@@ -113,11 +126,7 @@ ARGS should be nil."
   (if (or (not (null args)) (null venv-name))
     (eshell/echo vpy--activate-help-message)
     (progn
-      (setq-local vpy--current-venv-name venv-name)
-      (setq-local vpy--current-eshell-path-env
-        (concat (vpy--virtual-environment-bin-directory venv-name) ":"
-          vpy--original-eshell-path-env))
-      (setq eshell-path-env vpy--current-eshell-path-env)
+      (vpy--activate-virtual-environment venv-name)
       nil)))
 
 (defun vpy-deactivate (&rest args)
@@ -126,9 +135,7 @@ ARGS should be nil."
   (if (not (null args))
     (eshell/echo vpy--deactivate-help-message)
     (progn
-      (setq-local vpy--current-venv-name nil)
-      (setq-local vpy--current-eshell-path-env vpy--original-eshell-path-env)
-      (setq eshell-path-env vpy--current-eshell-path-env)
+      (vpy--deactivate-virtual-environment)
       nil)))
 
 (defun eshell/vpy (&optional cmd &rest args)
