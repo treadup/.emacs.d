@@ -1,6 +1,8 @@
-;;;
-;;; Customizations for company mode
-;;;
+;;; setup-company-mode --- Customizations for company mode
+
+;;; Commentary:
+
+;;; Code:
 
 ;; I tried the auto-complete package and tried to get jedi working
 ;; with it however I was unable to. Instead I am going to try company
@@ -44,3 +46,6 @@
 
 ;; References
 ;; http://company-mode.github.io/
+
+(provide 'setup-company-mode)
+;;; setup-company-mode ends here
