@@ -23,5 +23,18 @@
 ;; Enable the erase-buffer function.
 (put 'erase-buffer 'disabled nil)
 
+;;
+;; Recent files
+;;
+
+;; Build a list of recently opened files.
+;; https://www.emacswiki.org/emacs/RecentFiles
+(customize-set-variable 'recentf-save-file
+  (concat user-emacs-directory ".recentf"))
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 40)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
 (provide 'setup-emacs)
 ;;; setup-emacs.el ends here
