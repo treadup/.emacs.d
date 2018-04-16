@@ -64,16 +64,6 @@ environments."
 
 (add-hook 'eshell-mode-hook 'custom-eshell-mode-hook)
 
-;; The quit function allows us to execute the quit command
-;; in eshell to close the eshell buffer and window.
-;; Remember that in eshell you can run functions without
-;; using parenthesis.
-
-(defun eshell/quit ()
-"Kill the current buffer and window by typing quit in eshell.
-This might be better as an Eshell alias."
-  (kill-buffer-and-window))
-
 (defun eshell/lcd (&optional directory)
   "Change directory to DIRECTORY.
 If no directory argument is given go to the home folder
