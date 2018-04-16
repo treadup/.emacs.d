@@ -78,23 +78,17 @@
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-;; On OSX if you do not start the Emacs application from a shell the PATH variable
-;; will not be set correctly. To fix this you can use the exec-path-from-shell
-;; package which will try to read these variables from the shell and set them
-;; in Emacs.
-
-(use-package exec-path-from-shell
-  :ensure t
-  :config
-  (setq exec-path-from-shell-shell-name "/bin/bash")
-  (when (memq window-system '(mac ns x))
-            (exec-path-from-shell-initialize)))
+(defun setup-custom (filename)
+  "Load custom settings from the file with name FILENAME."
+;;  (message (concat "Loading " filename))
+  (load filename))
 
 ;;;
 ;;; Backups and Auto Saves
 ;;;
 
-;; TODO: Split this up into two for-foo.el files namely for-backups.el and for-autosave.el
+;; TODO: Split this up into two files setup-autosave.el and
+;; setup-backups.el.
 
 ;;
 ;; Issue: This section uses the custom-set-variables function. This function has to be
@@ -152,64 +146,14 @@
 ;; Make the customize system write to a temp file that is deleted.
 (setq custom-file (make-temp-file "emacs-custom"))
 
-;;
-;; Load packages
-;;
-
-;; The :ensure t tells use-package to load the package from the package-archives
-;; if the package is not already installed.
-
-;; Magit is a git frontend.
-(use-package magit
-  :ensure t)
-
-;;
-;; Clipboard interaction
-;;
-
-;; In general this area is a mess. See https://www.emacswiki.org/emacs/CopyAndPaste
-;; for more information.
-
-;; Use the clipboard when killing and yanking
-(setq select-enable-clipboard t)
-
-;; The C-w and C-y commands should use the clipboard selection.
-(setq select-enable-clipboard nil)
-
-;; Save clipboard strings into kill ring before replacing them.
-;; When one selects something in another program to paste it into Emacs,
-;; but kills something in Emacs before actually pasting it,
-;; this selection is gone unless this variable is non-nil
-(setq save-interprogram-paste-before-kill t)
-
-;;
-;; Recent files
-;;
-
-;; Build a list of recently opened files.
-;; https://www.emacswiki.org/emacs/RecentFiles
-(setq recentf-save-file (concat user-emacs-directory ".recentf"))
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 40)
-(global-set-key (kbd "C-x C-r") 'recentf-open-files)
-
-
-;;;
-;;; Editing
-;;;
-
-;; Use spaces instead of tabs
-(setq-default indent-tabs-mode nil)
-
-(defun setup-custom (filename)
-  "Load custom settings from the file with name FILENAME."
-;;  (message (concat "Loading " filename))
-  (load filename))
-
 ;;;
 ;;; Customizations
 ;;;
+
+;;
+;; Exec path
+;;
+(setup-custom "setup-exec-path")
 
 ;;
 ;; Hostname functions
