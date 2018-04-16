@@ -1,8 +1,8 @@
-;;;
-;;; Customizations for User Interface
-;;;
-;;; This file contains user interface specific things.
-;;;
+;;; setup-ui --- Customizations for User Interface
+
+;;; Commentary:
+
+;;; Code:
 
 ;;
 ;; User Interface
@@ -97,3 +97,22 @@
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
+
+;;
+;; Clipboard interaction
+;;
+
+;; In general this area is a mess. See https://www.emacswiki.org/emacs/CopyAndPaste
+;; for more information.
+
+;; Use the clipboard when killing and yanking
+(setq select-enable-clipboard t)
+
+;; Save clipboard strings into kill ring before replacing them.
+;; When one selects something in another program to paste it into Emacs,
+;; but kills something in Emacs before actually pasting it,
+;; this selection is gone unless this variable is non-nil
+(setq save-interprogram-paste-before-kill t)
+
+(provide 'setup-ui)
+;;; setup-ui.el ends here
