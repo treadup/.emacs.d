@@ -1,6 +1,8 @@
-;;;
-;;; Customization for web browser
-;;;
+;;; setup-browser --- Customization for web browser
+
+;;; Commentary:
+
+;;; Code:
 
 ;; The browse-url package is part of emacs but we still have to require it.
 (require 'browse-url)
@@ -12,7 +14,7 @@
 (global-set-key (kbd "C-c C-o") (lambda () (interactive) (browse-url-at-point)))
 
 ;; (browse-url-at-point) will browse the url at the point.
-;; C-c C-o should be bound to browse-url-at-point. 
+;; C-c C-o should be bound to browse-url-at-point.
 
 ;; Using the browse-url function I should be able to do something that is similar to
 ;; the Mac program Alfred.
@@ -23,4 +25,5 @@
 ;; (defun amazon)
 ;; (defun red)
 
-
+(provide 'setup-browser)
+;;; setup-browser.el ends here
