@@ -1,4 +1,7 @@
-;;;
+;;; init --- The main emacs user init file.
+
+;;; Commentary:
+
 ;;; Code:
 ;;;
 
@@ -24,6 +27,8 @@
 ;;
 ;; Setup GnuTLS
 ;;
+
+;; This is required for some reason on macOS.
 (require 'gnutls)
 (add-to-list 'gnutls-trustfiles "/etc/ssl/cert.pem")
 
@@ -507,6 +512,11 @@
 ;; Multi term setup
 ;;
 (setup-custom "setup-multi-term")
+
+;;
+;; Magit setup
+;;
+(setup-custom "setup-magit")
 
 ;;
 ;; Spotify setup
