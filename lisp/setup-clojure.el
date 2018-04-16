@@ -1,8 +1,9 @@
-;;;
-;;; Customizations for Clojure
-;;;
+;;; setup-clojure --- Customizations for Clojure
+
+;;; Commentary:
 ;;; This file contains things that are language specific to Clojure.
-;;;
+
+;;; Code:
 
 ;;
 ;; Clojure
@@ -71,7 +72,7 @@
 (defun config-for-cider ()
 
   ;; provides minibuffer documentation for the code you're typing into the repl
-  ;; Change this to 
+  ;; Change this to
   ;; https://groups.google.com/forum/#!topic/clojure/suo83_S3Luo
   ;; https://github.com/syl20bnr/spacemacs/pull/5828
   ;; (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
@@ -100,3 +101,6 @@
   :ensure t
   :config
   (config-for-cider))
+
+(provide 'setup-clojure)
+;;; setup-clojure.el ends here
