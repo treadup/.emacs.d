@@ -1,6 +1,8 @@
-;;;
-;;; Customizations for Common Lisp
-;;;
+;;; setup-common-lisp --- Customizations for Common Lisp
+
+;;; Commentary:
+
+;;; Code:
 
 (use-package slime
   :ensure t
@@ -8,3 +10,6 @@
   (progn
     (setq inferior-lisp-program "/usr/local/bin/sbcl")
     (setq slime-contribs '(slime-fancy))))
+
+(provide 'setup-common-lisp)
+;;; setup-common-lisp ends here
