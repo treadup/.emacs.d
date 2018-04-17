@@ -184,9 +184,9 @@
 (setup-custom "setup-buffer-move")
 
 ;;
-;; Crux setup
+;; Setup editing with Emacs
 ;;
-(setup-custom "setup-crux")
+(setup-custom "setup-editing")
 
 ;;
 ;; Theme specific setup
