@@ -91,13 +91,21 @@ on the current machine."
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
 (defun eshell-right ()
-"Open an eshell in a new window to the right og the current window."
+"Open an eshell in a new window to the right of the current window."
   (interactive)
   (progn
     (split-window-right)
     (other-window 1)
     (eshell t)
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
+
+(defun esh ()
+  "Open a new Eshell buffer in the current window."
+  (interactive)
+  (progn
+    (eshell t)
+    (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
+
 
 ;;
 ;; Custom prompt
