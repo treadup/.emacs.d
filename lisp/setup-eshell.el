@@ -60,7 +60,10 @@ environments."
 
   ;; Since we are using xterm-color.el we can have a terminal
   ;; with 256 colors instead of a dumb terminal.
-  (setenv "TERM" "xterm-256color"))
+  (setenv "TERM" "xterm-256color")
+
+  ;; Disable current line highlighting.
+  (setq-local global-hl-line-mode nil))
 
 (add-hook 'eshell-mode-hook 'custom-eshell-mode-hook)
 
