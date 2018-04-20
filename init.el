@@ -104,6 +104,11 @@
 ;;;
 
 ;;
+;; Emacs specific setup
+;;
+(setup-custom "setup-emacs")
+
+;;
 ;; Exec path
 ;;
 (setup-custom "setup-exec-path")
@@ -127,11 +132,6 @@
 ;; Auth source specific setup
 ;;
 (setup-custom "setup-auth-source")
-
-;;
-;; Emacs specific setup
-;;
-(setup-custom "setup-emacs")
 
 ;;
 ;; Python virtual environment manager for Eshell
