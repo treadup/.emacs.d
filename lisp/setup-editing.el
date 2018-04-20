@@ -18,11 +18,12 @@
   (progn
     (global-set-key (kbd "C-a") 'crux-move-beginning-of-line)
     (global-set-key (kbd "C-k") 'crux-smart-kill-line)
-    (global-set-key (kbd "C-K") 'crux-kill-whole-line)
+    (global-set-key (kbd "C-S-k") 'crux-kill-whole-line)
     (global-set-key (kbd "C-c 4 t") 'crux-transpose-windows)
     (global-set-key (kbd "C-c e") 'crux-eval-and-replace)
     (global-set-key (kbd "C-o") 'crux-smart-open-line)
-    (global-set-key (kbd "C-O") 'crux-smart-open-line-above)))
+    (global-set-key (kbd "C-S-o") 'crux-smart-open-line-above)
+    ))
 
 ;; Make it so that copying and cutting when no region is selected will
 ;; copy or cut the whole line.
