@@ -60,5 +60,11 @@
   :config
   (helm-projectile-on))
 
+;; Use swiper for searching the buffer.
+(use-package swiper-helm
+  :ensure t
+  :bind (("C-s" . swiper-helm)
+          ("C-r" . swiper-helm)))
+
 (provide 'setup-helm)
 ;;; setup-helm.el ends here
