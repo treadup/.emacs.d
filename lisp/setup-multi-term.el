@@ -38,7 +38,10 @@
   (global-set-key (kbd "C-c _") 'multi-term-below)
   (global-set-key (kbd "C-c -") 'multi-term-below)
   (global-set-key (kbd "C-c |") 'multi-term-right)
-  (global-set-key (kbd "C-c .") 'multi-term-current-buffer))
+  (global-set-key (kbd "C-c .") 'multi-term-current-buffer)
+  (add-hook 'term-mode-hook
+    (lambda ()
+      (setq-local global-hl-line-mode nil))))
 
 ;;
 ;; TODO: Have some keybiding for opening a terminal in the current window.
