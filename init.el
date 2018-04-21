@@ -204,11 +204,6 @@
 (setup-custom "setup-company-mode")
 
 ;;
-;; Projectile specific setup
-;;
-(setup-custom "setup-projectile")
-
-;;
 ;; Clojure specific setup
 ;;
 (setup-custom "setup-clojure")
