@@ -55,6 +55,9 @@
 
   (helm-mode 1))
 
+(use-package helm-ag
+  :ensure t)
+
 (use-package helm-projectile
   :ensure t
   :config
