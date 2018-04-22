@@ -1,18 +1,25 @@
-;;;
-;;; Customizations for oak
-;;;
+;;; setup-oak --- Customizations for oak
 
-(defun edit-bookmarks ()
-  "Edit bookmarks on oak"
+;;; Commentary:
+
+;;; Code:
+
+(defun oak-bookmarks ()
+  "Edit bookmarks on oak."
   (interactive)
   (find-file "/oak:~/code/python/redwood/data/bookmarks.json"))
 
-(defun notes-eshell ()
-"Open the notes folder in eshell locally on redwood and on oak
-otherwise"
+(defun oak-notes ()
+"Open the notes folder in eshell locally on oak."
   (interactive)
-  (let ((default-directory
-          (unless (is-host-p "hickory")
-            "~/notes"
-            "/oak:~/notes")))
-    (eshell)))
+  (let ((default-directory "/oak:~/notes"))
+    (eshell t)))
+
+(defun oak ()
+"Open an Eshell on oak."
+  (interactive)
+  (let ((default-directory "/oak:~/"))
+    (eshell t)))
+
+(provide 'setup-oak)
+;;; setup-oak ends here
