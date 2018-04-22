@@ -11,6 +11,10 @@
 ;; Hide startup screen
 (setq inhibit-startup-screen t)
 
+;; Do not show any window decorations.
+;; This only works on Emacs 26 or later.
+;; (set-frame-parameter nil 'undecorated t)
+
 ;; Show line numbers
 (add-hook 'prog-mode-hook 'linum-mode)
 (add-hook 'text-mode-hook 'linum-mode)
@@ -113,6 +117,11 @@
 ;; but kills something in Emacs before actually pasting it,
 ;; this selection is gone unless this variable is non-nil
 (setq save-interprogram-paste-before-kill t)
+
+;; In terminal mode use the same color for the foreground and
+;; background color of the vertical border.
+;; (set-face-background 'vertical-border "gray")
+;; (set-face-foreground 'vertical-border (face-background 'vertical-border))
 
 (provide 'setup-ui)
 ;;; setup-ui.el ends here
