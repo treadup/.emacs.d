@@ -14,3 +14,7 @@ lisp/*.elc
 
 # Ignore private folder
 private/
+
+# Include snippets folder
+!snippets/
+!snippets/*
