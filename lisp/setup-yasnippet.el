@@ -144,6 +144,27 @@
 ;;; Template Syntax
 ;;;
 
+;;; Plain Text
+;; Plain text can be included as the content of a template. All characters are
+;; interpreted as plain text except for $ and `. You need to use \ to escape
+;; these special characters like \$ and \`. The \ character will itself have to
+;; be escaped as \\ in some cases.
+
+;;; Embedded Elisp code
+;; Elisp code can be embedded inside the template, written inside back quotes (`).
+;; The Lisp forms are evaluated when the snippet is being expanded. The evaluation
+;; is done in the same buffer as the snippet being expanded.
+;;
+;; Snippet expansions are run with some special Elisp variables bound. On of these
+;; variables is yas-selected-text.
+
+;;; Tab stop fields
+;; Tab stops are fields that you can navigate back and forth by TAB and S-TAB. Tab stop
+;; fields are written by $ followed with a number. $0 has the special meaning of the exit
+;; point of the snippet. That is the last place to go when you have traveled all the fields.
+
+;;; Placeholder fields
+
 ;; See the following link. Specifically the section on template syntax.
 ;; http://joaotavora.github.io/yasnippet/snippet-development.html
 
