@@ -63,7 +63,10 @@ environments."
   (setenv "TERM" "xterm-256color")
 
   ;; Disable current line highlighting.
-  (setq-local global-hl-line-mode nil))
+  (setq-local global-hl-line-mode nil)
+
+  ;; Disable yasnippet mode
+  (yas-minor-mode -1))
 
 (add-hook 'eshell-mode-hook 'custom-eshell-mode-hook)
 
