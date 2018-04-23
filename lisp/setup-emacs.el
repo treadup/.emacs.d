@@ -7,6 +7,11 @@
 ;; program.
 ;; (global-auto-revert-mode 1)
 
+;; Use utf-8 as the coding system.
+;; TODO: I should look through this and make suitable adjustments.
+;; https://www.masteringemacs.org/article/working-coding-systems-unicode-emacs
+(prefer-coding-system 'utf-8-unix)
+
 ;; Make hyper links clickable in text mode and prog mode.
 (add-hook 'text-mode-hook 'goto-address-mode)
 (add-hook 'prog-mode-hook 'goto-address-mode)
