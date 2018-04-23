@@ -172,6 +172,11 @@
       (setq yas-buffer-local-condition
         '(not (python-syntax-comment-or-string-p)))))
 
+  ;; Saved snippets should not contain a newline at the end of the file.
+  (add-hook 'snippet-mode-hook
+    (lambda ()
+      (setq require-final-newline nil)))
+
   ;; Enable yasnippet everywhere.
   (yas-global-mode 1))
 
