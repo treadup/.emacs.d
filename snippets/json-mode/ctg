@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: ctg
+# key: ctg
+# --
+{
+    "category": "$1",
+    "slug": "$2",
+    "visibility": "public",
+    "bookmarks": [
+        $0
+    ]
+},

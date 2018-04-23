@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# contributor: henrik
+# key: bkm
+# name: create-bookmark
+# --
+{ "text": "$1", "url": "$2"},$0
