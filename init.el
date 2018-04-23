@@ -451,6 +451,11 @@
 (setup-custom "setup-pass")
 
 ;;
+;; elfeed specific setup
+;;
+(setup-custom "setup-elfeed")
+
+;;
 ;; Host specific setup
 ;;
 (setup-custom "setup-oak")
