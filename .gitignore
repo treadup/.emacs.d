@@ -18,3 +18,7 @@ private/
 # Include snippets folder
 !snippets/
 !snippets/*
+
+# Include the docs folder
+!docs/
+!docs/*
