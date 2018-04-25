@@ -281,6 +281,11 @@
 (setup-custom "setup-helm")
 
 ;;
+;; Helm swoop specific setup
+;;
+(setup-custom "setup-helm-swoop")
+
+;;
 ;; Ido specific setup
 ;;
 ;; (setup-custom "setup-ido")
