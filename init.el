@@ -76,7 +76,8 @@
 
 ;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder.
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
-(add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'load-path (concat user-emacs-directory (convert-standard-filename "lisp/")))
+(add-to-list 'load-path  (concat user-emacs-directory (convert-standard-filename "private/")))
 
 (defun setup-custom (filename)
   "Load custom settings from the file with name FILENAME."
@@ -464,6 +465,18 @@
 ;; Host specific setup
 ;;
 (setup-custom "setup-oak")
+
+;;
+;; Work specific setup
+;;
+(when (work-context-p)
+  (setup-custom "setup-work"))
+
+;;
+;; Home computer specific setup
+;;
+(when (home-context-p)
+  (setup-custom "setup-home"))
 
 ;;
 ;; Wanderlust email client
