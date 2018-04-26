@@ -8,7 +8,7 @@
 (use-package elfeed
   :ensure t
   :config
-  (global-set-key (kbd "C-c w") 'elfeed)
+  (global-set-key (kbd "C-c r") 'elfeed)
 
   (setq elfeed-feeds
     '("https://news.ycombinator.com/rss"
