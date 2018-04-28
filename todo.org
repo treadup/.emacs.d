@@ -81,6 +81,13 @@ Will probably have to write a bunch of custom code for this.
 * JavaScript
 Figure out a better way for working with JavaScript in Emacs.
 
+Modes that might be interesting here are js2-mode for JS files, and
+rjsx-mode for JSX.
+
+There is also indium.
+
+Also people seem to use skewer-mode when developing JavaScript.
+
 * Tramp hangs
 Tramp seems to hang alot on macOS. Figure out why this is happening.
 
@@ -98,3 +105,15 @@ are the following.
 
 1. pylint
 2. flake8
+* Emmet mode
+Emmet mode for editing web pages.
+* Web mode
+Figure out how to use web mode better.
+* Flycheck for JSON
+See if we can get flycheck working for JSON.
+* Flycheck for JavaScript
+flycheck with eslint to catch bugs and syntax errors.
+* Prettier mode
+Autoformat JavaScript files with prettier-mode.
+* Tern
+Use tern with company for code completion of JavaScript.
