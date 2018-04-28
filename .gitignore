@@ -4,6 +4,9 @@
 # Include init file
 !init.el
 
+# Include todo file
+!todo.org
+
 # Include elisp folder
 !lisp/
 !lisp/*
