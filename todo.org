@@ -1,0 +1,100 @@
+* Python shell
+There are three things that we could do.
+
+1. run-python
+2. Switch to python shell
+3. Send buffer to python shell
+
+C-c C-c
+C-c C-z
+
+* Python code editing
+Using python mode better.
+
+* Debugging Python code
+Debugging Python code.
+
+Some options are the following.
+realgud
+gud
+pdb
+
+* Refactoring in Emacs
+Figure out how people refactor code in Emacs.
+
+How do I make larger scale changes to a code base? Do people usually
+run programs that modify the buffer?
+
+* Ediff
+Figure out how to use Ediff
+* Edebug
+Figure out how to use Edebug
+* Emerge
+Figure out the emerge tool.
+
+* Smerge
+This is a simpler way of merging files.
+
+* Projectile
+Get better at Projectile.
+
+* Magit
+Get better at Magit.
+
+* Tangle
+Literate programming in Emacs with tangle.
+
+* vpy improvements
+Implement two new vpy commands.
+
+1. status
+2. auto
+
+** status
+The status command will display the following information.
+
+1. The name of the current virtual environment.
+2. If we are in automatic or manual mode.
+
+** auto
+The auto command will allow you to change between manual and automatic
+mode when it comes to virtual environment tracking.
+
+The command auto on will enable automatic virtual environment tracking.
+
+    auto on
+
+The command auto off will disable automatic virtual envionment
+tracking.
+
+    auto off
+
+* markdown
+See if we can find a command that will convert a buffer or region in
+the following manner.
+
+1. From html to markdown.
+2. From markdown to html.
+
+Will probably have to write a bunch of custom code for this.
+
+* JavaScript
+Figure out a better way for working with JavaScript in Emacs.
+
+* Tramp hangs
+Tramp seems to hang alot on macOS. Figure out why this is happening.
+
+I have seen some people commenting on that this might be due to the
+exec-path-from-shell package.
+
+* Documentation
+Write some simple documentation on the following.
+
+1. Registers
+
+* Flycheck for Python
+Configure flycheck for Python. The checkers that I want to look into
+are the following.
+
+1. pylint
+2. flake8
