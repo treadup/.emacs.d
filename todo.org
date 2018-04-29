@@ -19,6 +19,8 @@ realgud
 gud
 pdb
 
+* Django
+Find a way of running the Django manage.py commands from Emacs.
 * Refactoring in Emacs
 Figure out how people refactor code in Emacs.
 
@@ -88,6 +90,8 @@ There is also indium.
 
 Also people seem to use skewer-mode when developing JavaScript.
 
+https://www.emacswiki.org/emacs/CategoryJavaScript
+
 * Tramp hangs
 Tramp seems to hang alot on macOS. Figure out why this is happening.
 
@@ -117,3 +121,8 @@ flycheck with eslint to catch bugs and syntax errors.
 Autoformat JavaScript files with prettier-mode.
 * Tern
 Use tern with company for code completion of JavaScript.
+
+Tern does not seem to be updated anymore.
+
+Some people seem to use tide with plain JavaScript.
+https://github.com/ananthakumaran/tide
