@@ -1,12 +1,16 @@
-;;;
-;;; Customization for flycheck.el
-;;;
+;;; setup-flycheck --- Customization for flycheck
 
+;;; Commentary:
 ;; Flycheck provides modern on the fly syntax checking.
 ;; http://www.flycheck.org/en/latest/
 
+;;; Code:
+
 (use-package flycheck
   :ensure t
-  :diminish "FC")
+  :diminish "FC"
+  :config
+  (global-flycheck-mode))
 
-(global-flycheck-mode)
+(provide 'setup-flycheck)
+;;; setup-flycheck ends here
