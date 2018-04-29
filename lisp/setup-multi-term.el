@@ -1,10 +1,11 @@
-;;;
-;;; Customizations for multi-term
-;;;
+;;; setup-multi-term --- Customizations for multi-term
 
-;; See if there are any differences in how bash, fish and zsh are supported.
+;;; Commentary:
+
+;;; Code:
 
 (defun multi-term-below ()
+  "Open a window containing multi-term in a new window below the current one."
   (interactive)
   (progn
     (split-window-below)
@@ -13,6 +14,7 @@
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
 (defun multi-term-right ()
+  "Open a window containing multi-term in a new window to the right of the current one."
   (interactive)
   (progn
     (split-window-right)
@@ -21,6 +23,7 @@
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
 (defun multi-term-current-buffer ()
+  "Open multi-term in the current buffer."
   (interactive)
   (progn
     (multi-term)
@@ -33,12 +36,6 @@
   (unless multi-term-program
     (setq multi-term-program "/bin/bash"))
   (setq term-buffer-maximum-size 100000)
-  (global-set-key (kbd "C-c t") 'multi-term-next)
-  (global-set-key (kbd "C-c T") 'multi-term)
-  (global-set-key (kbd "C-c _") 'multi-term-below)
-  (global-set-key (kbd "C-c -") 'multi-term-below)
-  (global-set-key (kbd "C-c |") 'multi-term-right)
-  (global-set-key (kbd "C-c .") 'multi-term-current-buffer)
   (add-hook 'term-mode-hook
     (lambda ()
       (setq-local global-hl-line-mode nil))))
@@ -70,8 +67,5 @@
 
 ;; I should also be able to do all of the above using eshell.
 
-;; http://emacs-fu.blogspot.se/2010/06/console-apps-in-emacs-with-multi-term.html
-;; http://rawsyntax.com/blog/learn-emacs-zsh-and-multi-term/
-;; https://emacs.stackexchange.com/questions/2146/how-to-open-and-rename-several-multi-term-buffers-on-start-up
-;; https://www.emacswiki.org/emacs/MultiTerm
-;; https://medium.com/@lukaszkorecki/emacs-as-tmux-replacement-2acd10d7dfc8
+(provide 'setup-multi-term)
+;;; setup-multi-term ends here

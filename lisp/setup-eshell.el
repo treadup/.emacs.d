@@ -80,6 +80,10 @@ on the current machine."
     (eshell/cd (file-remote-p default-directory))
     (eshell/cd directory)))
 
+;;
+;; Buffer management
+;;
+
 ;; (eshell t) will create a new eshell with the next eshell index number.
 
 ;; This one is kind of interesting.
@@ -89,24 +93,6 @@ on the current machine."
 ;; Otherwise create a new eshell with the given index number and show
 ;; it in the current window.
 
-(defun eshell-below ()
-"Open an eshell in a new window below the current window."
-  (interactive)
-  (progn
-    (split-window-below)
-    (other-window 1)
-    (eshell t)
-    (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
-
-(defun eshell-right ()
-"Open an eshell in a new window to the right of the current window."
-  (interactive)
-  (progn
-    (split-window-right)
-    (other-window 1)
-    (eshell t)
-    (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
-
 (defun esh ()
   "Open a new Eshell buffer in the current window."
   (interactive)
@@ -114,6 +100,31 @@ on the current machine."
     (eshell t)
     (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
 
+(defun esh-below ()
+"Open an eshell in a new window below the current window."
+  (interactive)
+  (progn
+    (split-window-below)
+    (other-window 1)
+    (esh)))
+
+(defun esh-right ()
+"Open an eshell in a new window to the right of the current window."
+  (interactive)
+  (progn
+    (split-window-right)
+    (other-window 1)
+    (esh)))
+
+;;
+;; Keybindings for Eshell
+;;
+
+;; (global-set-key (kbd "C-c t") 'multi-term-next)
+(global-set-key (kbd "C-c _") 'esh-below)
+(global-set-key (kbd "C-c -") 'esh-below)
+(global-set-key (kbd "C-c |") 'esh-right)
+(global-set-key (kbd "C-c .") 'esh)
 
 ;;
 ;; Custom prompt
