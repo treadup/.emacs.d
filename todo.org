@@ -1,5 +1,9 @@
 * Flycheck for YAML files
 Configure flycheck to work with YAML files.
+
+I want to set the flycheck-checker variable for YAML buffers
+to a checker that can be used for YAML.
+
 * Python shell
 There are three things that we could do.
 
