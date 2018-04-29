@@ -5,7 +5,9 @@
 ;;; Code:
 
 (use-package yaml-mode
-  :ensure t)
-
+  :ensure t
+  :config
+  (add-hook 'yaml-mode-hook (lambda ()
+                              (flycheck-select-checker 'yaml-jsyaml))))
 (provide 'setup-yaml)
 ;;; setup-yaml ends here
