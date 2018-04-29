@@ -109,6 +109,10 @@ are the following.
 
 1. pylint
 2. flake8
+* Flycheck using multiple checkers for Python
+See if we can get Flycheck to use multiple checkers when checking
+Python code.
+https://github.com/msherry/flycheck-pycheckers
 * Emmet mode
 Emmet mode for editing web pages.
 * Web mode
