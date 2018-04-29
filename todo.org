@@ -117,8 +117,6 @@ https://github.com/msherry/flycheck-pycheckers
 Emmet mode for editing web pages.
 * Web mode
 Figure out how to use web mode better.
-* Flycheck for JSON
-See if we can get flycheck working for JSON.
 * Flycheck for JavaScript
 flycheck with eslint to catch bugs and syntax errors.
 * Prettier mode
