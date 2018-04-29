@@ -114,6 +114,11 @@
 (setup-custom "setup-exec-path")
 
 ;;
+;; Libraries for Elisp
+;;
+(setup-custom "setup-libraries")
+
+;;
 ;; Hostname functions
 ;;
 (setup-custom "setup-hostname")
@@ -429,11 +434,6 @@
 ;; Miscellaneous customizations
 ;;
 (setup-custom "setup-misc")
-
-;;
-;; Libraries for Elisp
-;;
-(setup-custom "setup-libraries")
 
 ;;
 ;; ERC specific setup
