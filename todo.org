@@ -136,3 +136,5 @@ Tern does not seem to be updated anymore.
 
 Some people seem to use tide with plain JavaScript.
 https://github.com/ananthakumaran/tide
+* Spellcheck
+Spellcheck with flyspell mode.
