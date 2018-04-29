@@ -77,7 +77,6 @@
 ;; Store custom elisp files in the /elisp subdirectory of the dot emacs folder.
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path (concat user-emacs-directory (convert-standard-filename "lisp/")))
-(add-to-list 'load-path  (concat user-emacs-directory (convert-standard-filename "private/")))
 
 (defun setup-custom (filename)
   "Load custom settings from the file with name FILENAME."
