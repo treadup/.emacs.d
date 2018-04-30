@@ -19,6 +19,7 @@ realgud
 gud
 pdb
 
+https://github.com/spiside/pdb-tutorial
 * Django
 Find a way of running the Django manage.py commands from Emacs.
 * Refactoring in Emacs
@@ -39,7 +40,7 @@ This is a simpler way of merging files.
 
 * Projectile
 Get better at Projectile.
-
+https://tuhdo.github.io/helm-projectile.html
 * Magit
 Get better at Magit.
 
@@ -71,15 +72,6 @@ tracking.
 
     auto off
 
-* markdown
-See if we can find a command that will convert a buffer or region in
-the following manner.
-
-1. From html to markdown.
-2. From markdown to html.
-
-Will probably have to write a bunch of custom code for this.
-
 * JavaScript
 Figure out a better way for working with JavaScript in Emacs.
 
@@ -103,16 +95,29 @@ Write some simple documentation on the following.
 
 1. Registers
 
-* Flycheck for Python
-Configure flycheck for Python. The checkers that I want to look into
-are the following.
+* Open new buffer with the contents of the given url.
+See if we can find some way to download the url at point and open it
+in the current buffer.
+* Emacs HTTP client
+Is there some kind of simple HTTP client for emacs?
 
-1. pylint
-2. flake8
-* Flycheck using multiple checkers for Python
-See if we can get Flycheck to use multiple checkers when checking
-Python code.
-https://github.com/msherry/flycheck-pycheckers
+There is a function called url-retrieve-synchronously that can be used
+to download the contents of a URL.
+
+There is a library called restclient.el that has url.el as a backend.
+There is a library called http.el that has request.el as a backend.
+
+(with-current-buffer (url-retrieve-synchronously "http://stackoverflow.com")
+  (prog1
+      (buffer-string)
+    (kill-buffer)))
+
+https://github.com/emacs-pe/http.el
+https://tkf.github.io/emacs-request/
+
+* Emacs HTML parser
+The following function can be used to parse HTML.
+libxml-parse-html-region
 * Emmet mode
 Emmet mode for editing web pages.
 * Web mode
@@ -130,3 +135,20 @@ Some people seem to use tide with plain JavaScript.
 https://github.com/ananthakumaran/tide
 * Spellcheck
 Spellcheck with flyspell mode.
+* Package management
+We can use package-refresh-contents to refresh the emacs package list.
+* Parse CSV files
+Parse CSV files using Emacs.
+https://melpa.org/#/pcsv
+* Generate HTML from Elisp
+See if there is something similar to htmlgen for Elisp.
+https://franz.com/support/documentation/6.0/doc/aserve/htmlgen.html
+* Font Locking
+Figure out how font locking works.
+http://ergoemacs.org/emacs/elisp_font_lock_mode.html
+* Text processing in Emacs
+http://ergoemacs.org/emacs/elisp_text_processing_lang.html
+http://ergoemacs.org/emacs/elisp_batch_html_tag_transform_bold.html
+http://ergoemacs.org/emacs/elisp_fix_dead_links.html
+http://ergoemacs.org/emacs/elisp_text-soup_automation.html
+http://ergoemacs.org/emacs/elisp_process_html.html
