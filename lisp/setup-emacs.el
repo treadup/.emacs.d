@@ -42,6 +42,16 @@
 (put 'erase-buffer 'disabled nil)
 
 ;;
+;; Midnight mode
+;;
+
+;; Use midnight-mode to get rid of unused buffers.
+(require 'midnight)
+
+;; Run midnight-hook 4 hours after midnight
+(midnight-delay-set 'midnight-delay (* 4 60 60))
+
+;;
 ;; Recent files
 ;;
 
