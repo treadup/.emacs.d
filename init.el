@@ -421,6 +421,11 @@
 (setup-custom "setup-magit")
 
 ;;
+;; Realgud setup
+;;
+(setup-custom "setup-realgud")
+
+;;
 ;; Spotify setup
 ;;
 (setup-custom "setup-spotify")
