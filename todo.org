@@ -21,7 +21,9 @@ pdb
 
 https://github.com/spiside/pdb-tutorial
 * Django
-Find a way of running the Django manage.py commands from Emacs.
+Configure Djangonauts so that we can run Django manage.py commands from Emacs.
+
+I might have to set the python-shell-extra-pythonpaths variable.
 * Refactoring in Emacs
 Figure out how people refactor code in Emacs.
 
@@ -37,6 +39,10 @@ Figure out the emerge tool.
 
 * Smerge
 This is a simpler way of merging files.
+
+It seems that smerge-mode comes builtin with Emacs.
+
+And it seems to be really good.
 
 * Projectile
 Get better at Projectile.
@@ -133,13 +139,8 @@ Tern does not seem to be updated anymore.
 
 Some people seem to use tide with plain JavaScript.
 https://github.com/ananthakumaran/tide
-* Spellcheck
-Spellcheck with flyspell mode.
 * Package management
 We can use package-refresh-contents to refresh the emacs package list.
-* Parse CSV files
-Parse CSV files using Emacs.
-https://melpa.org/#/pcsv
 * Generate HTML from Elisp
 See if there is something similar to htmlgen for Elisp.
 https://franz.com/support/documentation/6.0/doc/aserve/htmlgen.html
