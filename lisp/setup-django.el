@@ -1,8 +1,11 @@
-;;;
-;;; Customizations for Django
-;;;
+;;; setup-django --- Customizations for Django
 
-;; There seems to be three packages that are useful for Django development.
+;;; Commentary:
+
+;; Use djangonaut for Django development.
+;; https://github.com/proofit404/djangonaut
+
+;; There are a few other packages that can be used for Django development in Emacs.
 
 ;; pony-mode
 ;; https://github.com/davidmiller/pony-mode
@@ -13,8 +16,15 @@
 ;; python-django
 ;; https://github.com/fgallina/python-django.el
 
-
-;; For web mode you should be able to set the engine family to Django.
-
 ;; Spacemacs uses Pony mode for its Django layer.
 ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Bframeworks/django
+
+;;; Code:
+
+(use-package djangonaut
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'global-djangonaut-mode))
+
+(provide 'setup-django)
+;;; setup-django ends here
