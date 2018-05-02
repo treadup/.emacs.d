@@ -139,9 +139,19 @@
 (setup-custom "setup-auth-source")
 
 ;;
+;; Hydra specific setup
+;;
+(setup-custom "setup-hydra")
+
+;;
 ;; Python virtual environment manager for Eshell
 ;;
 (setup-custom "vpy")
+
+;;
+;; Django specific setup
+;;
+(setup-custom "setup-django")
 
 ;;
 ;; Eshell setup
