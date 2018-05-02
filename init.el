@@ -351,6 +351,11 @@
 (setup-custom "setup-flycheck")
 
 ;;
+;; Flyspell specific setup
+;;
+(setup-custom "setup-flyspell")
+
+;;
 ;; SQL specific setup
 ;;
 ;; (setup-custom "setup-sql")
