@@ -17,10 +17,6 @@
 
 ;;; Code:
 
-;; (unless (package-installed-p 'helm)
-;;  (package-refresh-contents)
-;;  (package-install 'helm))
-
 (use-package helm
   :diminish helm-mode
   :ensure t
@@ -32,12 +28,14 @@
     ("C-h a" . helm-apropos)
     ("C-h m" . helm-man-woman)
     ("C-h r" . helm-info-emacs)
-    ("C-h t" . helm-world-time))
+    ("C-h t" . helm-world-time)
+    ("C-x r l" . 'helm-bookmarks))
 
   :config
-  ;; Change helm prefix key chord.
-  (global-unset-key (kbd "C-x c"))
-  (global-set-key (kbd "C-c h") 'helm-command-prefix)
+  (require 'helm-config)
+  ;; By default this is C-x c which is really close to C-x C-c which will exit Emacs.
+  ;; Change the helm prefix key to be C-c h instead.
+  (customize-set-variable 'helm-command-prefix-key "C-c h")
 
   ;; Change behavior of tab.
   (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
@@ -67,7 +65,7 @@
 (use-package swiper-helm
   :ensure t
   :bind (("C-s" . swiper-helm)
-          ("C-r" . swiper-helm)))
+         ("C-r" . swiper-helm)))
 
 (provide 'setup-helm)
 ;;; setup-helm.el ends here
