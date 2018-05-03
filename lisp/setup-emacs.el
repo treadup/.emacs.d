@@ -41,6 +41,17 @@
 ;; Enable the erase-buffer function.
 (put 'erase-buffer 'disabled nil)
 
+;; When in a window system do not minimize the frame when pressing C-z.
+(when window-system (global-unset-key "\C-z"))
+
+;;
+;; Buffer key bindings
+;;
+
+(global-set-key (kbd "M-n") 'next-buffer)
+(global-set-key (kbd "M-p") 'previous-buffer)
+(global-set-key (kbd "C-c C-b") 'bury-buffer)
+
 ;;
 ;; Midnight mode
 ;;
