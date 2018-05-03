@@ -153,3 +153,15 @@ http://ergoemacs.org/emacs/elisp_batch_html_tag_transform_bold.html
 http://ergoemacs.org/emacs/elisp_fix_dead_links.html
 http://ergoemacs.org/emacs/elisp_text-soup_automation.html
 http://ergoemacs.org/emacs/elisp_process_html.html
+* Prefix command
+Looks like there is something called a prefix command.
+Perhaps which key can display better information for prefix commands.
+http://ergoemacs.org/emacs/emacs_keybinding_power_of_keys_sequence.html
+https://www.reddit.com/r/emacs/comments/3ytb6n/a_better_way_to_define_a_new_prefix/
+
+* Expand region
+This package looks interesting.
+https://github.com/magnars/expand-region.el
+* Ranger
+See if I find ranger useful.
+https://github.com/ralesi/ranger.el
