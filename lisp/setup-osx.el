@@ -26,9 +26,5 @@
   (pbcopy)
   (delete-region (region-beginning) (region-end)))
 
-(global-set-key (kbd "C-c c") 'pbcopy)
-(global-set-key (kbd "C-c v") 'pbpaste)
-(global-set-key (kbd "C-c x") 'pbcut)
-
 (provide 'setup-osx)
 ;;; setup-osx.el ends here

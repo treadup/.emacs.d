@@ -36,5 +36,12 @@
   :config
   (whole-line-or-region-global-mode))
 
+;; Make it so that you can expand the region semantically.
+(use-package expand-region
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c x") 'er/expand-region)
+  (global-set-key (kbd "C-c X") 'er/contract-region))
+
 (provide 'setup-editing)
 ;;; setup-editing ends here
