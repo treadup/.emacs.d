@@ -471,6 +471,11 @@
 (setup-custom "setup-pass")
 
 ;;
+;; Ranger specific setup
+;;
+(setup-custom "setup-ranger")
+
+;;
 ;; elfeed specific setup
 ;;
 (setup-custom "setup-elfeed")
