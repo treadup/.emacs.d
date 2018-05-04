@@ -1,3 +1,7 @@
+* Volume control in Emacs
+* Simple web browser in Emacs
+* Command to switch to Eshell in Emacs
+See if there is some way we can start Emacs in Eshell.
 * Python shell
 There are three things that we could do.
 
