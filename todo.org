@@ -108,23 +108,6 @@ Write some simple documentation on the following.
 * Open new buffer with the contents of the given url.
 See if we can find some way to download the url at point and open it
 in the current buffer.
-* Emacs HTTP client
-Is there some kind of simple HTTP client for emacs?
-
-There is a function called url-retrieve-synchronously that can be used
-to download the contents of a URL.
-
-There is a library called restclient.el that has url.el as a backend.
-There is a library called http.el that has request.el as a backend.
-
-(with-current-buffer (url-retrieve-synchronously "http://stackoverflow.com")
-  (prog1
-      (buffer-string)
-    (kill-buffer)))
-
-https://github.com/emacs-pe/http.el
-https://tkf.github.io/emacs-request/
-
 * Emacs HTML parser
 The following function can be used to parse HTML.
 libxml-parse-html-region
@@ -162,7 +145,3 @@ Looks like there is something called a prefix command.
 Perhaps which key can display better information for prefix commands.
 http://ergoemacs.org/emacs/emacs_keybinding_power_of_keys_sequence.html
 https://www.reddit.com/r/emacs/comments/3ytb6n/a_better_way_to_define_a_new_prefix/
-
-* Ranger
-See if I find ranger useful.
-https://github.com/ralesi/ranger.el

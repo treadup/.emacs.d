@@ -139,6 +139,11 @@
 (setup-custom "setup-auth-source")
 
 ;;
+;; Request specific setup
+;;
+(setup-custom "setup-request")
+
+;;
 ;; Hydra specific setup
 ;;
 (setup-custom "setup-hydra")
