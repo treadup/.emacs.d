@@ -54,6 +54,9 @@ environments."
   (setq eshell-path-env custom-eshell-path-env)
 
   ;; Create aliases
+
+  ;; Create aliases for Emacs
+  (eshell/alias "e" "find-file $1")
   (eshell/alias "ff" "find-file $1")
   (eshell/alias "emacs" "find-file $1")
 
