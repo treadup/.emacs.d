@@ -45,8 +45,19 @@
 (when window-system (global-unset-key "\C-z"))
 
 ;;
-;; Buffer key bindings
+;; Buffer
 ;;
+
+;; Make new buffers that are not associated with a file automatically
+;; set the major mode based on the buffer name.
+
+(setq-default major-mode
+  (lambda () (if buffer-file-name
+               (fundamental-mode)
+               (let ((buffer-file-name (buffer-name)))
+                 (set-auto-mode)))))
+
+;; Buffer key bindings
 
 (global-set-key (kbd "M-n") 'next-buffer)
 (global-set-key (kbd "M-p") 'previous-buffer)
