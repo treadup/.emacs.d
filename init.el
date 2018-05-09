@@ -253,7 +253,7 @@
 ;;
 
 (if (string-equal system-type "darwin")
-    (setup-custom "setup-osx"))
+    (setup-custom "setup-mac"))
 
 ;;
 ;; Eldoc mode specific setup
