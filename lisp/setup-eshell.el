@@ -54,10 +54,8 @@ environments."
   (setq eshell-path-env custom-eshell-path-env)
 
   ;; Create aliases
-
-  ;; Create aliases for Emacs
+  (eshell/alias "ll" "ls -l $*")
   (eshell/alias "e" "find-file $1")
-  (eshell/alias "ff" "find-file $1")
   (eshell/alias "emacs" "find-file $1")
 
   ;; Enable Eshell smart display.
@@ -128,6 +126,7 @@ on the current machine."
 (global-set-key (kbd "C-c -") 'esh-below)
 (global-set-key (kbd "C-c |") 'esh-right)
 (global-set-key (kbd "C-c .") 'esh)
+(global-set-key (kbd "<f1>") 'esh)
 
 ;;
 ;; Custom prompt
