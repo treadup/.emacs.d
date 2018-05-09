@@ -54,6 +54,12 @@
 ;; Buffer
 ;;
 
+(defun revert-this-buffer ()
+  "Revert the current buffer without asking."
+  (interactive)
+  (revert-buffer nil t t)
+  (message (concat "Reverted buffer " (buffer-name))))
+
 ;; Make new buffers that are not associated with a file automatically
 ;; set the major mode based on the buffer name.
 
