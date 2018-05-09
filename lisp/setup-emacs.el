@@ -70,10 +70,22 @@
                  (set-auto-mode)))))
 
 ;; Buffer key bindings
-
-(global-set-key (kbd "M-n") 'next-buffer)
-(global-set-key (kbd "M-p") 'previous-buffer)
 (global-set-key (kbd "C-c C-b") 'bury-buffer)
+
+;; Window key bindings
+(global-set-key (kbd "M-o") 'other-window)
+
+;; Window splitting functions.
+(defun split-T ()
+  "Perform a special window split.
+First splits the window horizontally.
+Then splits the bottom window vertically"
+  (interactive)
+  (split-window-below)
+  (other-window 1)
+  (split-window-right))
+
+(global-set-key (kbd "C-x 9") 'split-T)
 
 ;;
 ;; Midnight mode
