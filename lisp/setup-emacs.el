@@ -25,6 +25,12 @@
 ;;; Misc config
 ;;;
 
+;; Bind M-x to C-RET
+(global-set-key (kbd "C-<return>") 'helm-M-x)
+
+;; Bind C-: to eval.
+(global-set-key (kbd "C-:") 'eval-expression)
+
 ;; Make hyper links clickable in text mode and prog mode.
 (add-hook 'text-mode-hook 'goto-address-mode)
 (add-hook 'prog-mode-hook 'goto-address-mode)
