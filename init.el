@@ -416,6 +416,11 @@
 (setup-custom "setup-javascript")
 
 ;;
+;; Vimrc specific setup
+;;
+(setup-custom "setup-vimrc")
+
+;;
 ;; Eyebrowse specific setup
 ;;
 (setup-custom "setup-eyebrowse")
