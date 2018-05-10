@@ -145,3 +145,6 @@ Looks like there is something called a prefix command.
 Perhaps which key can display better information for prefix commands.
 http://ergoemacs.org/emacs/emacs_keybinding_power_of_keys_sequence.html
 https://www.reddit.com/r/emacs/comments/3ytb6n/a_better_way_to_define_a_new_prefix/
+* Markdown mode key bindings
+Learn the keybindings for markdown mode.
+https://jblevins.org/projects/markdown-mode/
