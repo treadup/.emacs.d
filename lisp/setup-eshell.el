@@ -122,6 +122,14 @@ on the current machine."
     (other-window 1)
     (esh)))
 
+(defun remote-esh ()
+  "Open a new remote Eshell buffer in the current window.
+Prompts for the server name in the mini buffer."
+  (interactive)
+  (let ((server (read-string "server: ")))
+    (let ((default-directory (concat "/" server ":~/")))
+      (esh))))
+
 ;;
 ;; Keybindings for Eshell
 ;;
@@ -132,6 +140,7 @@ on the current machine."
 (global-set-key (kbd "C-c |") 'esh-right)
 (global-set-key (kbd "C-c .") 'esh)
 (global-set-key (kbd "<f1>") 'esh)
+(global-set-key (kbd "<f2>") 'remote-esh)
 
 ;;
 ;; Custom prompt
