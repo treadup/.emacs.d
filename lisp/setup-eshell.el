@@ -73,6 +73,13 @@ environments."
 
 (add-hook 'eshell-mode-hook 'custom-eshell-mode-hook)
 
+(defun custom-eshell-exec-hook (executing-process)
+  "Do not query when killing an Eshell currently running a process.
+The EXECUTING-PROCESS is the process being executed by Eshell."
+  (tramp-compat-set-process-query-on-exit-flag executing-process nil))
+
+(add-hook 'eshell-exec-hook 'custom-eshell-exec-hook)
+
 (defun eshell/lcd (&optional directory)
   "Change directory to DIRECTORY.
 If no directory argument is given go to the home folder
@@ -97,9 +104,7 @@ on the current machine."
 (defun esh ()
   "Open a new Eshell buffer in the current window."
   (interactive)
-  (progn
-    (eshell t)
-    (set-process-query-on-exit-flag (get-buffer-process (current-buffer)) nil)))
+  (eshell t))
 
 (defun esh-below ()
 "Open an eshell in a new window below the current window."
