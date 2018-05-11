@@ -25,8 +25,9 @@
 ;;; Misc config
 ;;;
 
-;; Bind M-x to C-RET
+;; Try out different key bindings instead of the M-x key chord.
 (global-set-key (kbd "C-<return>") 'helm-M-x)
+(global-set-key (kbd "C-x C-m") 'helm-M-x)
 
 ;; Bind C-: to eval.
 (global-set-key (kbd "C-:") 'eval-expression)
