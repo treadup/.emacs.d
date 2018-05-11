@@ -25,10 +25,10 @@
     ("M-x" . helm-M-x)
     ("M-y" . helm-show-kill-ring)
     ("C-x C-b" . helm-buffers-list)
-    ("C-h a" . helm-apropos)
-    ("C-h m" . helm-man-woman)
-    ("C-h r" . helm-info-emacs)
-    ("C-h t" . helm-world-time)
+    ("C-M-h a" . helm-apropos)
+    ("C-M-h m" . helm-man-woman)
+    ("C-M-h r" . helm-info-emacs)
+    ("C-M-h t" . helm-world-time)
     ("C-x r l" . 'helm-bookmarks))
 
   :config

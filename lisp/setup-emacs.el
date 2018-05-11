@@ -51,6 +51,29 @@
 ;; When in a window system do not minimize the frame when pressing C-z.
 (when window-system (global-unset-key "\C-z"))
 
+;; Bind F5 to call the last keyboard macro.
+(global-set-key (kbd "<f5>") 'call-last-kbd-macro)
+
+;;
+;; Search
+;;
+(global-set-key (kbd "M-s") 'isearch-forward-regexp)
+(global-set-key (kbd "M-r") 'isearch-backward-regexp)
+
+(defalias 'rs 'replace-string)          ;; M-x rs
+(defalias 'rr 'replace-regexp)          ;; M-x rr
+(defalias 'qrr 'query-replace-regexp)   ;; M-x qrr
+
+;;
+;; Help
+;;
+
+;; Change C-h to be backspace which is the same as in the shell
+;; Move help to the C-M-h key chord.
+(global-set-key (kbd "C-h") 'backward-delete-char-untabify)
+(define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
+(global-set-key (kbd "C-M-h") 'help-command)
+
 ;;
 ;; Buffer
 ;;
