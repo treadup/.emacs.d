@@ -88,6 +88,16 @@ Then splits the bottom window vertically"
 
 (global-set-key (kbd "C-x 9") 'split-T)
 
+;; Scratch buffer
+(defun toggle-scratch-buffer ()
+  "Toggle between a buffer and the scratch buffer."
+  (interactive)
+  (if (equal (buffer-name) "*scratch*")
+      (switch-to-buffer (other-buffer))
+      (switch-to-buffer "*scratch*")))
+
+(global-set-key (kbd "C-x 7") 'toggle-scratch-buffer)
+
 ;;
 ;; Midnight mode
 ;;
