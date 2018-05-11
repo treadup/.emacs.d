@@ -24,6 +24,7 @@
   (("C-x C-f" . helm-find-files)
     ("M-x" . helm-M-x)
     ("M-y" . helm-show-kill-ring)
+    ("C-x b" . helm-buffers-list)
     ("C-x C-b" . helm-buffers-list)
     ("C-M-h a" . helm-apropos)
     ("C-M-h m" . helm-man-woman)
