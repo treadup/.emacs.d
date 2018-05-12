@@ -1,7 +1,4 @@
-* Volume control in Emacs
 * Simple web browser in Emacs
-* Command to switch to Eshell in Emacs
-See if there is some way we can start Emacs in Eshell.
 * Python shell
 There are three things that we could do.
 
@@ -148,3 +145,7 @@ https://www.reddit.com/r/emacs/comments/3ytb6n/a_better_way_to_define_a_new_pref
 * Markdown mode key bindings
 Learn the keybindings for markdown mode.
 https://jblevins.org/projects/markdown-mode/
+* Avy
+Avy looks interesting.
+https://github.com/abo-abo/avy
+http://pragmaticemacs.com/emacs/super-efficient-movement-using-avy/
