@@ -152,3 +152,11 @@ https://jblevins.org/projects/markdown-mode/
 Avy looks interesting.
 https://github.com/abo-abo/avy
 http://pragmaticemacs.com/emacs/super-efficient-movement-using-avy/
+* Occur mode
+Make better use of occur mode and multi occur mode.
+
+https://www.masteringemacs.org/article/searching-buffers-occur-mode
+* All
+There is a utility called all that can be used to edit all lines that
+match a regular expression.
+https://elpa.gnu.org/packages/all.html
