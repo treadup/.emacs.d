@@ -1,3 +1,6 @@
+* Helm git grep
+Figure out helm-git-grep.
+https://github.com/yasuyk/helm-git-grep
 * Simple web browser in Emacs
 * Python shell
 There are three things that we could do.
