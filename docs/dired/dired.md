@@ -16,5 +16,17 @@ buffer.
 It is possible to bookmark a dired buffer. The key chord C-x r m will
 create a bookmark for a dired buffer.
 
+## Renaming files
+With Dired you can rename a collection of files that are matched by a
+given regex.
+
+In other words I think that you can rename the files
+
+    f1.txt, ..., fk.txt
+
+to
+
+    b1.txt, ..., bk.txt
+
 ## References
 https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf
