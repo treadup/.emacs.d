@@ -27,3 +27,9 @@ associated with a file will still respect the auto-mode-alist.
 In other words if you create a new buffer called foo.py this buffer
 will open in python-mode. If you create a new buffer called bar.md
 this buffer will open in markdown-mode.
+
+## Toggle scratch buffer
+You can toggle between the scratch buffer and the other buffer using
+the C-x 7 key combination.
+
+    C-x 7
