@@ -147,6 +147,8 @@ https://www.reddit.com/r/emacs/comments/3ytb6n/a_better_way_to_define_a_new_pref
 * Markdown mode key bindings
 Learn the keybindings for markdown mode.
 https://jblevins.org/projects/markdown-mode/
+* Grep
+The grep, lgrep and rgrep commands.
 * Avy
 Avy looks interesting.
 https://github.com/abo-abo/avy
