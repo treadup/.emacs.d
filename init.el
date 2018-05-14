@@ -441,6 +441,11 @@
 (setup-custom "setup-magit")
 
 ;;
+;; HTTP client setup
+;;
+(setup-custom "setup-http")
+
+;;
 ;; Realgud setup
 ;;
 (setup-custom "setup-realgud")
