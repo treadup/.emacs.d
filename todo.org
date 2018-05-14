@@ -1,6 +1,5 @@
-* Helm git grep
-Figure out helm-git-grep.
-https://github.com/yasuyk/helm-git-grep
+* Emacs HTTP client
+https://emacs.stackexchange.com/questions/12464/go-to-body-after-url-retrieve-synchronously/29798#29798
 * Simple web browser in Emacs
 * Python shell
 There are three things that we could do.
