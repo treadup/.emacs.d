@@ -156,6 +156,8 @@ http://pragmaticemacs.com/emacs/super-efficient-movement-using-avy/
 * Occur mode
 Make better use of occur mode and multi occur mode.
 
+The multi-occur-in-this-mode function looks interesting.
+
 https://www.masteringemacs.org/article/searching-buffers-occur-mode
 * All
 There is a utility called all that can be used to edit all lines that
