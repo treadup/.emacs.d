@@ -163,3 +163,9 @@ https://www.masteringemacs.org/article/searching-buffers-occur-mode
 There is a utility called all that can be used to edit all lines that
 match a regular expression.
 https://elpa.gnu.org/packages/all.html
+* Change window size
+Create a Hydra that allows us to change the size of a window.
+Not sure what it should be keybound to.
+
+This hydra should calld shrink/enlarge-window-horizontally and
+enlarge/shrink-window.
