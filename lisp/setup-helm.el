@@ -55,7 +55,9 @@
   (helm-mode 1))
 
 (use-package helm-ag
-  :ensure t)
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c a") 'helm-ag))
 
 (use-package helm-projectile
   :ensure t
@@ -65,6 +67,17 @@
 (use-package swiper-helm
   :ensure t
   :bind (("C-M-s" . swiper-helm)))
+
+(use-package helm-git-grep
+  :ensure t
+  :config
+  ;; Invoke `helm-git-grep' globally.
+  (global-set-key (kbd "C-c g") 'helm-git-grep)
+  ;; Invoke `helm-git-grep' from isearch.
+  (define-key isearch-mode-map (kbd "C-c g") 'helm-git-grep-from-isearch)
+  ;; Invoke `helm-git-grep' from other helm.
+  (eval-after-load 'helm
+    '(define-key helm-map (kbd "C-c g") 'helm-git-grep-from-helm)))
 
 (provide 'setup-helm)
 ;;; setup-helm.el ends here
