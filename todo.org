@@ -169,3 +169,20 @@ Not sure what it should be keybound to.
 
 This hydra should calld shrink/enlarge-window-horizontally and
 enlarge/shrink-window.
+
+* Run or raise
+Run or raise for emacs.
+http://emacsredux.com/blog/2013/04/29/start-command-or-switch-to-its-buffer/
+
+https://vickychijwani.me/blazing-fast-application-switching-in-linux/
+* Evaling multiline Elisp
+https://emacs.stackexchange.com/questions/16622/how-do-i-eval-a-multiple-line-elisp-expression-inside-the-current-buffer
+
+https://www.emacswiki.org/emacs/EvaluatingExpressions
+* Generate HTML from Elisp
+See if there is something similar to htmlgen for Elisp.
+https://franz.com/support/documentation/6.0/doc/aserve/htmlgen.html
+* Delete vs Kill
+Figure out the difference between delete and kill in Emacs.
+* Navigate man pages and info pages
+Figure out how to navigate man pages and info pages in Emacs.
