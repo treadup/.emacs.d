@@ -186,3 +186,7 @@ https://franz.com/support/documentation/6.0/doc/aserve/htmlgen.html
 Figure out the difference between delete and kill in Emacs.
 * Navigate man pages and info pages
 Figure out how to navigate man pages and info pages in Emacs.
+* Wanderlust
+http://emacs-fu.blogspot.se/2010/02/i-have-been-using-wanderlust-e-mail.html
+https://github.com/wanderlust/wanderlust
+http://wanderlust.github.io/wl-docs/wl.html
