@@ -321,6 +321,11 @@
 (setup-custom "setup-erlang")
 
 ;;
+;; PHP specific setup
+;;
+(setup-custom "setup-php")
+
+;;
 ;; Kill current buffer instead of prompting for buffer to kill.
 ;;
 (setup-custom "setup-kill-buffer")
