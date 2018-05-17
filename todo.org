@@ -190,3 +190,40 @@ Figure out how to navigate man pages and info pages in Emacs.
 http://emacs-fu.blogspot.se/2010/02/i-have-been-using-wanderlust-e-mail.html
 https://github.com/wanderlust/wanderlust
 http://wanderlust.github.io/wl-docs/wl.html
+http://box.matto.nl/emacsgmail.html
+* With Buffer
+See if I can figure out what the with-current-buffer and
+with-temp-buffer functions do.
+
+https://www.gnu.org/software/emacs/manual/html_node/elisp/Current-Buffer.html
+* Whitespace manipulation commands
+C-x C-o (delete-blank-lines), delete-trailing-whitespace, tabify and
+untabify, indent-region, and so on.
+* Dired
+Learn to use Dired.
+* gnuserv
+gnuserv: automatically open certain document types (including View
+Source in your browser) in Emacs.
+* Text navigation
+The following quote is from the Effective Emacs article.
+
+Effortless navigation: re-bind a few keys so that you can move the
+cursor in any direction, by chars or words, by holding down Alt and
+just pressing various letter keys.
+
+* Region management
+choosing a non-disgusting color for the highlighted region, covering region-related commands.
+
+* Rectangle commands
+yet another incredibly important set of related commands with no
+analogues in other editors. Once again, you'll wonder how you lived
+without them.
+
+* Working with archives
+browsing and editing archives: tar, gzip, zip, jar, etc. Most people
+have no idea this feature exists, and it's nothing short of amazing.
+
+* Indent tools
+See if indent-tools and python work well.
+https://melpa.org/#/indent-tools
+* Text manipulation
