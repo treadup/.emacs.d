@@ -525,9 +525,7 @@
 ;;
 ;; Wanderlust email client
 ;;
-;; Right now I cannot load the wanderlust email client from MELPA.
-;; I'm going to leave this in there and see if it works later on.
-;; (setup-custom "setup-wanderlust.el")
+(setup-custom "setup-wanderlust.el")
 
 (provide 'init)
 ;;; init.el ends here
