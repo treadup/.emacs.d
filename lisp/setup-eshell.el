@@ -57,6 +57,7 @@ environments."
   (eshell/alias "ll" "ls -l $*")
   (eshell/alias "e" "find-file $1")
   (eshell/alias "emacs" "find-file $1")
+  (eshell/alias "config" "/usr/bin/git --git-dir=$HOME/.dotconf/ --work-tree=$HOME $*")
 
   ;; Enable Eshell smart display.
   (eshell-smart-initialize)
