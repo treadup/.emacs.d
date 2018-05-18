@@ -1,20 +1,17 @@
-;;; setup-http --- Configuration related to http
+;;; setup-http --- HTTP helper functions.
 
 ;;; Commentary:
 
+;; Some helper functions for working with HTTP in Emacs.
+
 ;;; Code:
 
-(defun fetch (url)
-  "Fetch the given URL and place the contents in the current buffer."
-   (with-current-buffer (url-retrieve-synchronously url)
-     ;; Remove the http headers.
-     ;; (search-forward "\n\n")
-     ;; (delete-region (point-min) (point))
+(require 'url-handlers)
 
-     ;; We want this to go in the buffer and not the minibuffer.
-
-     (buffer-string)))
-
+(defun url-insert-body-at-point (url)
+  "Download the contents of the URL and insert the body into the buffer at the point."
+  (let ((download-buffer (url-retrieve-synchronously url)))
+    (url-insert download-buffer)))
 
 (provide 'setup-http)
 ;;; setup-http ends here
