@@ -8,6 +8,7 @@ There are three things that we could do.
 2. Switch to python shell
 3. Send buffer to python shell
 
+C-c C-p
 C-c C-c
 C-c C-z
 
@@ -227,3 +228,6 @@ have no idea this feature exists, and it's nothing short of amazing.
 See if indent-tools and python work well.
 https://melpa.org/#/indent-tools
 * Text manipulation
+* Emacs as Bookmark Manager
+This page has a really good way of using Emacs as a bookmarks manager.
+http://rexim.me/emacs-as-bookmark-manager-links.html
