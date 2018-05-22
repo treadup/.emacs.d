@@ -40,19 +40,12 @@
 ;; no operation pager.
 (setenv "PAGER" "cat")   ;; TODO: Might want to test to set the pager to the empty string "".
 
-;; I think that the custom-eshell-path-env is deprecated. Since I switched to
-;; using vpy there is no reason to use this anymore I think.
-(defvar custom-eshell-path-env)
-(setq custom-eshell-path-env eshell-path-env)
-
 ;; This is a hack to get Eshell to respect the bin folder from
 ;; the Python virtual environment.
 (defun custom-eshell-mode-hook ()
 "Set the eshell-path-env to the current custom version.
 The custom-eshell-path-env is updated whenever you switch virtual
 environments."
-  (setq eshell-path-env custom-eshell-path-env)
-
   ;; Create aliases
   (eshell/alias "ll" "ls -l $*")
   (eshell/alias "e" "find-file $1")
