@@ -31,7 +31,7 @@
 ;; Increase font size.
 ;; Play with the :height attribute to change size
 (set-face-attribute 'default nil
-                    :family "Source Code Pro for Powerline"
+                    :family "Fira Code"
                     :height 160
                     :weight 'normal
                     :width 'normal)
