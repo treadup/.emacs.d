@@ -95,6 +95,7 @@
 
 ;; Buffer key bindings
 (global-set-key (kbd "C-c C-b") 'bury-buffer)
+(global-set-key (kbd "C-x 8") 'bury-buffer)
 
 ;; Window key bindings
 (global-set-key (kbd "M-o") 'other-window)
