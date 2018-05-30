@@ -1,6 +1,3 @@
-* Emacs HTTP client
-https://emacs.stackexchange.com/questions/12464/go-to-body-after-url-retrieve-synchronously/29798#29798
-* Simple web browser in Emacs
 * Python shell
 There are three things that we could do.
 
@@ -105,12 +102,6 @@ Write some simple documentation on the following.
 
 1. Registers
 
-* Open new buffer with the contents of the given url.
-See if we can find some way to download the url at point and open it
-in the current buffer.
-* Emacs HTML parser
-The following function can be used to parse HTML.
-libxml-parse-html-region
 * Emmet mode
 Emmet mode for editing web pages.
 * Web mode
@@ -126,8 +117,6 @@ Tern does not seem to be updated anymore.
 
 Some people seem to use tide with plain JavaScript.
 https://github.com/ananthakumaran/tide
-* Package management
-We can use package-refresh-contents to refresh the emacs package list.
 * Generate HTML from Elisp
 See if there is something similar to htmlgen for Elisp.
 https://franz.com/support/documentation/6.0/doc/aserve/htmlgen.html
@@ -228,6 +217,10 @@ have no idea this feature exists, and it's nothing short of amazing.
 See if indent-tools and python work well.
 https://melpa.org/#/indent-tools
 * Text manipulation
+Operating on characters, words, sexps, sentences, paragraphs.
+There are consistent operations that you can do on these.
+
+Actually I'm not sure if this is what I meant by text manipulation.
 * Emacs as Bookmark Manager
 This page has a really good way of using Emacs as a bookmarks manager.
 http://rexim.me/emacs-as-bookmark-manager-links.html
