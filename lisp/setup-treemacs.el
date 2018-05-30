@@ -60,8 +60,8 @@
 
         ;; After here we need to start thinking about how we
         ;; want to map things.
-        ("C-c b t"     . treemacs-toggle)
-        ("C-c b T"     . treemacs)
+        ("C-c t t"     . treemacs-toggle)
+        ("C-c t T"     . treemacs)
 ;;        ("M-m fB"     . treemacs-bookmark)
 ;;        ("M-m f C-t"  . treemacs-find-file)
 ;;        ("M-m f M-t"  . treemacs-find-tag)
@@ -73,8 +73,8 @@
   :config
   (setq treemacs-header-function #'treemacs-projectile-create-header)
   :bind (:map global-map
-              ("C-c b P" . treemacs-projectile)
-              ("C-c b p" . treemacs-projectile-toggle)))
+              ("C-c t P" . treemacs-projectile)
+              ("C-c t p" . treemacs-projectile-toggle)))
 
 ;; treemacs and treemacs-projectile are similar
 ;; treemacs-toggle and treemacs-projectile-toggle are also similar
