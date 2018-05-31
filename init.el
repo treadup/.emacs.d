@@ -316,6 +316,11 @@
 (setup-custom "setup-common-lisp")
 
 ;;
+;; Lua specific setup
+;;
+(setup-custom "setup-lua")
+
+;;
 ;; Erlang specific setup
 ;;
 (setup-custom "setup-erlang")
