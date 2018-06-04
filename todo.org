@@ -1,3 +1,12 @@
+* Keyboard repeat rate
+For some reason Emacs cannot keep up with the increased keyboard
+repeat rate.
+
+Seems to happen more for C-n than for C-p.
+
+You can test this by running /usr/bin/emacs -Q to run Emacs without
+any init files.
+
 * Python shell
 There are three things that we could do.
 
@@ -191,9 +200,6 @@ C-x C-o (delete-blank-lines), delete-trailing-whitespace, tabify and
 untabify, indent-region, and so on.
 * Dired
 Learn to use Dired.
-* gnuserv
-gnuserv: automatically open certain document types (including View
-Source in your browser) in Emacs.
 * Text navigation
 The following quote is from the Effective Emacs article.
 
