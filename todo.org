@@ -7,6 +7,13 @@ Seems to happen more for C-n than for C-p.
 You can test this by running /usr/bin/emacs -Q to run Emacs without
 any init files.
 
+The culprit seems to be the spaceline package. If I comment out the
+spaceline package usage then the scrolling issue mostly goes away.
+
+One fix would be to replace spaceline with another package that does not
+have an issue with scrolling. Or we could go back to using the default
+modeline in Emacs.
+
 * Python shell
 There are three things that we could do.
 
