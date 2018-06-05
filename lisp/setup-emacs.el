@@ -7,6 +7,11 @@
 ;; program.
 ;; (global-auto-revert-mode 1)
 
+;; Solve problem with lag when scrolling the point.
+;; Without this scrolling using C-n will freeze frequently.
+;; https://emacs.stackexchange.com/questions/28736/emacs-pointcursor-movement-lag
+(setq auto-window-vscroll nil)
+
 ;;;
 ;;; Character coding system
 ;;;
