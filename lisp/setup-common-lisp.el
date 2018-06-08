@@ -11,9 +11,11 @@
 ;;     (setq inferior-lisp-program "/usr/local/bin/sbcl")
 ;;     (setq slime-contribs '(slime-fancy))))
 
-(load (expand-file-name "~/.quicklisp/slime-helper.el"))
-(setq inferior-lisp-program "sbcl")
-
+(let ((slime-helper-filename (expand-file-name "~/.quicklisp/slime-helper.el")))
+  (when (file-exists-p slime-helper-filename)
+    (progn
+      (load slime-helper-filename)
+      (setq inferior-lisp-program "sbcl"))))
 
 (provide 'setup-common-lisp)
 ;;; setup-common-lisp ends here
