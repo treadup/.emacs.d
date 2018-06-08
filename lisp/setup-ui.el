@@ -31,10 +31,15 @@
 ;; Increase font size.
 ;; Play with the :height attribute to change size
 (set-face-attribute 'default nil
-                    :family "Fira Code"
+                    :family "DejaVu Sans Mono"
                     :height 160
                     :weight 'normal
                     :width 'normal)
+
+;; Here are some possible font families that you can use.
+;; "Fira Code"
+;; "Inconsolata"
+;; "DejaVu Sans Mono"
 
 ;; No cursor blinking
 (blink-cursor-mode 0)
