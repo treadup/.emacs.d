@@ -20,21 +20,16 @@
 (add-hook 'text-mode-hook 'linum-mode)
 
 (if (not (display-graphic-p))
-    (setq linum-format "%d "))
+  (setq linum-format "%d "))
 
-;; Show menu bar if we are in graphics mode
-;; TOOD: Probably disable this unless we are on a Mac
-(if (display-graphic-p)
-    (menu-bar-mode t))
-
-;; Set default font
-;; Increase font size.
-;; Play with the :height attribute to change size
-(set-face-attribute 'default nil
-                    :family "DejaVu Sans Mono"
-                    :height 160
-                    :weight 'normal
-                    :width 'normal)
+;; Set default font used by all frames.
+(add-to-list 'default-frame-alist '(font . "Fira Code-16"))
+;; (set-face-attribute
+;;   'default nil
+;;   :family "Fira Code"
+;;   :height 160
+;;   :weight 'normal
+;;   :width 'normal)
 
 ;; Here are some possible font families that you can use.
 ;; "Fira Code"
@@ -77,8 +72,13 @@
 ;; This variable is deprecated as of Emacs 24.1
 ;; (setq tooltip-use-echo-area t)
 
+;; Show menu bar if we are in graphics mode
+;; TOOD: Probably disable this unless we are on a Mac
+(if (display-graphic-p)
+    (menu-bar-mode t))
+
 ;; Remove menu bar
-(menu-bar-mode -1)
+;; (menu-bar-mode -1)
 
 ;; Remove toolbar
 (tool-bar-mode -1)
