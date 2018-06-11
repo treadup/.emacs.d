@@ -353,7 +353,7 @@
 ;;
 ;; Treemacs specific setup
 ;;
-(setup-custom "setup-treemacs")
+;; (setup-custom "setup-treemacs")
 
 ;;
 ;; Log file specific setup
