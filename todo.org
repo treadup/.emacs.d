@@ -1,4 +1,4 @@
-p* Python shell
+* Python shell
 There are three things that we could do.
 
 1. run-python
@@ -221,3 +221,17 @@ Actually I'm not sure if this is what I meant by text manipulation.
 * Emacs as Bookmark Manager
 This page has a really good way of using Emacs as a bookmarks manager.
 http://rexim.me/emacs-as-bookmark-manager-links.html
+* Color glitches in spaceline on macOS
+Here is some information about how to fix color glitches in the
+spaceline wave characters on macOS.
+
+There is a problem with the color of the transition glyphs between
+the different elements in the spaceline.
+
+https://github.com/syl20bnr/spacemacs/issues/4426
+https://github.com/milkypostman/powerline/issues/54
+* Incorrect glyph height in spaceline
+The height of the wave glyph in the spaceline is incorrect sometimes.
+This might only happen the first time you create a new frame.
+
+https://github.com/syl20bnr/spacemacs/issues/8131
