@@ -23,13 +23,12 @@
   (setq linum-format "%d "))
 
 ;; Set default font used by all frames.
-(add-to-list 'default-frame-alist '(font . "Fira Code-16"))
-;; (set-face-attribute
-;;   'default nil
-;;   :family "Fira Code"
-;;   :height 160
-;;   :weight 'normal
-;;   :width 'normal)
+(set-face-attribute
+   'default nil
+   :family "Fira Code"
+   :height 160
+   :weight 'normal
+   :width 'normal)
 
 ;; Here are some possible font families that you can use.
 ;; "Fira Code"
