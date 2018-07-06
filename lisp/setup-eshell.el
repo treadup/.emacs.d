@@ -82,6 +82,14 @@ on the current machine."
     (eshell/cd (file-remote-p default-directory))
     (eshell/cd directory)))
 
+(defun eshell/clear ()
+"Clear the eshell buffer.
+This is a work around the broken built in clear function."
+  (let ((inhibit-read-only t))
+    (erase-buffer)
+    ;; (eshell-send-input)
+    ))
+
 ;;
 ;; Buffer management
 ;;
