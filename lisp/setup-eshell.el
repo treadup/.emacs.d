@@ -175,6 +175,12 @@ first two characters in the directory name."
 "Set the foreground color of the given TEXT to COLOR."
   (propertize text 'face `(:foreground ,color)))
 
+(defun append-space (text)
+"Append a space to TEXT if TEXT is a non empty string."
+  (if (s-blank? text)
+    ""
+    (concat text " ")))
+
 (defun custom-eshell-prompt-virtualenv ()
 "The following will find the name of the current virtual environment.
 If there is no current virtual environment return a blank string."
@@ -182,7 +188,7 @@ If there is no current virtual environment return a blank string."
     (if (s-blank? venv-path)
       ""
       (with-color
-        (concat (car (last (s-split "/" venv-path))) " ")
+        (append-space (car (last (s-split "/" venv-path))))
         "cyan"))))
 
 ;; In tramp we can have multi hops. This kind of means that the host
@@ -198,7 +204,7 @@ If there is no current virtual environment return a blank string."
 (defun custom-eshell-prompt-git-branch ()
   "Return the current git branch."
   (with-color
-    (concat (magit-get-current-branch) " ")
+    (append-space (magit-get-current-branch))
     "magenta"))
 
 (defun custom-eshell-prompt-path ()
