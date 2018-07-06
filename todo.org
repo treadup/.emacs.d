@@ -230,8 +230,3 @@ the different elements in the spaceline.
 
 https://github.com/syl20bnr/spacemacs/issues/4426
 https://github.com/milkypostman/powerline/issues/54
-* Incorrect glyph height in spaceline
-The height of the wave glyph in the spaceline is incorrect sometimes.
-This might only happen the first time you create a new frame.
-
-https://github.com/syl20bnr/spacemacs/issues/8131
