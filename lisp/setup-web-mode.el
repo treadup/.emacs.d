@@ -13,10 +13,7 @@
   :ensure t
   :config
   (setq web-mode-engines-alist '(("django"    . "\\.html\\'")))
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-
-  ;; Use web-mode for JSX files.
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode)))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode)))
 
 (use-package emmet-mode
   :ensure t
