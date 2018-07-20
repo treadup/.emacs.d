@@ -8,18 +8,21 @@
 ;; The rjsx-mode might be interesting for jsx files.
 ;; https://github.com/felipeochoa/rjsx-mode
 ;;
-;; For now I will use web-mode for JSX files. This is
-;; configured in the setup-web-mode.el file.
+;; js2-jsx-mode and rjsx do not handle indentation of JSX buffers
+;; very well. However web-mode can be configured to have nice
+;; indentation for JSX content. For now I will use web-mode when
+;; editing JSX files. This is configured in setup-web-mode.el
 
 ;;; Code:
-(use-package js2-mode
-  :ensure t
-  :config
-  ;; Use the jsx mode for .js and React .jsx files.
-  (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
-  (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode)))
+;; (use-package js2-mode
+;;   :ensure t
+;;   :config
+;;   ;; Use the jsx mode for .js and React .jsx files.
+;;   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+;;   (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+;;
+;;   (customize-set-variable 'js2-bounce-indent-p t))
 
-;; Use web-mode for JSX files.
 ;; (use-package rjsx-mode
 ;;   :ensure t
 ;;   :config
