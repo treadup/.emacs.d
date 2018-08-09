@@ -22,7 +22,7 @@ is set to the given URL."
   (erase-buffer)
   (url-insert-body-at-point url))
 
-(defun browse-url(url)
+(defun browse-url-in-buffer(url)
   "Browse the given URL in a new buffer.
 Creates a new buffer whose contents is the body of the given URL.
 The buffer name is set to the URL."
@@ -31,20 +31,20 @@ The buffer name is set to the URL."
     (switch-to-buffer (current-buffer))
     (web-mode)))
 
-(defun browse-url-at-point ()
+(defun browse-url-at-point-in-buffer ()
   "Browse the url at point."
   (interactive)
   (let ((url (url-get-url-at-point)))
     (when url
-      (browse-url url))))
+      (browse-url-in-buffer url))))
 
-(defun browse ()
+(defun browse-in-buffer ()
   "Browse the URL that you enter in the minibuffer."
   (interactive)
   (browse-url (read-string "Enter url to browse: ")))
 
-(global-set-key (kbd "C-c b") 'browse-url-at-point)
-(global-set-key (kbd "C-c B") 'browse)
+;; (global-set-key (kbd "C-c b") 'browse-url-at-point-in-buffer)
+;; (global-set-key (kbd "C-c B") 'browse-in-buffer)
 
 (provide 'setup-http)
 ;;; setup-http ends here
