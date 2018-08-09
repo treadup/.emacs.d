@@ -14,11 +14,19 @@
 (load-theme 'spacemacs-dark t)
 ;; (load-theme 'spacemacs-light t)
 
+(defun is-macos ()
+  "Return true if we are running on macOS."
+  (string-equal system-type "darwin"))
 
 ;; Use the modeline from spacemacs
 (use-package spaceline-config
   :ensure spaceline
   :config
+
+  ;; For macOS fix the colors of the separator characters in the powerline.
+  (when (is-macos)
+    (setq powerline-image-apple-rgb t))
+
   (spaceline-spacemacs-theme))
 
 ;; Use the wave separator character in the modeline instead of the arrow.
