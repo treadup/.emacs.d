@@ -1,3 +1,11 @@
+* ES6 syntax in js2-mode
+See if we can get js2-mode to use ES6 syntax.
+* Indentation width in .js and .jsx file
+See if we can configure indentation in .js and .jsx files.
+Two spaces per indent seems about right.
+
+Does this need to be configured via the .editorconfig file?
+
 * Python shell
 There are three things that we could do.
 
