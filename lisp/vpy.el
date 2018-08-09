@@ -49,7 +49,7 @@ ARGS should be nil."
 (defvar-local vpy-venv-name nil)
 
 ;; Folder containing the Python virtual environments.
-(defvar vpy-virtualenv-workon-dir (expand-file-name "~/.local/share/virtualenvs/"))
+(defvar vpy-virtualenv-workon-dir (expand-file-name "~/.virtualenvs/"))
 
 (defun vpy--virtual-environment-directory (venv-name)
   "Find the path to the Python virtual environment with the given VENV-NAME."
