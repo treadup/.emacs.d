@@ -14,23 +14,27 @@
 ;; 6. TODO: The mode line should contain the name of the virtual environment.
 
 ;;; Code:
-(use-package anaconda-mode
-  :ensure t
-  :config
-  (progn
-    ;; Activate anaconda-mode for all Python buffers.
-    (add-hook 'python-mode-hook 'anaconda-mode)
 
-    ;; Anaconda has an eldoc mode. See if I can get this working.
-    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)))
+;; Right now there is an issue with anaconda-mode that causes freezes when
+;; typing. See if disabling anaconda-mode fixes the problem.
 
-(use-package company-anaconda
-  :ensure t
-  :config
+;; (use-package anaconda-mode
+;;   :ensure t
+;;   :config
+;;   (progn
+;;     ;; Activate anaconda-mode for all Python buffers.
+;;     (add-hook 'python-mode-hook 'anaconda-mode)
 
-  ;; Add company-anaconda as a company backend.
-  (eval-after-load "company"
-    '(add-to-list 'company-backends 'company-anaconda)))
+;;     ;; Anaconda has an eldoc mode. See if I can get this working.
+;;     (add-hook 'python-mode-hook 'anaconda-eldoc-mode)))
+
+;; (use-package company-anaconda
+;;   :ensure t
+;;   :config
+
+;;   ;; Add company-anaconda as a company backend.
+;;   (eval-after-load "company"
+;;     '(add-to-list 'company-backends 'company-anaconda)))
 
 ;; References
 ;; https://github.com/proofit404/anaconda-mode
