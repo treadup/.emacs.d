@@ -72,12 +72,11 @@
 ;; (setq tooltip-use-echo-area t)
 
 ;; Show menu bar if we are in graphics mode
-;; TOOD: Probably disable this unless we are on a Mac
-(if (display-graphic-p)
-    (menu-bar-mode t))
+;; (if (display-graphic-p)
+;;    (menu-bar-mode t))
 
 ;; Remove menu bar
-;; (menu-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; Remove toolbar
 (tool-bar-mode -1)
