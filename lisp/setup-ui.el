@@ -22,11 +22,17 @@
 (if (not (display-graphic-p))
   (setq linum-format "%d "))
 
+(defun system-specific-default-font-family ()
+  "Determines the default font family to use."
+  (if (string-equal system-type "darwin")
+    "Source Code Pro"
+    "Fira Code"))
+
 ;; Set default font used by all frames.
 (set-face-attribute
    'default nil
-   :family "Fira Code"
-   :height 160
+   :family (system-specific-default-font-family)
+   :height 180
    :weight 'normal
    :width 'normal)
 
