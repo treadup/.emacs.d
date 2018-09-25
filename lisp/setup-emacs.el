@@ -30,6 +30,11 @@
 ;;; Misc config
 ;;;
 
+;; Do not ask for confirmation when killing processes.
+;; The confirm-kill-processes variable was introduced in Emacs 26.
+(when (boundp 'confirm-kill-processes)
+  (setq confirm-kill-processes nil))
+
 ;; Try out different key bindings instead of the M-x key chord.
 ;; (global-set-key (kbd "C-<return>") 'helm-M-x)
 ;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
