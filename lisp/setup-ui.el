@@ -16,11 +16,16 @@
 ;; (set-frame-parameter nil 'undecorated t)
 
 ;; Show line numbers
-(add-hook 'prog-mode-hook 'linum-mode)
-(add-hook 'text-mode-hook 'linum-mode)
 
-(if (not (display-graphic-p))
-  (setq linum-format "%d "))
+;; The display-line-numbers-mode was added in Emacs 26.1
+;; It is a replacement for linum-mode.
+(if (boundp display-line-numbers)
+  (progn
+    (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+    (add-hook 'text-mode-hook 'display-line-numbers-mode))
+  (progn
+    (add-hook 'prog-mode-hook 'linum-mode)
+    (add-hook 'text-mode-hook 'linum-mode)))
 
 (defun system-specific-default-font-family ()
   "Determines the default font family to use."
