@@ -19,7 +19,7 @@
 
 ;; The display-line-numbers-mode was added in Emacs 26.1
 ;; It is a replacement for linum-mode.
-(if (boundp display-line-numbers)
+(if (boundp 'display-line-numbers)
   (progn
     (add-hook 'prog-mode-hook 'display-line-numbers-mode)
     (add-hook 'text-mode-hook 'display-line-numbers-mode))
