@@ -31,7 +31,28 @@
   (add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
 
   ;; Set the content type to jsx when editing .js and .jsx files
-  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'"))))
+  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+
+  ;; Indentation
+  (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-quotes" . nil))
+  (add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
+
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-script-padding 2)
+  (setq web-mode-attr-indent-offset 2)
+  (setq web-mode-enable-css-colorization t)
+
+  ;; Disable automatic quoting
+  (setq web-mode-enable-auto-quoting nil)
+
+  ;; Highlight the current element
+  (setq web-mode-enable-current-element-highlight t))
 
 (use-package emmet-mode
   :ensure t
