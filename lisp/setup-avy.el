@@ -11,7 +11,8 @@
 ;;; Code:
 (use-package avy
   :ensure t
-  :bind (("C-M-s" . avy-goto-word-1)))
+  :bind (("C-'" . avy-goto-char-2)
+         ("C-\"" . avy-goto-word-1)))
 
 (provide 'setup-avy)
 ;;; setup-avy ends here
