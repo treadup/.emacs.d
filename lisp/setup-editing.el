@@ -31,10 +31,20 @@
 
 ;; Make it so that copying and cutting when no region is selected will
 ;; copy or cut the whole line.
-(use-package whole-line-or-region
-  :ensure t
-  :config
-  (whole-line-or-region-global-mode))
+;; This package interferes with kill-backward-word-or-region.
+;; (use-package whole-line-or-region
+;;   :ensure t
+;;   :config
+;;   (whole-line-or-region-global-mode))
+
+(defun kill-backward-word-or-region ()
+  "Kill backward word if no region is active. Otherwise kill the active region."
+  (interactive)
+  (if (region-active-p)
+    (kill-region (region-beginning) (region-end))
+    (backward-kill-word 1)))
+
+(global-set-key (kbd "C-w") 'kill-backward-word-or-region)
 
 ;; Make it so that you can expand the region semantically.
 (use-package expand-region
