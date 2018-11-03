@@ -1,3 +1,7 @@
+* Origami
+Code folding using origami.
+https://github.com/gregsexton/origami.el
+
 * ES6 syntax in js2-mode
 See if we can get js2-mode to use ES6 syntax.
 * Indentation width in .js and .jsx file
