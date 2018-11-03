@@ -65,6 +65,17 @@
 ;; caused by the use-package macro.
 (require 'bind-key)
 
+(use-package auto-package-update
+   :ensure t
+   :config
+
+   ;; Update the packages every 4 days
+   (setq auto-package-update-interval 4)
+
+   ;; Update all packages on startup that have updates available.
+   (auto-package-update-maybe))
+
+
 ;; Load the diminish package early. It can then be used in the use-package forms
 ;; using :diminish
 (use-package diminish
