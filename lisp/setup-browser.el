@@ -13,8 +13,13 @@
 ;; (browse-url "http://the.url.goes.here/some/path") will navigate to the url directly.
 (global-set-key (kbd "C-c C-o") (lambda () (interactive) (browse-url-at-point)))
 
-;; Use Firefox to browse URLs from Emacs
-(setq browse-url-browser-function 'browse-url-firefox)
+(if (string-equal system-type "darwin")
+  (progn
+    ;; Use the OS default browser on macOS.
+    (customize-set-variable browse-url-browser-function 'browse-url-default-macosx-browser))
+  (progn
+    ;; Use Google Chrome on all other systems.
+    (setq browse-url-browser-function 'browse-url-chrome)))
 
 ;; (browse-url-at-point) will browse the url at the point.
 ;; C-c C-o should be bound to browse-url-at-point.
