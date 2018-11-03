@@ -21,10 +21,10 @@
 
 ;;; Code:
 
-(use-package djangonaut
-  :ensure t
-  :config
-  (add-hook 'python-mode-hook 'global-djangonaut-mode))
+;; (use-package djangonaut
+;;  :ensure t
+;;  :config
+;;  (add-hook 'python-mode-hook 'global-djangonaut-mode))
 
 (provide 'setup-django)
 ;;; setup-django ends here
