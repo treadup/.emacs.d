@@ -7,7 +7,7 @@
 
 ;; The flx-ido readme reccomends increasing the gc-cons-threshold to
 ;; at least 20 MB.
-(setq gc-cons-threshold 30000000)
+;; (setq gc-cons-threshold 30000000)
 
 ;; Byte compile all files in the .emacs.d/lisp folder. Force byte compilation
 ;; even if there is no existing .elc file for the .el file.
