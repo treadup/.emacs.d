@@ -59,11 +59,6 @@
   :config
   (global-set-key (kbd "C-c a") 'helm-ag))
 
-(use-package helm-projectile
-  :ensure t
-  :config
-  (helm-projectile-on))
-
 (use-package swiper-helm
   :ensure t
   :bind (("C-M-s" . swiper-helm)))
