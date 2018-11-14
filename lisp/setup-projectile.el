@@ -19,6 +19,12 @@
   (customize-set-variable 'projectile-mode-line
     '(:eval (format "Prj[%s]" (projectile-project-name))))
 
+  ;; Use both S+p and C-c p as the default prefix for projectile.
+  ;; Before projectile would itself set this keybinding to C-c p but
+  ;; now you have to do it yourself.
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
   ;; Enable projectile everywhere
   (projectile-mode))
 
