@@ -543,5 +543,10 @@
 ;;
 (setup-custom "setup-wanderlust.el")
 
+;;
+;; Avy specific setup
+;;
+(setup-custom "setup-avy.el")
+
 (provide 'init)
 ;;; init.el ends here
