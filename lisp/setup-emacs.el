@@ -5,7 +5,7 @@
 ;;; Code:
 ;; Automatically revert a buffer if the file was changed by an external
 ;; program.
-;; (global-auto-revert-mode 1)
+(global-auto-revert-mode t)
 
 ;; Solve problem with lag when scrolling the point.
 ;; Without this scrolling using C-n will freeze frequently.
