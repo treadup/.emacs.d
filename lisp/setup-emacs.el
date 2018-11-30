@@ -94,6 +94,12 @@
   (revert-buffer nil t t)
   (message (concat "Reverted buffer " (buffer-name))))
 
+(defun untabify-this-buffer ()
+  "Untabify the current buffer."
+  (interactive)
+  (delete-trailing-whitespace)
+  (untabify (point-min) (point-max)))
+
 ;; Make new buffers that are not associated with a file automatically
 ;; set the major mode based on the buffer name.
 
