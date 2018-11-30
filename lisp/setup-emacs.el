@@ -186,6 +186,22 @@ Start `ielm' if it's not already running."
 
 (global-set-key (kbd "C-c r")  'rename-file-and-buffer)
 
+;; Copy filename of current buffer to clipboard
+;; https://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
+(defun buffer-filename-to-clipboard ()
+  "Copy the filename of the current buffer to the clipboard.
+   Does nothing if the buffer is not associated with a file or
+   directory."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))
+
+(global-set-key (kbd "C-c n") 'buffer-filename-to-clipboard)
+
 ;;
 ;; Midnight mode
 ;;
