@@ -364,7 +364,7 @@
 ;;
 ;; Treemacs specific setup
 ;;
-;; (setup-custom "setup-treemacs")
+(setup-custom "setup-treemacs")
 
 ;;
 ;; Log file specific setup
@@ -494,7 +494,7 @@
 ;;
 ;; Guru mode
 ;;
-(setup-custom "setup-guru")
+;; (setup-custom "setup-guru")
 
 ;;
 ;; Yasnippet
