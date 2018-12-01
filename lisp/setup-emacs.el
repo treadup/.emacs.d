@@ -218,6 +218,9 @@ Start `ielm' if it's not already running."
 ;; Run midnight-hook 4 hours after midnight
 (midnight-delay-set 'midnight-delay (* 4 60 60))
 
+;; Enable midnight mode globally.
+;; (midnight-mode 1)
+
 ;;
 ;; Recent files
 ;;
