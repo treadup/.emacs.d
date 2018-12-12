@@ -79,6 +79,12 @@
 ;; Display tooltips in the echo area.
 (tooltip-mode -1)
 
+;;; When on macOS use dark appearance and have a transparent titlebar.
+(if (string-equal system-type "darwin")
+  (progn
+    (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+    (add-to-list 'default-frame-alist '(ns-appearance . dark))))
+
 ;; This variable is deprecated as of Emacs 24.1
 ;; (setq tooltip-use-echo-area t)
 
