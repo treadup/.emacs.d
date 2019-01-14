@@ -332,6 +332,11 @@
 (setup-custom "setup-lua")
 
 ;;
+;; Elm specific setup
+;;
+(setup-custom "setup-elm")
+
+;;
 ;; Erlang specific setup
 ;;
 (setup-custom "setup-erlang")
