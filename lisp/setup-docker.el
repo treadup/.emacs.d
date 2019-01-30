@@ -2,8 +2,12 @@
 ;;; Customization for Docker
 ;;;
 
-;; Docker major mode for editing Dockerfiles
+;; Major mode for editing Dockerfiles
 (use-package dockerfile-mode
+  :ensure t)
+
+;; Major mode for editing docker-compose files
+(use-package docker-compose-mode
   :ensure t)
 
 ;; Tramp integration for Docker
