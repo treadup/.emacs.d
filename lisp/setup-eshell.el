@@ -67,12 +67,12 @@ environments."
 
 (add-hook 'eshell-mode-hook 'custom-eshell-mode-hook)
 
-(defun custom-eshell-exec-hook (executing-process)
-  "Do not query when killing an Eshell currently running a process.
-The EXECUTING-PROCESS is the process being executed by Eshell."
-  (tramp-compat-set-process-query-on-exit-flag executing-process nil))
+;; (defun custom-eshell-exec-hook (executing-process)
+;;  "Do not query when killing an Eshell currently running a process.
+;; The EXECUTING-PROCESS is the process being executed by Eshell."
+;;  (tramp-compat-set-process-query-on-exit-flag executing-process nil))
 
-(add-hook 'eshell-exec-hook 'custom-eshell-exec-hook)
+;; (add-hook 'eshell-exec-hook 'custom-eshell-exec-hook)
 
 (defun eshell/lcd (&optional directory)
   "Change directory to DIRECTORY.
