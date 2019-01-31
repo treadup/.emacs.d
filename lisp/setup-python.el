@@ -106,10 +106,6 @@ Either in the given directory DIR in one of the ancestors."
 
 (defconst original-python-extra-pythonpaths python-shell-extra-pythonpaths)
 
-;; Repeat of what is in the setup-eshell.el file.
-(defvar custom-eshell-path-env)
-(setq custom-eshell-path-env eshell-path-env)
-
 (defun activate-python-project ()
 "Activate the current projectile project as a python project.
 Sets the python-extra-pythonpath to the root of the project.
@@ -127,13 +123,6 @@ Activates the virtual environment."
         (unless (s-blank? venv-name)
           (progn
             (pyvenv-workon venv-name)
-            ;; Set the eshell path
-            ;; https://github.com/jorgenschaefer/elpy/issues/1172
-            ;; Setting eshell-path-env directly does not seem to work.
-            (setq eshell-path-env (mapconcat 'identity exec-path ":"))
-            ;; Instead set custom-eshell-path-env that we then use in
-            ;; an eshell-mode hook to set eshell-path-env.
-            (setq custom-eshell-path-env (mapconcat 'identity exec-path ":"))
             ))))))
 
 ;; On startup activate the current projectile project, if there is
