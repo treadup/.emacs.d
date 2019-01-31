@@ -1,3 +1,13 @@
+* pip-isort
+This looks interesting.
+ https://github.com/paetzke/py-isort.el
+* py-autopep8
+Automatically format your code according to pep8.
+https://github.com/paetzke/py-autopep8.el
+* pip-requirements
+https://github.com/Wilfred/pip-requirements.el
+* iedit
+Learn how to use iedit.
 * Origami
 Code folding using origami.
 https://github.com/gregsexton/origami.el
