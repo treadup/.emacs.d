@@ -2,24 +2,6 @@
 
 ;;; Commentary:
 
-;; Allow eshell to modify the global environment.  This is needed so that when
-;; we switch python virutal environments this change also shows up in Eshell.
-;; (setq eshell-modify-global-environment t)
-
-;; See if I can't define my own methods for handling virutal environments
-;; in eshell.
-;;
-;; workon - activate a virtual environment
-;; deactivate - deactivate the current virtual environment
-;; mkvenv
-;; rmvenv
-;; lsvenv
-
-;; These could work by managing the eshell-path-env ourselves.  When we call workon
-;; we would append the virtual environments bin folder to custom-eshell-path-env.
-;; Then in the custom-eshell-prompt-function we could update eshell-path-env from
-;; custom-eshell-path-env.  This will work but it might be slow.
-
 ;; We want to enable Eshell smart display mode. This gives us a built in pager for
 ;; all commands. Space will move down a page. Backspace will move back a page.
 ;; https://www.masteringemacs.org/article/complete-guide-mastering-eshell
@@ -27,6 +9,7 @@
 ;;; Code:
 
 (require 'eshell)
+(require 's)
 
 ;; Use Eshell smart display
 (require 'em-smart)
@@ -43,9 +26,7 @@
 ;; This is a hack to get Eshell to respect the bin folder from
 ;; the Python virtual environment.
 (defun custom-eshell-mode-hook ()
-"Set the eshell-path-env to the current custom version.
-The custom-eshell-path-env is updated whenever you switch virtual
-environments."
+  "Customize Eshell on startup."
   ;; Create aliases
   (eshell/alias "ll" "ls -l $*")
   (eshell/alias "e" "find-file $1")
@@ -250,5 +231,13 @@ For non root users this is $.  For the root user this is #."
 ;; line in the prompt.
 (customize-set-variable 'eshell-prompt-regexp "[$#] ")
 
+;; The eshell-bookmarks package integrates eshell with bookmarks.el
+;; capture a bookmark to eshell with C-x r m
+;; restore an eshell with C-x r l
+(use-package eshell-bookmark
+  :ensure t
+  :config
+  (add-hook 'eshell-mode-hook 'eshell-bookmark-setup))
+
 (provide 'setup-eshell)
-;;; setup-eshell.el ends here
+;;; setup-eshell ends here
