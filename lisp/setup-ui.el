@@ -59,7 +59,7 @@
 ;;
 ;; Perhaps have some way of detecting which screen I am on and modifying the size
 ;; of the frame dynamically at startup.
-(setq initial-frame-alist '((top . 0) (left . 0) (width . 126) (height . 36)))
+(setq initial-frame-alist '((top . 0) (left . 0) (width . 129) (height . 34)))
 
 ;; Turn of the visual bell.
 ;;
