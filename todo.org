@@ -1,3 +1,30 @@
+* Python Virtual Environment
+Change the way we handle python virutal environments.
+
+The parts that I am going to use are the following.
+
+I will be calling the following function to set the venv.
+
+    (pyvenv-workon venv-name)
+
+Next I will get the name of the python virtual env from a buffer local
+variable. This variable can be set as a file local variable or a dir
+local variable.
+
+Finaly there is the post-command-hook.
+
+This hook is used to test if the virtualenv should be activated when
+changing the buffer.
+https://stackoverflow.com/questions/47456134/emacs-lisp-hooks-for-detecting-change-of-active-buffer
+
+This should be done by having a venv-name and a current-venv-name.
+
+Actually it would be better if we could just skip having to watch when
+the current buffer changes.
+
+Could we achieve everything that we want with just buffer local
+variables that are set on file load time?
+
 * pip-isort
 This looks interesting.
  https://github.com/paetzke/py-isort.el
