@@ -96,41 +96,9 @@ Either in the given directory DIR in one of the ancestors."
       (parse-dot-venv-file venv-filename)
       nil)))
 
-;;
-;; Projectile switch project hook
-;;
-
 ;; There are two things that you need to configure for Python in Emacs.
 ;; The first is adding the root folder of the project as an extra python path.
 ;; The second is activating the virtual environment.
-
-(defconst original-python-extra-pythonpaths python-shell-extra-pythonpaths)
-
-(defun activate-python-project ()
-"Activate the current projectile project as a python project.
-Sets the python-extra-pythonpath to the root of the project.
-Activates the virtual environment."
-  (if (projectile-project-p)
-    (progn
-      ;; Add the project root to the python-shell-extra-pythonpaths
-      (setq python-shell-extra-pythonpaths original-python-extra-pythonpaths)
-      (add-to-list 'python-shell-extra-pythonpaths (projectile-project-root))
-      ;; If we are in a virtual environment then deactivate it.
-      (if python-shell-virtualenv-root
-        (pyvenv-deactivate))
-      ;; Acivate the virtual environment from the .venv file if there is one.
-      (let ((venv-name (find-automatic-venv-name default-directory)))
-        (unless (s-blank? venv-name)
-          (progn
-            (pyvenv-workon venv-name)
-            ))))))
-
-;; On startup activate the current projectile project, if there is
-;; one, as a python project.
-(activate-python-project)
-
-;; And switch python project when we switch projects in Projectile.
-(add-hook 'projectile-after-switch-project-hook #'activate-python-project)
 
 ;;
 ;; iPython
@@ -143,3 +111,6 @@ Activates the virtual environment."
 ;;        python-shell-interpreter-args "--simple-prompt -i")
 
 ;; Actually the above might interfer when switching virtual environments.
+
+(provide 'setup-python)
+;;; setup-python.el ends here
