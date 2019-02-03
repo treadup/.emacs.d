@@ -68,7 +68,7 @@
 ;; for python virtual envs.
 
 ;; Folder containing the Python virtual environments.
-(defconst python-virtualenv-workon-dir (expand-file-name "~/.local/share/virtualenvs/"))
+(defconst python-virtualenv-workon-dir (expand-file-name "~/.virtualenvs/"))
 
 (defun parse-dot-venv-file (filename)
 "Parse a .venv file with the given FILENAME  and return the name of the virtual environment."
@@ -103,7 +103,7 @@ Either in the given directory DIR in one of the ancestors."
 
 (defun venv-activate (dir)
   "Activate the Python virtual environment located at DIR."
-  (interactive)
+  (interactive "DVirtualenv directory: ")
   (pythonic-activate dir))
 
 (defun venv-deactivate ()
@@ -111,10 +111,20 @@ Either in the given directory DIR in one of the ancestors."
   (interactive)
   (pythonic-deactivate))
 
-(defun venv-workon ()
-  "Activate a named Python virtual environment.
+(defun venv-names ()
+  "Return the list of the known virtual environment names."
+  ;; In the future we might just want this to be a hard coded
+  ;; list instead. Currently the returned list contains a bunch
+  ;; of garbage virtual environment names.
+  (mapcar 'f-filename (f-directories python-virtualenv-workon-dir)))
+
+(defun venv-workon (venv-name)
+  "Activate the Python virtual environment with the name VENV-NAME.
 The name of the virtual environment is entered interactively."
-  (message "Code to activate a named virtual environment goes here"))
+  (interactive "sVirtualenv name: ")
+  (venv-activate (concat python-virtualenv-workon-dir venv-name)))
+
+;; (completing-read "Virtual env name: " (list "redwood" "skyfall") nil t)
 
 (defun venv-auto ()
   "Activate the Python virtual environment associated with the current file.
