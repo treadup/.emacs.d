@@ -27,12 +27,25 @@
   (when (is-macos)
     (setq powerline-image-apple-rgb t))
 
-  (spaceline-spacemacs-theme))
+  (spaceline-define-segment python-vitualenv-spaceline-segment
+    "Spaceline segment for displaying the currently active Python virtual environment name.
+Only shown in Python buffers."
+    (when
+      (and
+        active
+        (eq 'python-mode major-mode)
+        python-shell-virtualenv-root)
+      (propertize (f-filename python-shell-virtualenv-root)
+        'face 'spaceline-python-venv
+        'help-echo (format "Python virtual environment (from python-shell-virtualenv-root): %s"
+                     (f-filename python-shell-virtualenv-root)))))
 
-;; Use the wave separator character in the modeline instead of the arrow.
-;; To get this to work you might have to execute (spaceline-compile)
-(setq powerline-default-separator 'wave)
-(spaceline-compile)
+  (spaceline-spacemacs-theme 'python-vitualenv-spaceline-segment)
+
+  ;; Use the wave separator character in the modeline instead of the arrow.
+  ;; To get this to work you might have to execute (spaceline-compile)
+  (setq powerline-default-separator 'wave)
+  (spaceline-compile))
 
 (provide 'setup-theme)
 ;;; setup-theme.el ends here
