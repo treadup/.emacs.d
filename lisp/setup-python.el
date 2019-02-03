@@ -64,9 +64,6 @@
 ;; (use-package pyvenv
 ;;  :ensure t)
 
-;; TODO: Have a flag where you can enable or disable the old Eshell support
-;; for python virtual envs.
-
 ;; Folder containing the Python virtual environments.
 (defconst python-virtualenv-workon-dir (expand-file-name "~/.virtualenvs/"))
 
@@ -81,17 +78,17 @@
   "Find the path to the Python virtual environment with the given VENV-NAME."
   (concat (file-name-as-directory python-virtualenv-workon-dir) venv-name))
 
-(defun find-dot-venv-filename (dir)
+(defun find-dot-venv-filename ()
   "Find the name of the .venv file associated with the given directory DIR."
   (let ((dot-venv-directory (locate-dominating-file default-directory ".venv")))
     (if dot-venv-directory
       (concat dot-venv-directory ".venv")
       nil)))
 
-(defun find-automatic-venv-name (dir)
+(defun find-automatic-venv-name ()
   "Find the name of the virtual environment from a .venv file.
 Either in the given directory DIR in one of the ancestors."
-  (let ((venv-filename (find-dot-venv-filename dir)))
+  (let ((venv-filename (find-dot-venv-filename)))
     (if venv-filename
       (parse-dot-venv-file venv-filename)
       nil)))
@@ -128,7 +125,11 @@ The name of the virtual environment is entered interactively."
 (defun venv-auto ()
   "Activate the Python virtual environment associated with the current file.
 If the current buffer does not have an associated file then do nothing."
-  (message "Code to automatically activate a virtual environment"))
+  (interactive)
+  (let ((venv-name (find-automatic-venv-name)))
+    (venv-workon venv-name)))
+
+(define-key python-mode-map (kbd "C-c C-e") 'venv-auto)
 
 ;;
 ;; iPython
