@@ -61,8 +61,8 @@
 ;; Unfortunately this package does not support Eshell.
 ;; There is a github issue to fix this.
 ;; github.com/joergenschaefer/elpy/issues/1172
-(use-package pyvenv
-  :ensure t)
+;; (use-package pyvenv
+;;  :ensure t)
 
 ;; TODO: Have a flag where you can enable or disable the old Eshell support
 ;; for python virtual envs.
@@ -99,6 +99,27 @@ Either in the given directory DIR in one of the ancestors."
 ;; There are two things that you need to configure for Python in Emacs.
 ;; The first is adding the root folder of the project as an extra python path.
 ;; The second is activating the virtual environment.
+
+
+(defun venv-activate (dir)
+  "Activate the Python virtual environment located at DIR."
+  (interactive)
+  (pythonic-activate dir))
+
+(defun venv-deactivate ()
+  "Deactivate the currently active Python virtual environment."
+  (interactive)
+  (pythonic-deactivate))
+
+(defun venv-workon ()
+  "Activate a named Python virtual environment.
+The name of the virtual environment is entered interactively."
+  (message "Code to activate a named virtual environment goes here"))
+
+(defun venv-auto ()
+  "Activate the Python virtual environment associated with the current file.
+If the current buffer does not have an associated file then do nothing."
+  (message "Code to automatically activate a virtual environment"))
 
 ;;
 ;; iPython
