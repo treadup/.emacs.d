@@ -121,10 +121,9 @@ Either in the given directory DIR in one of the ancestors."
 (defun venv-workon (venv-name)
   "Activate the Python virtual environment with the name VENV-NAME.
 The name of the virtual environment is entered interactively."
-  (interactive "sVirtualenv name: ")
+  (interactive
+    (list (completing-read "Virtual env name: " (venv-names) nil t)))
   (venv-activate (concat python-virtualenv-workon-dir venv-name)))
-
-;; (completing-read "Virtual env name: " (list "redwood" "skyfall") nil t)
 
 (defun venv-auto ()
   "Activate the Python virtual environment associated with the current file.
