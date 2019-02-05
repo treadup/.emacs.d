@@ -40,6 +40,16 @@ Only shown in Python buffers."
         'help-echo (format "Python virtual environment (from python-shell-virtualenv-root): %s"
                      (f-filename python-shell-virtualenv-root)))))
 
+  (spaceline-define-segment python-extra-pythonpaths-segment
+    "Spaceline segment for displaying the python-shell-extra-pythonpaths value.
+Only shown in Python buffers."
+    (when
+      (and
+        active
+        (eq 'python-mode major-mode))
+      (propertize (if python-shell-extra-pythonpaths (format "%s" python-shell-extra-pythonpaths) "No extra pythonpaths")
+        'face 'spaceline-python-venv)))
+
   (spaceline-spacemacs-theme 'python-vitualenv-spaceline-segment)
 
   ;; Use the wave separator character in the modeline instead of the arrow.
