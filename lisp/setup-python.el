@@ -79,15 +79,18 @@
   (concat (file-name-as-directory python-virtualenv-workon-dir) venv-name))
 
 (defun find-dot-venv-filename ()
-  "Find the name of the .venv file associated with the given directory DIR."
+  "Find the name of the .venv file associated with the current file."
   (let ((dot-venv-directory (locate-dominating-file default-directory ".venv")))
     (if dot-venv-directory
       (concat dot-venv-directory ".venv")
       nil)))
 
+(defun find-dot-venv-directory ()
+  "Find the name of the directory containing the .venv file associated with the current file."
+  (locate-dominating-file default-directory ".venv"))
+
 (defun find-automatic-venv-name ()
-  "Find the name of the virtual environment from a .venv file.
-Either in the given directory DIR in one of the ancestors."
+  "Find the name of the virtual environment associated with the current file."
   (let ((venv-filename (find-dot-venv-filename)))
     (if venv-filename
       (parse-dot-venv-file venv-filename)
@@ -97,6 +100,20 @@ Either in the given directory DIR in one of the ancestors."
 ;; The first is adding the root folder of the project as an extra python path.
 ;; The second is activating the virtual environment.
 
+(defun venv-find-executable (executable)
+  "Find an EXECUTABLE. Search the current path.
+If there is a virtual environment then search the bin
+folder of the virtual environment as well."
+  (let ((exec-path (python-shell-calculate-exec-path)))
+    (executable-find executable)))
+
+(defun venv-only-find-executable (executable)
+  "Find an EXECUTABLE searching only the bin folder in the current virtual environment."
+  (if python-shell-virtualenv-root
+    (let ((exec-path (list (concat python-shell-virtualenv-root "bin"))))
+      (executable-find executable))))
+
+(defconst original-python-shell-extra-pythonpaths python-shell-extra-pythonpaths)
 
 (defun venv-activate (dir)
   "Activate the Python virtual environment located at DIR."
@@ -106,7 +123,9 @@ Either in the given directory DIR in one of the ancestors."
 (defun venv-deactivate ()
   "Deactivate the currently active Python virtual environment."
   (interactive)
-  (pythonic-deactivate))
+  (progn
+    (pythonic-deactivate)
+    (setq python-shell-extra-pythonpaths original-python-shell-extra-pythonpaths)))
 
 (defun venv-names ()
   "Return the list of the known virtual environment names."
@@ -127,7 +146,14 @@ The name of the virtual environment is entered interactively."
 If the current buffer does not have an associated file then do nothing."
   (interactive)
   (let ((venv-name (find-automatic-venv-name)))
-    (venv-workon venv-name)))
+    (if venv-name
+      (let ((venv-directory (find-dot-venv-directory)))
+        (when venv-directory
+          (progn
+            (setq python-shell-extra-pythonpaths
+              (cons venv-directory original-python-shell-extra-pythonpaths))
+            (venv-workon venv-name))))
+      (venv-deactivate))))
 
 (define-key python-mode-map (kbd "C-c C-e") 'venv-auto)
 
