@@ -10,6 +10,7 @@
   :ensure t
   :diminish "FC"
   :config
+  (setq flycheck-executable-find 'venv-find-executable)
   (global-flycheck-mode))
 
 (provide 'setup-flycheck)
