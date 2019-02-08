@@ -36,6 +36,13 @@
   (eval-after-load "company"
     '(add-to-list 'company-backends 'company-anaconda)))
 
+;; Emacs integration for the black code formatter for Python.
+;; The black executable needs to be installed for this to work.
+;; https://melpa.org/#/blacken
+;; https://github.com/proofit404/blacken/
+(use-package blacken
+  :ensure t)
+
 ;; References
 ;; https://github.com/proofit404/anaconda-mode
 ;; https://github.com/proofit404/company-anaconda
