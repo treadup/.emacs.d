@@ -38,10 +38,19 @@
 
 ;; Emacs integration for the black code formatter for Python.
 ;; The black executable needs to be installed for this to work.
+;; In other words you should have done pip3 install black to
+;; install black in the global python3 environment.
 ;; https://melpa.org/#/blacken
 ;; https://github.com/proofit404/blacken/
 (use-package blacken
   :ensure t)
+
+;; An alternative code formatter is autopep8
+;; First you need to install the autopep8 python library.
+;; pip3 install autopep8
+;; Then we install the py-autopep8 package.
+;; (use-package py-autopep8
+;;  :ensure t)
 
 ;; References
 ;; https://github.com/proofit404/anaconda-mode
@@ -163,6 +172,12 @@ If the current buffer does not have an associated file then do nothing."
       (venv-deactivate))))
 
 (define-key python-mode-map (kbd "C-c C-e") 'venv-auto)
+
+;;
+;; Requirements mode
+;;
+(use-package pip-requirements
+  :ensure t)
 
 ;;
 ;; iPython
