@@ -97,5 +97,8 @@
                        (when (has-js-x-ts-x-extension)
                          (tide-setup))))))
 
+(use-package prettier-js
+  :ensure t)
+
 (provide 'setup-web-mode)
 ;;; setup-web-mode ends here
