@@ -31,10 +31,10 @@
 ;;   (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode)))
 
 ;; Use company-tern for completion in JavaScript modes.
-(use-package company-tern
-  :ensure t
-  :config
-  (add-to-list 'company-backends 'company-tern))
+;; (use-package company-tern
+;;  :ensure t
+;;  :config
+;;  (add-to-list 'company-backends 'company-tern))
 
 (provide 'setup-javascript)
 ;;; setup-javascript ends here
