@@ -43,7 +43,9 @@
 ;; https://melpa.org/#/blacken
 ;; https://github.com/proofit404/blacken/
 (use-package blacken
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'blacken-mode))
 
 ;; Use isort to sort python imports.
 ;; The isort module needs to be installed for this to work.
