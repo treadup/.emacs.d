@@ -553,5 +553,10 @@
 ;;
 (setup-custom "setup-avy.el")
 
+;;
+;; Eglot specific setup
+;;
+(setup-custom "setup-eglot.el")
+
 (provide 'init)
 ;;; init.el ends here
