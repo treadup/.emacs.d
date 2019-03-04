@@ -556,7 +556,10 @@
 ;;
 ;; Eglot specific setup
 ;;
-(setup-custom "setup-eglot.el")
+;; I do not have Emacs 26.1 or later on my Linux machine.
+;; Only use eglot on macOS.
+(if (string-equal system-type "darwin")
+  (setup-custom "setup-eglot.el"))
 
 (provide 'init)
 ;;; init.el ends here
