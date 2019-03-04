@@ -2,39 +2,17 @@
 ;;; Commentary:
 ;;;
 
-;; This configuration does the following.
-;; 1. Activates anaconda-mode
-;; 2. Set the python-shell-extra-pythonpaths to contain the root
-;;    folder of the current projectile project.
-;; 3. Activate the virtual environment in the .venv file in the current
-;;    projectile project.
-;; 3. Turn on auto-completion using company-anaconda.
-;; 4. Turn on eldoc using anaconda-eldoc-mode
-;; 5. Use iPython for the inferior shell
-;; 6. TODO: The mode line should contain the name of the virtual environment.
+;; Anaconda mode is currently broken on macOS with the following error message.
+;; Server error: InvalidPythonEnvironment("Could not get version information for '<some file>':
+;; OSError(24, 'Too many open files')",)
+
+;; Therefore I will not use Anaconda mode for now.
 
 ;;; Code:
 
-;; Right now there is an issue with anaconda-mode that causes freezes when
-;; typing. See if disabling anaconda-mode fixes the problem.
-
-(use-package anaconda-mode
-  :ensure t
-  :config
-  (progn
-    ;; Activate anaconda-mode for all Python buffers.
-    (add-hook 'python-mode-hook 'anaconda-mode)
-
-    ;; Anaconda has an eldoc mode. See if I can get this working.
-    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)))
-
-(use-package company-anaconda
-  :ensure t
-  :config
-
-  ;; Add company-anaconda as a company backend.
-  (eval-after-load "company"
-    '(add-to-list 'company-backends 'company-anaconda)))
+;; Use pythonic to manage Python virtual environments.
+(use-package pythonic
+  :ensure t)
 
 ;; Emacs integration for the black code formatter for Python.
 ;; The black executable needs to be installed for this to work.
