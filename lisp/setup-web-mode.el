@@ -63,7 +63,7 @@
   (add-hook 'css-mode-hook  'emmet-mode)
   (add-hook 'web-mode-hook  'emmet-mode))
 
-;; Tide depends on typescript mode.
+;; This is a left over from when I was using Tide.
 (use-package typescript-mode
   :ensure t)
 
@@ -76,27 +76,7 @@
            (string-equal extension "ts")
            (string-equal extension "tsx"))))
 
-;; Tide provides code completion for ts, tsx, js and jsx files.
-;; (It also does the same for ts and tsx files.)
-;; https://github.com/ananthakumaran/tide#use-package
-
-;; For tide to work you need to have a jsconfig.json file or tsconfig.json
-;; file in the top level folder of the project.
-(use-package tide
-  :ensure t
-  :after (typescript-mode company flycheck)
-  :config
-
-  ;; We might want to add the jsx-tide checker to flycheck.
-  ;; (flycheck-add-mode 'javascript-eslint 'web-mode)
-  ;; (flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
-
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (web-mode . (lambda ()
-                       (when (has-js-x-ts-x-extension)
-                         (tide-setup))))))
-
+;; Use prettier for code formatting of .js and .jsx files.
 (use-package prettier-js
   :ensure t)
 
