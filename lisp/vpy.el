@@ -18,15 +18,18 @@ environments in eshell.
 
 The following commands are available.
     help <command>                 Shows the help message for the command.
+    create <virtual env name>      Creates new named virtual environment
     activate <virtual env name>    Activates the named virtual environment.
+    connect                        Connects the active virtual environment with the current directory
     deactivate                     Deactivates the current virtual environment.
 ")
 
 (defconst vpy--help-help-message "Usage: vpy help <command> ")
-
+(defconst vpy--create-help-message "Usage: vpy create <virtual env name>")
 (defconst vpy--activate-help-message "Usage: vpy activate <virtual env name>")
-
+(defconst vpy--connect-help-message "Usage: vpy connect <virtual env name>")
 (defconst vpy--deactivate-help-message "Usage: vpy deactivate")
+
 
 (defun vpy-help (&optional cmd &rest args)
 "Show the help text for the command.
@@ -38,7 +41,9 @@ ARGS should be nil."
       (eshell/echo vpy--help-message)
       (pcase cmd
         ("help"       (eshell/echo vpy--help-help-message))
+        ("create"     (eshell/echo vpy--create-help-message))
         ("activate"   (eshell/echo vpy--activate-help-message))
+        ("connect"    (eshell/echo vpy--connect-help-message))
         ("deactivate" (eshell/echo vpy--deactivate-help-message))
         (_            (eshell/echo (concat "Unknown command " cmd)))))
     (eshell/echo vpy--help-help-message)))
@@ -122,6 +127,18 @@ hook is called by Eshell before displaying the prompt."
 ;; Eshell commands
 ;;
 
+(defun vpy-create (&optional venv-name &rest args)
+ "Create named virutal environment with name VENV-NAME.
+ARGS should be nil."
+  (if (or (not (null args)) (null venv-name))
+    (eshell/echo vpy--create-help-message)
+    (progn
+      (eshell/echo "Creating Python virtual environment. This might take a while...")
+      (eshell/echo
+        (shell-command-to-string
+          (concat "/usr/bin/env python3 -m venv " vpy-virtualenv-workon-dir venv-name)))
+      nil)))
+
 (defun vpy-activate (&optional venv-name &rest args)
 "Activate the VENV-NAME virtual environment.
 ARGS should be nil."
@@ -140,6 +157,14 @@ ARGS should be nil."
       (vpy--deactivate-virtual-environment)
       nil)))
 
+(defun vpy-connect (&optional venv-name &rest args)
+"Connect the virtual environment with name VENV-NAME to the current directory.
+ARGS should be nil."
+  (if (or (not (null args)) (null venv-name))
+    (eshell/echo vpy--connect-help-message)
+    (let ((dot-venv-filename (concat (file-name-as-directory (eshell/pwd)) ".venv")))
+      (f-write-text venv-name 'utf-8 dot-venv-filename))))
+
 (defun eshell/vpy (&optional cmd &rest args)
 "The vpy function is used to manage Python virtual environments.
 Executes the given CMD.  ARGS are dependent on the command you execute."
@@ -147,7 +172,9 @@ Executes the given CMD.  ARGS are dependent on the command you execute."
     (vpy-help)
     (pcase cmd
       ("help" (apply 'vpy-help args))
+      ("create" (apply 'vpy-create args))
       ("activate" (apply 'vpy-activate args))
+      ("connect" (apply 'vpy-connect args))
       ("deactivate" (apply 'vpy-deactivate args))
       (_ (eshell/echo (concat "Unknown command " cmd))))))
 
