@@ -342,6 +342,11 @@
 (setup-custom "setup-erlang")
 
 ;;
+;; Elixir specific setup
+;;
+(setup-custom "setup-elixir")
+
+;;
 ;; PHP specific setup
 ;;
 (setup-custom "setup-php")
