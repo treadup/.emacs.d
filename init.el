@@ -427,9 +427,14 @@
 (setup-custom "setup-scheme")
 
 ;;
-;; Go lang specific setup
+;; Golang specific setup
 ;;
 (setup-custom "setup-go")
+
+;;
+;; Rust specific setup
+;;
+(setup-custom "setup-rust")
 
 ;;
 ;; YAML specific setup
