@@ -53,5 +53,22 @@
   (global-set-key (kbd "C-c x") 'er/expand-region)
   (global-set-key (kbd "C-c X") 'er/contract-region))
 
+(defun indent-buffer ()
+  "Indent the current buffer."
+  (interactive)
+  (save-excursion
+    (indent-region
+      (point-min) (point-max) nil)))
+
+(defun indent-buffer-or-region ()
+  "Indent the buffer if no region is active. Otherwise indent the region."
+  (interactive)
+  (if (region-active-p)
+    (indent-region (region-beginning) (region-end))
+    (indent-buffer)))
+
+(global-set-key (kbd "C-c i") 'indent-buffer-or-region)
+
+
 (provide 'setup-editing)
 ;;; setup-editing ends here
