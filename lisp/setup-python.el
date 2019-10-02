@@ -28,9 +28,11 @@
 ;; Use isort to sort python imports.
 ;; The isort module needs to be installed for this to work.
 ;; In other words you need to do pip3 install isort to
-;; install black in the global python3 environment.
+;; install isort in the global python3 environment.
 (use-package py-isort
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'before-save-hook 'py-isort-before-save))
 
 ;; An alternative code formatter is autopep8
 ;; First you need to install the autopep8 python library.
