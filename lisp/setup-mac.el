@@ -16,5 +16,9 @@
 ;; Cmd is already the super modifier which means that we can keybind
 ;; things using S+<key>.
 
+;; Do not popup new frames when opening emacs. Instead open the
+;; existing frame.
+(setq ns-pop-up-frames nil)
+
 (provide 'setup-mac)
 ;;; setup-mac.el ends here
