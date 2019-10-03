@@ -267,6 +267,12 @@
     (setup-custom "setup-mac"))
 
 ;;
+;; Unix specific setup
+;;
+(unless (string-equal system-type "darwin")
+  (setup-custom "setup-unix"))
+
+;;
 ;; Eldoc mode specific setup
 ;;
 (setup-custom "setup-eldoc")
