@@ -57,7 +57,7 @@
 (use-package helm-ag
   :ensure t
   :config
-  (global-set-key (kbd "C-c a") 'helm-ag))
+  (global-set-key (kbd "C-c a") 'helm-ag-project-root))
 
 (use-package swiper-helm
   :ensure t
@@ -68,6 +68,7 @@
   :config
   ;; Invoke `helm-git-grep' globally.
   (global-set-key (kbd "C-c g") 'helm-git-grep)
+  (global-set-key (kbd "C-c s") 'helm-git-grep)
   ;; Invoke `helm-git-grep' from isearch.
   (define-key isearch-mode-map (kbd "C-c g") 'helm-git-grep-from-isearch)
   ;; Invoke `helm-git-grep' from other helm.
