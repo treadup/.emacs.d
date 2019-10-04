@@ -284,5 +284,17 @@ Start `ielm' if it's not already running."
 
 (customize-set-variable 'vc-make-backup-files t)
 
+;;
+;; Find file in project
+;;
+
+(use-package find-file-in-project
+  :ensure t
+  :config
+
+  ;; Use the fd program instead of find.
+  (setq ffip-use-rust-fd t)
+  (global-set-key (kbd "C-c f") 'find-file-in-project))
+
 (provide 'setup-emacs)
 ;;; setup-emacs.el ends here

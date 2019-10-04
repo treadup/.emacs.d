@@ -185,11 +185,6 @@
 (setup-custom "setup-server")
 
 ;;
-;; Projectile
-;;
-(setup-custom "setup-projectile")
-
-;;
 ;; Rainbow delimiters
 ;;
 (setup-custom "setup-rainbow-delimiters")
