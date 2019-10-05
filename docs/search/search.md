@@ -41,21 +41,31 @@ To move to the previous symbol under point use M-p.
 The following functions can be used to search and replace text in a
 buffer.
 
-The interactive function rs is an alias for replace-string. You can
-run replace-string using the following command.
+To replace a string in the entire buffer run the buffer-replace-string
+function which is bound to the following key chord.
 
-    M-x rs
+    C-c r
 
-The interactive function rr is an alias for replace-regexp. You can
-run replace-regexp using the following command.
+To replace a regexp in the entire buffer run the buffer-replace-regexp
+function which is bound to the following key chord.
 
-    M-x rr
-
-The interactive function qrr is an alias for query-replace-regexp. You
-can run query-replace-regexp using the following command.
-
-    M-x qrr
+    C-M-c r
 
 ## Searching in Project
+Searching in the entire project can be done using one of the following
+commands.
+
+To search the entire project using helm-git-grep use the following
+key chord.
+
+    C-c s
+or
+
+    C-c g
+
+To search the entire project using helm-ag-project-root use the
+following key chord.
+
+    C-c a
 
 ## Replacing in Project

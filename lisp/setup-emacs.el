@@ -74,6 +74,29 @@
 (defalias 'rr 'replace-regexp)          ;; M-x rr
 (defalias 'qrr 'query-replace-regexp)   ;; M-x qrr
 
+(defun buffer-replace-string ()
+  (interactive)
+  (save-mark-and-excursion
+    (replace-string
+      (read-string "Old text: ")
+      (read-string "New text: ")
+      nil
+      (point-min)
+      (point-max))))
+
+(defun buffer-replace-regexp
+  (interactive)
+  (save-mark-and-excursion
+    (query-replace-regexp
+      (read-string "Regex: ")
+      (read-string "Replacement: ")
+      nil
+      (point-min)
+      (point-max))))
+
+(global-set-key (kbd "C-c r") 'buffer-replace-string)
+(global-set-key (kbd "C-M-c r") 'buffer-replace-regexp)
+
 ;;
 ;; Help
 ;;
@@ -189,8 +212,6 @@ Start `ielm' if it's not already running."
          (t
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
-
-(global-set-key (kbd "C-c r")  'rename-file-and-buffer)
 
 ;; Copy filename of current buffer to clipboard
 ;; https://emacsredux.com/blog/2013/03/27/copy-filename-to-the-clipboard/
