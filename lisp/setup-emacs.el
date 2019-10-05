@@ -95,7 +95,6 @@
       (point-max))))
 
 (global-set-key (kbd "C-c r") 'buffer-replace-string)
-(global-set-key (kbd "C-M-c r") 'buffer-replace-regexp)
 
 ;;
 ;; Help

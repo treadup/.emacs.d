@@ -528,6 +528,11 @@
 (setup-custom "setup-ranger")
 
 ;;
+;; dumbjump specific setup
+;;
+;; (setup-custom "setup-dumbjump")
+
+;;
 ;; elfeed specific setup
 ;;
 (setup-custom "setup-elfeed")
