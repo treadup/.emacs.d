@@ -1,19 +1,14 @@
-* pip-isort
-This looks interesting.
- https://github.com/paetzke/py-isort.el
+* Jump to definition
+Figure out how to jump to the definition of function or class.
+
+If you use imenu then at least Emacs know about the important things
+in the current buffer.
+
 * iedit
 Learn how to use iedit.
 * Origami
 Code folding using origami.
 https://github.com/gregsexton/origami.el
-
-* ES6 syntax in js2-mode
-See if we can get js2-mode to use ES6 syntax.
-* Indentation width in .js and .jsx file
-See if we can configure indentation in .js and .jsx files.
-Two spaces per indent seems about right.
-
-Does this need to be configured via the .editorconfig file?
 
 * Python shell
 There are three things that we could do.
@@ -29,24 +24,13 @@ C-c C-z
 * Python code editing
 Using python mode better.
 
-* Debugging Python code
-Debugging Python code.
-
-Some options are the following.
-realgud
-gud
-pdb
-
-https://github.com/spiside/pdb-tutorial
-* Django
-Configure Djangonauts so that we can run Django manage.py commands from Emacs.
-
-I might have to set the python-shell-extra-pythonpaths variable.
 * Refactoring in Emacs
 Figure out how people refactor code in Emacs.
 
 How do I make larger scale changes to a code base? Do people usually
 run programs that modify the buffer?
+
+How do people deal with modifying all files in a project.
 
 * Ediff
 Figure out how to use Ediff
@@ -62,51 +46,8 @@ It seems that smerge-mode comes builtin with Emacs.
 
 And it seems to be really good.
 
-* Projectile
-Get better at Projectile.
-https://tuhdo.github.io/helm-projectile.html
-* Magit
-Get better at Magit.
-
 * Tangle
 Literate programming in Emacs with tangle.
-
-* vpy improvements
-Implement two new vpy commands.
-
-1. status
-2. auto
-
-** status
-The status command will display the following information.
-
-1. The name of the current virtual environment.
-2. If we are in automatic or manual mode.
-
-** auto
-The auto command will allow you to change between manual and automatic
-mode when it comes to virtual environment tracking.
-
-The command auto on will enable automatic virtual environment tracking.
-
-    auto on
-
-The command auto off will disable automatic virtual envionment
-tracking.
-
-    auto off
-
-* JavaScript
-Figure out a better way for working with JavaScript in Emacs.
-
-Modes that might be interesting here are js2-mode for JS files, and
-rjsx-mode for JSX.
-
-There is also indium.
-
-Also people seem to use skewer-mode when developing JavaScript.
-
-https://www.emacswiki.org/emacs/CategoryJavaScript
 
 * Tramp hangs
 Tramp seems to hang alot on macOS. Figure out why this is happening.
@@ -114,95 +55,25 @@ Tramp seems to hang alot on macOS. Figure out why this is happening.
 I have seen some people commenting on that this might be due to the
 exec-path-from-shell package.
 
-* Documentation
-Write some simple documentation on the following.
-
-1. Registers
-
 * Emmet mode
 Emmet mode for editing web pages.
 * Web mode
 Figure out how to use web mode better.
-* Flycheck for JavaScript
-flycheck with eslint to catch bugs and syntax errors.
-* Prettier mode
-Autoformat JavaScript files with prettier-mode.
-* Tern
-Use tern with company for code completion of JavaScript.
-
-Tern does not seem to be updated anymore.
-
-Some people seem to use tide with plain JavaScript.
-https://github.com/ananthakumaran/tide
-* Generate HTML from Elisp
-See if there is something similar to htmlgen for Elisp.
-https://franz.com/support/documentation/6.0/doc/aserve/htmlgen.html
-* Font Locking
-Figure out how font locking works.
-http://ergoemacs.org/emacs/elisp_font_lock_mode.html
 * Text processing in Emacs
 http://ergoemacs.org/emacs/elisp_text_processing_lang.html
 http://ergoemacs.org/emacs/elisp_batch_html_tag_transform_bold.html
 http://ergoemacs.org/emacs/elisp_fix_dead_links.html
 http://ergoemacs.org/emacs/elisp_text-soup_automation.html
 http://ergoemacs.org/emacs/elisp_process_html.html
-* Prefix command
-Looks like there is something called a prefix command.
-Perhaps which key can display better information for prefix commands.
-http://ergoemacs.org/emacs/emacs_keybinding_power_of_keys_sequence.html
-https://www.reddit.com/r/emacs/comments/3ytb6n/a_better_way_to_define_a_new_prefix/
 * Markdown mode key bindings
 Learn the keybindings for markdown mode.
 https://jblevins.org/projects/markdown-mode/
-* Grep
-The grep, lgrep and rgrep commands.
-* Avy
-Avy looks interesting.
-https://github.com/abo-abo/avy
-http://pragmaticemacs.com/emacs/super-efficient-movement-using-avy/
 * Occur mode
 Make better use of occur mode and multi occur mode.
 
 The multi-occur-in-this-mode function looks interesting.
 
 https://www.masteringemacs.org/article/searching-buffers-occur-mode
-* All
-There is a utility called all that can be used to edit all lines that
-match a regular expression.
-https://elpa.gnu.org/packages/all.html
-* Change window size
-Create a Hydra that allows us to change the size of a window.
-Not sure what it should be keybound to.
-
-This hydra should calld shrink/enlarge-window-horizontally and
-enlarge/shrink-window.
-
-* Run or raise
-Run or raise for emacs.
-http://emacsredux.com/blog/2013/04/29/start-command-or-switch-to-its-buffer/
-
-https://vickychijwani.me/blazing-fast-application-switching-in-linux/
-* Evaling multiline Elisp
-https://emacs.stackexchange.com/questions/16622/how-do-i-eval-a-multiple-line-elisp-expression-inside-the-current-buffer
-
-https://www.emacswiki.org/emacs/EvaluatingExpressions
-* Generate HTML from Elisp
-See if there is something similar to htmlgen for Elisp.
-https://franz.com/support/documentation/6.0/doc/aserve/htmlgen.html
-* Delete vs Kill
-Figure out the difference between delete and kill in Emacs.
-* Navigate man pages and info pages
-Figure out how to navigate man pages and info pages in Emacs.
-* Wanderlust
-http://emacs-fu.blogspot.se/2010/02/i-have-been-using-wanderlust-e-mail.html
-https://github.com/wanderlust/wanderlust
-http://wanderlust.github.io/wl-docs/wl.html
-http://box.matto.nl/emacsgmail.html
-* With Buffer
-See if I can figure out what the with-current-buffer and
-with-temp-buffer functions do.
-
-https://www.gnu.org/software/emacs/manual/html_node/elisp/Current-Buffer.html
 * Whitespace manipulation commands
 C-x C-o (delete-blank-lines), delete-trailing-whitespace, tabify and
 untabify, indent-region, and so on.
@@ -215,35 +86,6 @@ Effortless navigation: re-bind a few keys so that you can move the
 cursor in any direction, by chars or words, by holding down Alt and
 just pressing various letter keys.
 
-* Region management
-choosing a non-disgusting color for the highlighted region, covering region-related commands.
-
-* Rectangle commands
-yet another incredibly important set of related commands with no
-analogues in other editors. Once again, you'll wonder how you lived
-without them.
-
 * Working with archives
 browsing and editing archives: tar, gzip, zip, jar, etc. Most people
 have no idea this feature exists, and it's nothing short of amazing.
-
-* Indent tools
-See if indent-tools and python work well.
-https://melpa.org/#/indent-tools
-* Text manipulation
-Operating on characters, words, sexps, sentences, paragraphs.
-There are consistent operations that you can do on these.
-
-Actually I'm not sure if this is what I meant by text manipulation.
-* Emacs as Bookmark Manager
-This page has a really good way of using Emacs as a bookmarks manager.
-http://rexim.me/emacs-as-bookmark-manager-links.html
-* Color glitches in spaceline on macOS
-Here is some information about how to fix color glitches in the
-spaceline wave characters on macOS.
-
-There is a problem with the color of the transition glyphs between
-the different elements in the spaceline.
-
-https://github.com/syl20bnr/spacemacs/issues/4426
-https://github.com/milkypostman/powerline/issues/54
