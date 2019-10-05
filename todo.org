@@ -1,8 +1,25 @@
-* Jump to definition
-Figure out how to jump to the definition of function or class.
+* Make Eglot respect the current virtual environment
+You can execute python using the following command to start pyls.
 
-If you use imenu then at least Emacs know about the important things
-in the current buffer.
+    python -m pyls
+
+This is the root of the virtualenv.
+    python-shell-virtualenv-root
+
+python-shell-calculate-exec-path
+python-shell-calculate-process-environment
+python-shell-process-environment
+
+* Eslint
+Eslint for .js and .jsx files.
+* Jump to definition
+Find a way to jumping to a definition.
+
+One person recommends using the following setup.
+ global + gtags + pygments
+
+Another package that I have seen recommended is dumbjump.
+https://github.com/jacktasia/dumb-jump
 
 * iedit
 Learn how to use iedit.
