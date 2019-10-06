@@ -228,6 +228,13 @@ Start `ielm' if it's not already running."
 
 (global-set-key (kbd "C-c n") 'buffer-filename-to-clipboard)
 
+;; Save all unsaved buffers
+(defun save-all-buffers ()
+  "Save all unsaved buffers."
+  (interactive) (save-some-buffers t))
+
+(global-set-key (kbd "s-s") 'save-all-buffers)
+
 ;;
 ;; Midnight mode
 ;;
