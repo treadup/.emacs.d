@@ -1,4 +1,6 @@
 # Search and Replace
+This document covers different ways of searching for text in a
+document or a project and replacing text in a document.
 
 ## Searching
 The following key bindings are used for searching.
@@ -69,3 +71,48 @@ following key chord.
     C-c a
 
 ## Replacing in Project
+This is covered more in a separate document about how to work with
+projects. Replacing text in a project is a special case of the more
+general case work on all files in the project.
+
+## Goto definition
+There are two different approaches that you can use for jumping to the
+defintion of functions, classes, variables, etc. One is to using
+something like a language server that creates an abstract syntax tree
+and has full understanding of the code. This requires stuff like
+Python virtual environments to be setup correctly. The other approach
+is to just do text search. You can use regular expressions to try to
+find the definition of a function for example.
+
+Getting Python virtual environments or python running in a docker
+image working with python-mode or anaconda-mode can be kind of tricky.
+So for now I have decided on going with a pure text based approach for
+going to definitions. The package I have picked for this is called
+dumbjump.
+
+To jump to the definition of the symbol under point use the following
+key chord.
+
+    M-g j
+or
+
+    s-j
+
+where s is the Cmd key.
+
+To jump back to where you were use the following key chord
+
+    M-g b
+
+or
+
+    s-b
+
+To jump to the definition in the other window use the following key
+chord
+
+    M-g o
+
+or
+
+    s-o
