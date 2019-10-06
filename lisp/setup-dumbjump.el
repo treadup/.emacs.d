@@ -11,6 +11,9 @@
   (global-set-key (kbd "M-g j") 'dumb-jump-go)
   (global-set-key (kbd "M-g b") 'dumb-jump-back)
   (global-set-key (kbd "M-g i") 'dumb-jump-go-prompt)
+  (global-set-key (kbd "s-j") 'dumb-jump-go)
+  (global-set-key (kbd "s-b") 'dump-jump-back)
+  (global-set-key (kbd "s-o") 'dumb-jump-go-other-window)
   :ensure)
 
 (provide 'setup-dumbjump)
