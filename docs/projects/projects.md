@@ -55,7 +55,12 @@ this approach.
 
 ### Perform operations on all open buffers
 You can use Emacs to perform operations on all open buffers. With this
-approach which buffers are currently open becomes important.
+approach which buffers are currently open becomes important. The
+following work flow would be used with this approach.
+
+1. Open all files in the project.
+2. Perform the modification of each open buffer
+3. Save all unsaved buffers
 
 You could filter the buffer list down a bit to perform operations on
 all open buffers backed by a file. You might also only want to perform
@@ -73,4 +78,22 @@ You could split write operations into two steps.
 This allows us to skip implementing save functionality in each
 operation. Currently save-all-buffers is bound to s-s.
 
+We need functions for opening all buffers with a certain file
+extension in a directory tree rooted at a certain directory. We can
+use this function to create a function for opening all buffers with a
+certain extension in the current project.
+
+Finally we need a function to perform an operation on all open buffers
+in the same project as the current buffer.
+
 ### Perform operations on all files in the project
+You could also ignore the currently open buffers and perform the
+operations on the files in the filesystem. Open each file into a
+buffer, perform the operation on the buffer, and then save the buffer
+back.
+
+An improvement on this approach would be to respect the list of
+currently open buffers. If a buffer is visiting a file then there is
+no need to open or close this file. Just perform the modifications on
+the buffer in place. From the users perspective the buffers that were
+originally opened are the buffers that are opened at the end.
