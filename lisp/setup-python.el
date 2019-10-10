@@ -14,6 +14,13 @@
 (use-package pythonic
   :ensure t)
 
+;; Use anaconda-mode for editing Python files and buffers.
+(use-package anaconda-mode
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+  :ensure t)
+
 ;; Emacs integration for the black code formatter for Python.
 ;; The black executable needs to be installed for this to work.
 ;; In other words you should have done pip3 install black to
