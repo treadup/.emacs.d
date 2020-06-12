@@ -76,9 +76,28 @@
            (string-equal extension "ts")
            (string-equal extension "tsx"))))
 
+(defun should-enable-prettier-minor-mode ()
+  "Determines if the prettier minor mode should be enabled.
+The prettier minor mode should be enabled if we are
+editing a .js or .jsx file."
+  (and
+    (buffer-file-name)
+    (string-match "[.]jsx?$" (buffer-file-name))))
+
+(defun conditionally-enable-prettier ()
+  "Enable prettier for .js and .jsx files."
+  (when (should-enable-prettier-minor-mode)
+    (prettier-js-mode)))
+
 ;; Use prettier for code formatting of .js and .jsx files.
+;; For this to work you have to have installed the prettier cli command.
+;; You can check if prettier is installed by running the
+;;    which prettier
+;; command.
 (use-package prettier-js
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'web-mode-hook 'conditionally-enable-prettier))
 
 (provide 'setup-web-mode)
 ;;; setup-web-mode ends here
