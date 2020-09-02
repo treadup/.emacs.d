@@ -94,6 +94,14 @@ editing a .js or .jsx file."
 ;; You can check if prettier is installed by running the
 ;;    which prettier
 ;; command.
+;; To use a prettier version installed locally in the project you can
+;; set the prettier-js-command in a .dir-locals.el file. It should look
+;; like the following.
+;;
+;; (( nil
+;;     (prettier-js-command
+;;      .
+;;      "/path/to/local/project/node_modules/.bin/prettier")))
 (use-package prettier-js
   :ensure t
   :config
