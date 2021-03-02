@@ -503,11 +503,6 @@
 (setup-custom "setup-erc")
 
 ;;
-;; Guru mode
-;;
-;; (setup-custom "setup-guru")
-
-;;
 ;; Yasnippet
 ;;
 (setup-custom "setup-yasnippet")
