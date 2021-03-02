@@ -488,11 +488,6 @@
 (setup-custom "setup-realgud")
 
 ;;
-;; Spotify setup
-;;
-(setup-custom "setup-spotify")
-
-;;
 ;; html to markdown setup
 ;;
 (setup-custom "setup-html-to-markdown")
