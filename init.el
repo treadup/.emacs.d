@@ -488,11 +488,6 @@
 (setup-custom "setup-misc")
 
 ;;
-;; ERC specific setup
-;;
-(setup-custom "setup-erc")
-
-;;
 ;; Yasnippet
 ;;
 (setup-custom "setup-yasnippet")
