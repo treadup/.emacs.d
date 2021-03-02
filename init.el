@@ -560,11 +560,6 @@
   (setup-custom "setup-home"))
 
 ;;
-;; Wanderlust email client
-;;
-(setup-custom "setup-wanderlust.el")
-
-;;
 ;; Avy specific setup
 ;;
 (setup-custom "setup-avy.el")
