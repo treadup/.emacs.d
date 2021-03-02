@@ -518,11 +518,6 @@
 (setup-custom "setup-yasnippet")
 
 ;;
-;; Pass specific setup
-;;
-(setup-custom "setup-pass")
-
-;;
 ;; Ranger specific setup
 ;;
 (setup-custom "setup-ranger")
