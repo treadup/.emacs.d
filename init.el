@@ -478,11 +478,6 @@
 (setup-custom "setup-http")
 
 ;;
-;; Realgud setup
-;;
-(setup-custom "setup-realgud")
-
-;;
 ;; html to markdown setup
 ;;
 (setup-custom "setup-html-to-markdown")
