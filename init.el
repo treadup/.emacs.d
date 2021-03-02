@@ -523,11 +523,6 @@
 ;; (setup-custom "setup-dumbjump")
 
 ;;
-;; elfeed specific setup
-;;
-(setup-custom "setup-elfeed")
-
-;;
 ;; Smartscan specific setup
 ;;
 (setup-custom "setup-smartscan")
