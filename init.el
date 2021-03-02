@@ -166,11 +166,6 @@
 (setup-custom "vpy")
 
 ;;
-;; Django specific setup
-;;
-(setup-custom "setup-django")
-
-;;
 ;; Eshell setup
 ;;
 (setup-custom "setup-eshell")
