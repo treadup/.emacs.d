@@ -142,7 +142,8 @@
 ;;
 ;; EasyPG specific setup
 ;;
-(setup-custom "setup-gpg")
+;; Failed to verify signature for this package. Removing it for now.
+;; (setup-custom "setup-gpg")
 
 ;;
 ;; Auth source specific setup
