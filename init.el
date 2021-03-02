@@ -518,11 +518,6 @@
 (setup-custom "setup-yasnippet")
 
 ;;
-;; Ranger specific setup
-;;
-(setup-custom "setup-ranger")
-
-;;
 ;; dumbjump specific setup
 ;;
 ;; (setup-custom "setup-dumbjump")
