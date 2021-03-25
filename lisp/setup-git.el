@@ -12,16 +12,17 @@
 ;; Show git gutter
 ;;
 
-(when (>= emacs-major-version 26)
-  (use-package git-gutter
-    :ensure t
-    :config
-    (progn
-      (add-hook 'prog-mode-hook 'git-gutter-mode)
-      (add-hook 'text-mode-hook 'git-gutter-mode))))
+(use-package git-gutter
+  :ensure t
+  :config
+  (progn
+    (add-hook 'prog-mode-hook 'git-gutter-mode)
+    (add-hook 'text-mode-hook 'git-gutter-mode)))
 
-(global-set-key (kbd "C-x g") 'magit-status)
-;; https://magit.vc/manual/magit/Getting-started.html#Getting-started
+(use-package magit
+  :ensure
+  :config
+  (global-set-key (kbd "C-x g") 'magit-status))
 
 (provide 'setup-git)
 ;;; setup-git ends here
