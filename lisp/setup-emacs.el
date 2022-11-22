@@ -279,8 +279,16 @@ Start `ielm' if it's not already running."
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
 (customize-set-variable 'auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1" t)))
 
-;; create the autosave dir if necessary, since emacs won't.
+;; Create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
+
+;;
+;; Lock files
+;;
+
+;; Prevent Emacs from creating lock files. Emacs will no longer create
+;; a lock file called .#foo when editing a file named foo.
+(customize-set-variable 'create-lockfiles nil)
 
 ;;
 ;; Backup
