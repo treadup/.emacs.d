@@ -97,16 +97,6 @@
 (global-set-key (kbd "C-c r") 'buffer-replace-string)
 
 ;;
-;; Help
-;;
-
-;; Change C-h to be backspace which is the same as in the shell
-;; Move help to the C-M-h key chord.
-(global-set-key (kbd "C-h") 'backward-delete-char-untabify)
-(define-key isearch-mode-map (kbd "C-h") 'isearch-delete-char)
-(global-set-key (kbd "C-M-h") 'help-command)
-
-;;
 ;; Buffer
 ;;
 
