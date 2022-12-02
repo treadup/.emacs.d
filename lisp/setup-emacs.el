@@ -106,7 +106,7 @@
   (revert-buffer nil t t)
   (message (concat "Reverted buffer " (buffer-name))))
 
-(defun untabify-this-buffer ()
+(defun untabify-buffer ()
   "Untabify the current buffer."
   (interactive)
   (delete-trailing-whitespace)
