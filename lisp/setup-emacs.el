@@ -326,5 +326,18 @@ Start `ielm' if it's not already running."
   (setq ffip-use-rust-fd t)
   (global-set-key (kbd "C-c f") 'find-file-in-project))
 
+;;
+;; Bookmarks
+;;
+(defvar bookmarks-directory "~/code/python/personal-website/website/templates/website/bookmarks/")
+
+(defun find-bookmark-file ()
+  "Find file starting in the bookmarks folder."
+  (interactive)
+  (let ((default-directory bookmarks-directory))
+    (call-interactively #'find-file)))
+
+(global-set-key (kbd "C-c b") 'find-bookmark-file)
+
 (provide 'setup-emacs)
 ;;; setup-emacs.el ends here
