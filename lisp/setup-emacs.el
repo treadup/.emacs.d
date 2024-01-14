@@ -12,6 +12,11 @@
 ;; https://emacs.stackexchange.com/questions/28736/emacs-pointcursor-movement-lag
 (setq auto-window-vscroll nil)
 
+;;
+;; Use fido for completions
+;;
+(fido-vertical-mode 1)
+
 ;;;
 ;;; Character coding system
 ;;;
