@@ -146,6 +146,11 @@
 ;; (setup-custom "setup-gpg")
 
 ;;
+;; Setup bookmark functions
+;;
+(setup-custom "setup-bookmarks")
+
+;;
 ;; Auth source specific setup
 ;;
 (setup-custom "setup-auth-source")
