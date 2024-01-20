@@ -327,17 +327,17 @@ Start `ielm' if it's not already running."
   (global-set-key (kbd "C-c f") 'find-file-in-project))
 
 ;;
-;; Bookmarks
+;; Emacs files
 ;;
-(defvar bookmarks-directory "~/code/python/personal-website/website/templates/website/bookmarks/")
+(defvar elisp-directory "~/.emacs.d/lisp/")
 
-(defun find-bookmark-file ()
-  "Find file starting in the bookmarks folder."
+(defun find-emacs-lisp-file ()
+  "Find file starting in the Emacs Lisp folder."
   (interactive)
-  (let ((default-directory bookmarks-directory))
+  (let ((default-directory elisp-directory))
     (call-interactively #'find-file)))
 
-(global-set-key (kbd "C-c b") 'find-bookmark-file)
+(global-set-key (kbd "C-c e") 'find-emacs-lisp-file)
 
 (provide 'setup-emacs)
 ;;; setup-emacs.el ends here
