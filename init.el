@@ -476,8 +476,3 @@
 ;; Smartscan specific setup
 ;;
 (setup-custom "setup-smartscan")
-
-;;
-;; Host specific setup
-;;
-(setup-custom "setup-oak")
