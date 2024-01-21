@@ -57,10 +57,6 @@
 ;; https://www.emacswiki.org/emacs/DotEmacsDotD
 (add-to-list 'load-path (concat user-emacs-directory (convert-standard-filename "lisp/")))
 
-(defun setup-custom (filename)
-  "Load custom settings from the file with name FILENAME."
-  (load filename))
-
 ;;
 ;; Customize system
 ;;
@@ -78,255 +74,255 @@
 ;;
 ;; Emacs specific setup
 ;;
-(setup-custom "setup-emacs")
+(load "setup-emacs")
 
 ;;
 ;; Exec path
 ;;
-(setup-custom "setup-exec-path")
+(load "setup-exec-path")
 
 ;;
 ;; Libraries for Elisp
 ;;
-(setup-custom "setup-libraries")
+(load "setup-libraries")
 
 ;;
 ;; Hostname functions
 ;;
-(setup-custom "setup-hostname")
+(load "setup-hostname")
 
 ;;
 ;; Context functions
 ;;
-(setup-custom "setup-context")
+(load "setup-context")
 
 ;;
 ;; Setup bookmark functions
 ;;
-(setup-custom "setup-bookmarks")
+(load "setup-bookmarks")
 
 ;;
 ;; Auth source specific setup
 ;;
-(setup-custom "setup-auth-source")
+(load "setup-auth-source")
 
 ;;
 ;; Request specific setup
 ;;
-(setup-custom "setup-request")
+(load "setup-request")
 
 ;;
 ;; Python virtual environment manager for Eshell
 ;;
-(setup-custom "vpy")
+(load "vpy")
 
 ;;
 ;; Eshell setup
 ;;
-(setup-custom "setup-eshell")
+(load "setup-eshell")
 
 ;;
 ;; Emacs server
 ;;
-(setup-custom "setup-server")
+(load "setup-server")
 
 ;;
 ;; Rainbow delimiters
 ;;
-(setup-custom "setup-rainbow-delimiters")
+(load "setup-rainbow-delimiters")
 
 ;;
 ;; User interface specific setup
 ;;
-(setup-custom "setup-ui")
+(load "setup-ui")
 
 ;;
 ;; Window numbering
 ;;
-(setup-custom "setup-winum")
+(load "setup-winum")
 
 ;;
 ;; Window Configuration
 ;;
-(setup-custom "setup-window-configuration")
+(load "setup-window-configuration")
 
 ;;
 ;; Setup editing with Emacs
 ;;
-(setup-custom "setup-editing")
+(load "setup-editing")
 
 ;;
 ;; Theme specific setup
 ;;
-(setup-custom "setup-theme")
+(load "setup-theme")
 
 ;;
 ;; Ag specific setup
 ;;
-(setup-custom "setup-ag")
+(load "setup-ag")
 
 ;;
 ;; Clojure specific setup
 ;;
-(setup-custom "setup-clojure")
+(load "setup-clojure")
 
 ;;
 ;; Shell specific setup
 ;;
-(setup-custom "setup-shell")
+(load "setup-shell")
 
 ;;
 ;; Xterm color setup
 ;;
-(setup-custom "setup-xterm-color")
+(load "setup-xterm-color")
 
 ;;
 ;; Bash specific setup
 ;;
-(setup-custom "setup-bash")
+(load "setup-bash")
 
 ;;
 ;; Fish specific setup
 ;;
-(setup-custom "setup-fish")
+(load "setup-fish")
 
 ;;
 ;; OS X specific setup
 ;;
 
 (if (string-equal system-type "darwin")
-    (setup-custom "setup-mac"))
+    (load "setup-mac"))
 
 ;;
 ;; Unix specific setup
 ;;
 (unless (string-equal system-type "darwin")
-  (setup-custom "setup-unix"))
+  (load "setup-unix"))
 
 ;;
 ;; Eldoc mode specific setup
 ;;
-(setup-custom "setup-eldoc")
+(load "setup-eldoc")
 
 ;;
 ;; Which key setup
 ;;
-(setup-custom "setup-which-key")
+(load "setup-which-key")
 
 ;;
 ;; Text mode specific setup
 ;;
-(setup-custom "setup-text")
+(load "setup-text")
 
 ;;
 ;; Git specific setup
 ;;
-(setup-custom "setup-git")
+(load "setup-git")
 
 ;;
 ;; Tramp specific setup
 ;;
-(setup-custom "setup-tramp")
+(load "setup-tramp")
 
 ;;
 ;; Elisp specific setup
 ;;
-(setup-custom "setup-elisp")
+(load "setup-elisp")
 
 ;;
 ;; Python specific setup
 ;;
-(setup-custom "setup-python")
+(load "setup-python")
 
 ;;
 ;; Common Lisp specific setup
 ;;
-(setup-custom "setup-common-lisp")
+(load "setup-common-lisp")
 
 ;;
 ;; Lua specific setup
 ;;
-;; (setup-custom "setup-lua")
+;; (load "setup-lua")
 
 ;;
 ;; Erlang specific setup
 ;;
-;; (setup-custom "setup-erlang")
+;; (load "setup-erlang")
 
 ;;
 ;; Elixir specific setup
 ;;
-;; (setup-custom "setup-elixir")
+;; (load "setup-elixir")
 
 ;;
 ;; Execute shell commands and place the result in the current buffer.
 ;;
-(setup-custom "setup-shell-command")
+(load "setup-shell-command")
 
 ;;
 ;; Web mode specific setup
 ;;
-(setup-custom "setup-web-mode")
+(load "setup-web-mode")
 
 ;;
 ;; Editor Config specific setup
 ;;
-(setup-custom "setup-editor-config")
+(load "setup-editor-config")
 
 ;;
 ;; Flycheck specific setup
 ;;
-(setup-custom "setup-flycheck")
+(load "setup-flycheck")
 
 ;;
 ;; Flyspell specific setup
 ;;
-(setup-custom "setup-flyspell")
+(load "setup-flyspell")
 
 ;;
 ;; Ascii Doc specific setup
 ;;
-;; (setup-custom "setup-asciidoc")
+;; (load "setup-asciidoc")
 
 ;;
 ;; Markdown specific setup
 ;;
-(setup-custom "setup-markdown")
+(load "setup-markdown")
 
 ;;
 ;; Scheme specific setup
 ;;
-(setup-custom "setup-scheme")
+(load "setup-scheme")
 
 ;;
 ;; Golang specific setup
 ;;
-(setup-custom "setup-go")
+(load "setup-go")
 
 ;;
 ;; Rust specific setup
 ;;
-;; (setup-custom "setup-rust")
+;; (load "setup-rust")
 
 ;;
 ;; YAML specific setup
 ;;
-(setup-custom "setup-yaml")
+(load "setup-yaml")
 
 ;;
 ;; JSON specific setup
 ;;
-(setup-custom "setup-json")
+(load "setup-json")
 
 ;;
 ;; JavaScript specific setup
 ;;
-(setup-custom "setup-javascript")
+(load "setup-javascript")
 
 ;;
 ;; Todo specific setup
 ;;
-(setup-custom "setup-todo")
+(load "setup-todo")
 
 (provide 'init)
 ;;; init.el ends here.
