@@ -302,11 +302,6 @@
 (setup-custom "setup-web-mode")
 
 ;;
-;; Project navigation specific setup
-;;
-(setup-custom "setup-project-nav")
-
-;;
 ;; Editor Config specific setup
 ;;
 (setup-custom "setup-editor-config")
@@ -320,11 +315,6 @@
 ;; Flyspell specific setup
 ;;
 (setup-custom "setup-flyspell")
-
-;;
-;; NGINX specific setup
-;;
-(setup-custom "setup-nginx")
 
 ;;
 ;; Ascii Doc specific setup
