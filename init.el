@@ -428,11 +428,6 @@
 (setup-custom "setup-javascript")
 
 ;;
-;; Vimrc specific setup
-;;
-(setup-custom "setup-vimrc")
-
-;;
 ;; Todo specific setup
 ;;
 (setup-custom "setup-todo")
