@@ -279,17 +279,17 @@
 ;;
 ;; Lua specific setup
 ;;
-(setup-custom "setup-lua")
+;; (setup-custom "setup-lua")
 
 ;;
 ;; Erlang specific setup
 ;;
-(setup-custom "setup-erlang")
+;; (setup-custom "setup-erlang")
 
 ;;
 ;; Elixir specific setup
 ;;
-(setup-custom "setup-elixir")
+;; (setup-custom "setup-elixir")
 
 ;;
 ;; Execute shell commands and place the result in the current buffer.
@@ -319,7 +319,7 @@
 ;;
 ;; Ascii Doc specific setup
 ;;
-(setup-custom "setup-asciidoc")
+;; (setup-custom "setup-asciidoc")
 
 ;;
 ;; Markdown specific setup
@@ -339,7 +339,7 @@
 ;;
 ;; Rust specific setup
 ;;
-(setup-custom "setup-rust")
+;; (setup-custom "setup-rust")
 
 ;;
 ;; YAML specific setup
