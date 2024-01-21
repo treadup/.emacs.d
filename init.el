@@ -493,10 +493,3 @@
 ;;
 (when (home-context-p)
   (setup-custom "setup-home"))
-
-;;
-;; Avy specific setup
-;;
-(setup-custom "setup-avy.el")
-
-;;; init.el ends here
