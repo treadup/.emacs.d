@@ -46,40 +46,8 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 ;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-(package-initialize)
-
-;; To upadate the packages (or is it the index of packages?) run (package-refresh-contents)
+;; To update the packages (or is it the index of packages?) run (package-refresh-contents)
 ;; You can also run M-x package-list-packages. This will also update the list of packages.
-
-;; If you remove a use-package statement for a package that package will still stay installed
-;; if it has already been installed. Removing a use-package statement will never uninstall
-;; a package. You have to do this manually. One simple way of doing this is to remove the elpa
-;; folder in the emacs user directory.
-
-;; Bootstrap 'use-package'
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-;; Required when bytecompiling to avoid personal-keybindings is void error that seems to be
-;; caused by the use-package macro.
-(require 'bind-key)
-
-(use-package auto-package-update
-   :ensure t
-   :config
-
-   ;; Update the packages every 4 days
-   (setq auto-package-update-interval 4)
-
-   ;; Update all packages on startup that have updates available.
-   (auto-package-update-maybe))
-
-
-;; Load the diminish package early. It can then be used in the use-package forms
-;; using :diminish
-(use-package diminish
-  :ensure t)
 
 ;;
 ;; Load path
@@ -91,7 +59,6 @@
 
 (defun setup-custom (filename)
   "Load custom settings from the file with name FILENAME."
-;;  (message (concat "Loading " filename))
   (load filename))
 
 ;;
