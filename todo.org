@@ -1,3 +1,36 @@
+* Custom find-file with selectable default location
+I have multiple long path names that I want to open files in.
+Have some kind of menu where one selects the start location.
+Have it use something like getche in C. In other words you do
+not have to press enter.
+
+Once you know where you should start.
+
+
+Perhaps not change the default folder in Emacs.
+
+https://howardism.org/Technical/Emacs/alt-completing-read.html
+
+https://www.masteringemacs.org/article/understanding-minibuffer-completion
+
+(icomplete-mode 1)
+
+(icomplete-vertical-mode 1)
+
+(fido-mode 1)
+(fido-vertical-mode 1)
+
+(let ((choices '("First" "Second" "Third" "Three")))
+  (completing-read "Choose: " choices))
+
+Here is the solution to this problem.
+
+(defvar bookmarks-directory "~/code/python/personal-website/website/templates/website/bookmarks")
+
+(let ((default-directory bookmarks-directory))
+  (call-interactively #'find-file))
+
+
 * Make Eglot respect the current virtual environment
 You can execute python using the following command to start pyls.
 
@@ -20,6 +53,8 @@ One person recommends using the following setup.
 
 Another package that I have seen recommended is dumbjump.
 https://github.com/jacktasia/dumb-jump
+
+Or just use plain etags and Emacs tags for this.
 
 * iedit
 Learn how to use iedit.
