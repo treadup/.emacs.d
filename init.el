@@ -481,15 +481,3 @@
 ;; Host specific setup
 ;;
 (setup-custom "setup-oak")
-
-;;
-;; Work specific setup
-;;
-(when (work-context-p)
-  (setup-custom "setup-work"))
-
-;;
-;; Home computer specific setup
-;;
-(when (home-context-p)
-  (setup-custom "setup-home"))
