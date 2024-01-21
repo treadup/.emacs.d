@@ -451,8 +451,3 @@
 ;; HTTP client setup
 ;;
 (setup-custom "setup-http")
-
-;;
-;; html to markdown setup
-;;
-(setup-custom "setup-html-to-markdown")
