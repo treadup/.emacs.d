@@ -361,7 +361,5 @@
 ;;
 (setup-custom "setup-todo")
 
-;;
-;; HTTP client setup
-;;
-(setup-custom "setup-http")
+(provide 'init)
+;;; init.el ends here.
