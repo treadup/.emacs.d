@@ -298,11 +298,6 @@
 (setup-custom "setup-lua")
 
 ;;
-;; Elm specific setup
-;;
-(setup-custom "setup-elm")
-
-;;
 ;; Erlang specific setup
 ;;
 (setup-custom "setup-erlang")
@@ -311,11 +306,6 @@
 ;; Elixir specific setup
 ;;
 (setup-custom "setup-elixir")
-
-;;
-;; PHP specific setup
-;;
-(setup-custom "setup-php")
 
 ;;
 ;; Execute shell commands and place the result in the current buffer.
