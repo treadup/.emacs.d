@@ -215,11 +215,6 @@
 (setup-custom "setup-ag")
 
 ;;
-;; Company mode specific setup
-;;
-(setup-custom "setup-company-mode")
-
-;;
 ;; Clojure specific setup
 ;;
 (setup-custom "setup-clojure")
