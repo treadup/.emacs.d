@@ -200,11 +200,6 @@
 (setup-custom "setup-window-configuration")
 
 ;;
-;; Buffer move setup
-;;
-(setup-custom "setup-buffer-move")
-
-;;
 ;; Setup editing with Emacs
 ;;
 (setup-custom "setup-editing")
