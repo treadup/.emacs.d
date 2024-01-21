@@ -348,11 +348,6 @@
 (setup-custom "setup-project-nav")
 
 ;;
-;; Log file specific setup
-;;
-;;(setup-custom "setup-log")
-
-;;
 ;; Editor Config specific setup
 ;;
 (setup-custom "setup-editor-config")
@@ -366,11 +361,6 @@
 ;; Flyspell specific setup
 ;;
 (setup-custom "setup-flyspell")
-
-;;
-;; SQL specific setup
-;;
-;; (setup-custom "setup-sql")
 
 ;;
 ;; NGINX specific setup
