@@ -433,11 +433,6 @@
 (setup-custom "setup-vimrc")
 
 ;;
-;; Eyebrowse specific setup
-;;
-(setup-custom "setup-eyebrowse")
-
-;;
 ;; Todo specific setup
 ;;
 (setup-custom "setup-todo")
