@@ -98,12 +98,6 @@
 ;; Customize system
 ;;
 
-;; http://irreal.org/blog/?p=3765
-;; http://emacs.stackexchange.com/questions/102/advantages-of-setting-variables-with-setq-instead-of-custom-el
-;; http://stackoverflow.com/questions/5052088/what-is-custom-set-variables-and-faces-in-my-emacs
-;; https://www.reddit.com/r/emacs/comments/2lif7v/how_to_transform_your_customsetvariables_in/
-;; http://stackoverflow.com/questions/8545756/how-to-treat-my-custom-emacs-theme-as-a-safe-theme
-;;
 ;; Safe code. The error message about safe code has something to do with custom-set-variables not having been
 ;; called before the theme is loaded.
 ;; I do not want generated code in my init.el file.
@@ -302,21 +296,6 @@
 ;; Elisp specific setup
 ;;
 (setup-custom "setup-elisp")
-
-;;
-;; Ivy specific setup
-;;
-;; (setup-custom "setup-ivy")
-
-;;
-;; Helm specific setup
-;;
-(setup-custom "setup-helm")
-
-;;
-;; Ido specific setup
-;;
-;; (setup-custom "setup-ido")
 
 ;;
 ;; Python specific setup
