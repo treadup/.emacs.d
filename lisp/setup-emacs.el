@@ -162,6 +162,8 @@ Then splits the bottom window vertically"
 
 (global-set-key (kbd "C-x 7") 'toggle-scratch-buffer)
 
+;; Always remove trailing whitespaces when saving a file.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; The following is the source for the start-or-switch-to function and the
 ;; visit-ielm function.

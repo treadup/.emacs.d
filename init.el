@@ -159,11 +159,6 @@
 (setup-custom "setup-eshell")
 
 ;;
-;; Whitespace specific setup
-;;
-(setup-custom "setup-whitespace")
-
-;;
 ;; Emacs server
 ;;
 (setup-custom "setup-server")
