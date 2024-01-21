@@ -333,11 +333,6 @@
 (setup-custom "setup-php")
 
 ;;
-;; Kill current buffer instead of prompting for buffer to kill.
-;;
-(setup-custom "setup-kill-buffer")
-
-;;
 ;; Execute shell commands and place the result in the current buffer.
 ;;
 (setup-custom "setup-shell-command")
