@@ -443,11 +443,6 @@
 (setup-custom "setup-todo")
 
 ;;
-;; Multi term setup
-;;
-(setup-custom "setup-multi-term")
-
-;;
 ;; HTTP client setup
 ;;
 (setup-custom "setup-http")
