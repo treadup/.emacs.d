@@ -327,11 +327,6 @@
 (setup-custom "setup-nginx")
 
 ;;
-;; Docker specific setup
-;;
-(setup-custom "setup-docker")
-
-;;
 ;; Ascii Doc specific setup
 ;;
 (setup-custom "setup-asciidoc")
