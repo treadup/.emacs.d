@@ -456,8 +456,3 @@
 ;; html to markdown setup
 ;;
 (setup-custom "setup-html-to-markdown")
-
-;;
-;; Miscellaneous customizations
-;;
-(setup-custom "setup-misc")
