@@ -461,8 +461,3 @@
 ;; Miscellaneous customizations
 ;;
 (setup-custom "setup-misc")
-
-;;
-;; Yasnippet
-;;
-(setup-custom "setup-yasnippet")
