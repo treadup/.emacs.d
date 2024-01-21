@@ -268,11 +268,6 @@
 (setup-custom "setup-text")
 
 ;;
-;; Browser specific setup
-;;
-(setup-custom "setup-browser")
-
-;;
 ;; Git specific setup
 ;;
 (setup-custom "setup-git")
