@@ -134,12 +134,6 @@
 (setup-custom "setup-context")
 
 ;;
-;; EasyPG specific setup
-;;
-;; Failed to verify signature for this package. Removing it for now.
-;; (setup-custom "setup-gpg")
-
-;;
 ;; Setup bookmark functions
 ;;
 (setup-custom "setup-bookmarks")
@@ -153,11 +147,6 @@
 ;; Request specific setup
 ;;
 (setup-custom "setup-request")
-
-;;
-;; Hydra specific setup
-;;
-(setup-custom "setup-hydra")
 
 ;;
 ;; Python virtual environment manager for Eshell
