@@ -466,13 +466,3 @@
 ;; Yasnippet
 ;;
 (setup-custom "setup-yasnippet")
-
-;;
-;; dumbjump specific setup
-;;
-;; (setup-custom "setup-dumbjump")
-
-;;
-;; Smartscan specific setup
-;;
-(setup-custom "setup-smartscan")
