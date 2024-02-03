@@ -97,11 +97,6 @@
 (load "setup-bookmarks")
 
 ;;
-;; Request specific setup
-;;
-(load "setup-request")
-
-;;
 ;; Eshell setup
 ;;
 (load "setup-eshell")
