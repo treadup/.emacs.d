@@ -205,11 +205,6 @@
 (load "setup-text")
 
 ;;
-;; Git specific setup
-;;
-(load "setup-git")
-
-;;
 ;; Tramp specific setup
 ;;
 (load "setup-tramp")
