@@ -82,11 +82,6 @@
 (load "setup-exec-path")
 
 ;;
-;; Libraries for Elisp
-;;
-(load "setup-libraries")
-
-;;
 ;; Hostname functions
 ;;
 (load "setup-hostname")
