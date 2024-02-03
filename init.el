@@ -220,11 +220,6 @@
 (load "setup-tramp")
 
 ;;
-;; Elisp specific setup
-;;
-(load "setup-elisp")
-
-;;
 ;; Python specific setup
 ;;
 (load "setup-python")
