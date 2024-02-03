@@ -97,11 +97,6 @@
 (load "setup-bookmarks")
 
 ;;
-;; Auth source specific setup
-;;
-(load "setup-auth-source")
-
-;;
 ;; Request specific setup
 ;;
 (load "setup-request")
