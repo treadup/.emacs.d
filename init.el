@@ -290,11 +290,6 @@
 (load "setup-go")
 
 ;;
-;; Rust specific setup
-;;
-;; (load "setup-rust")
-
-;;
 ;; YAML specific setup
 ;;
 (load "setup-yaml")
