@@ -245,11 +245,6 @@
 (load "setup-flyspell")
 
 ;;
-;; Markdown specific setup
-;;
-(load "setup-markdown")
-
-;;
 ;; Scheme specific setup
 ;;
 (load "setup-scheme")
