@@ -112,11 +112,6 @@
 (load "setup-request")
 
 ;;
-;; Python virtual environment manager for Eshell
-;;
-(load "vpy")
-
-;;
 ;; Eshell setup
 ;;
 (load "setup-eshell")
