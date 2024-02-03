@@ -87,11 +87,6 @@
 (load "setup-hostname")
 
 ;;
-;; Context functions
-;;
-(load "setup-context")
-
-;;
 ;; Setup bookmark functions
 ;;
 (load "setup-bookmarks")
