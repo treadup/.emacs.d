@@ -275,11 +275,6 @@
 (load "setup-flyspell")
 
 ;;
-;; Ascii Doc specific setup
-;;
-;; (load "setup-asciidoc")
-
-;;
 ;; Markdown specific setup
 ;;
 (load "setup-markdown")
